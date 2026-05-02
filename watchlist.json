@@ -1,0 +1,87 @@
+[
+  {
+    "name": "GMM Pfaudler",
+    "nse": "GMMPFAUDLR",
+    "bse": "505255"
+  },
+  {
+    "name": "Sumitomo Chemical India",
+    "nse": "SUMICHEM",
+    "bse": "542920"
+  },
+  {
+    "name": "AIA Engineering",
+    "nse": "AIAENG",
+    "bse": "532683"
+  },
+  {
+    "name": "IRCTC",
+    "nse": "IRCTC",
+    "bse": "542830"
+  },
+  {
+    "name": "Poly Medicure",
+    "nse": "POLYMED",
+    "bse": "531768"
+  },
+  {
+    "name": "Fine Organic Industries",
+    "nse": "FINEORG",
+    "bse": "541557"
+  },
+  {
+    "name": "MapMyIndia",
+    "nse": "MAPMYINDIA",
+    "bse": "543425"
+  },
+  {
+    "name": "Urban Company",
+    "nse": "URBANCO",
+    "bse": "544515"
+  },
+  {
+    "name": "Vedant Fashions Manyavar",
+    "nse": "MANYAVAR",
+    "bse": "543463"
+  },
+  {
+    "name": "Ather Energy",
+    "nse": "ATHERENERG",
+    "bse": "544397"
+  },
+  {
+    "name": "ICICI Prudential AMC",
+    "nse": "ICICIAMC",
+    "bse": "544658"
+  },
+  {
+    "name": "Amagi Media Labs",
+    "nse": "AMAGI",
+    "bse": "544679"
+  },
+  {
+    "name": "ICICI Lombard",
+    "nse": "ICICIGI",
+    "bse": "540716"
+  },
+  {
+    "name": "Sunteck Realty",
+    "nse": "SUNTECK",
+    "bse": "512179"
+  },
+  {
+    "name": "DMart Avenue Supermarts",
+    "nse": "DMART",
+    "bse": "540376"
+  },
+  {
+    "name": "Kotak Mahindra Bank",
+    "nse": "KOTAKBANK",
+    "bse": "500247"
+  },
+  {
+    "name": "Affle India",
+    "nse": "AFFLE",
+    "bse": "542752"
+  }
+]
