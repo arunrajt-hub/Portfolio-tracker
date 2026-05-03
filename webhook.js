@@ -79,8 +79,9 @@ async function handleCommand(text, env) {
   if (upper.startsWith("REMOVE ")) {
     const query = text.slice(7).trim().toUpperCase();
     const watchlist = await getWatchlist(env);
+    const bseCode = query.replace(/^BSE:/, "");
     const index = watchlist.findIndex(
-      (c) => c.nse.toUpperCase() === query || c.name.toUpperCase() === query
+      (c) => c.bse === bseCode || c.nse.toUpperCase() === query || c.name.toUpperCase() === query
     );
     if (index === -1) return `❌ "${text.slice(7).trim()}" not found in watchlist.`;
     const removed = watchlist.splice(index, 1)[0];
@@ -88,7 +89,7 @@ async function handleCommand(text, env) {
     return `✅ Removed *${removed.name}* from watchlist.`;
   }
 
-  return `🤖 *Commands:*\n• LIST\n• ADD <name> NSE:<ticker> BSE:<code>\n• REMOVE <name or ticker>`;
+  return `🤖 *Commands:*\n• LIST\n• ADD BSE:<code>\n• ADD BSE:<code> NSE:<ticker>\n• REMOVE BSE:<code>\n• REMOVE <name>`;
 }
 
 async function getWatchlist(env) {
