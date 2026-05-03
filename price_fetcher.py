@@ -27,6 +27,9 @@ def fetch_prices():
 
     prices = []
     for company in COMPANIES:
+        if not company.get("nse"):
+            prices.append({"name": company["name"], "ticker": "N/A", "price": None, "change_pct": None, "arrow": "-"})
+            continue
         try:
             url = f"{NSE_QUOTE_URL}{company['nse']}"
             resp = session.get(url, timeout=10)

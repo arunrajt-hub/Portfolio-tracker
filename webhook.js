@@ -9,12 +9,6 @@ export default {
   async fetch(request, env) {
     if (request.method !== "POST") return new Response("OK", { status: 200 });
 
-    // Verify secret token to block unknown callers
-    const secret = request.headers.get("X-Webhook-Secret");
-    if (secret !== env.WEBHOOK_SECRET) {
-      return new Response("Unauthorized", { status: 401 });
-    }
-
     let body;
     try {
       body = await request.json();
@@ -49,20 +43,36 @@ async function handleCommand(text, env) {
     return `📋 *Watchlist (${watchlist.length} stocks)*\n\n${lines.join("\n")}`;
   }
 
-  // ADD <name> NSE:<ticker> BSE:<code>
+  // ADD BSE:<code> [NSE:<ticker>]
   if (upper.startsWith("ADD ")) {
-    const match = text.match(/^ADD\s+(.+?)\s+NSE:(\S+)\s+BSE:(\S+)$/i);
-    if (!match) {
-      return "❌ Format: ADD <name> NSE:<ticker> BSE:<code>\nExample: ADD Tata Motors NSE:TATAMOTORS BSE:500570";
+    const bseMatch = text.match(/BSE:(\d+)/i);
+    if (!bseMatch) {
+      return "❌ Format: ADD BSE:<code> [NSE:<ticker>]\nExample: ADD BSE:500570\nExample: ADD BSE:500570 NSE:TATAMOTORS";
     }
-    const [, name, nse, bse] = match;
-    const watchlist = await getWatchlist(env);
-    const exists = watchlist.find((c) => c.nse.toUpperCase() === nse.toUpperCase());
-    if (exists) return `⚠️ ${exists.name} is already in the watchlist.`;
+    const bse = bseMatch[1];
+    const nseMatch = text.match(/NSE:(\S+)/i);
+    const nse = nseMatch ? nseMatch[1].toUpperCase() : "";
 
-    watchlist.push({ name: name.trim(), nse: nse.toUpperCase(), bse: bse.trim() });
+    const watchlist = await getWatchlist(env);
+    if (watchlist.find((c) => c.bse === bse)) {
+      return `⚠️ BSE:${bse} is already in the watchlist.`;
+    }
+
+    // Auto-fetch company name from BSE
+    let name = `BSE:${bse}`;
+    try {
+      const resp = await fetch(
+        `https://api.bseindia.com/BseIndiaAPI/api/getScripHeaderData/w?Debtflag=&scripcode=${bse}&seriesid=`,
+        { headers: { "User-Agent": "Mozilla/5.0", "Referer": "https://www.bseindia.com/" } }
+      );
+      const data = await resp.json();
+      name = data?.Cmpname?.SeriesN || data?.Cmpname?.FullN || name;
+    } catch {}
+
+    watchlist.push({ name: name.trim(), nse, bse });
     await saveWatchlist(watchlist, env, `Add ${name.trim()} to watchlist`);
-    return `✅ Added *${name.trim()}* (NSE: ${nse.toUpperCase()}, BSE: ${bse}) to watchlist.`;
+    const nseNote = nse ? `, NSE: ${nse}` : " (no NSE ticker — prices won't show)";
+    return `✅ Added *${name.trim()}* (BSE: ${bse}${nseNote})`;
   }
 
   // REMOVE <name or ticker>
