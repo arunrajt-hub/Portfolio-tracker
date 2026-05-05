@@ -67,6 +67,6 @@ def format_price_table(prices):
             emoji = "📈" if p["change_pct"] >= 0 else "📉"
             sign = "+" if p["change_pct"] >= 0 else "-"
             lines.append(f"{emoji} *{p['ticker']}*: ₹{p['price']:,.0f}  ({sign}{abs(p['change_pct']):.1f}%)")
-        else:
+        elif p["ticker"] != "N/A":
             lines.append(f"⬜ *{p['ticker']}*: N/A")
     return "\n".join(lines)
