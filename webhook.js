@@ -27,7 +27,7 @@ export default {
 
     const text = (message.text?.body || "").trim();
     const reply = await handleCommand(text, env);
-    await sendWhatsApp(reply, env);
+    if (reply) await sendWhatsApp(reply, env);
 
     return new Response("OK");
   },
@@ -89,7 +89,7 @@ async function handleCommand(text, env) {
     return `✅ Removed *${removed.name}* from watchlist.`;
   }
 
-  return `🤖 *Commands:*\n• LIST\n• ADD BSE:<code>\n• ADD BSE:<code> NSE:<ticker>\n• REMOVE BSE:<code>\n• REMOVE <name>`;
+  return null;
 }
 
 async function getWatchlist(env) {
