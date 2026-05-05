@@ -17,7 +17,7 @@ export default {
     }
 
     const message = body?.messages?.[0];
-    if (!message || message.type !== "text" || message.fromMe) return new Response("OK");
+    if (!message || message.type !== "text") return new Response("OK");
 
     const from = message.from?.replace(/[^0-9]/g, "");
     const allowed = env.WHATSAPP_NUMBER.replace(/[^0-9]/g, "");
