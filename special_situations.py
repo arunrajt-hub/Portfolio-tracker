@@ -22,7 +22,7 @@ HEADERS = {
 # AGM/EGM (special resolutions), Insider Trading / SAST (open offers,
 # pledges), Board Meeting, and Company Update (BSE's catch-all bucket, where
 # most capex/regulatory/business-win headlines actually land). "Result" is
-# deliberately excluded — quarterly_results.py already covers that per-company.
+# deliberately excluded — routine quarterly results aren't a special situation.
 MARKET_WIDE_CATEGORIES = [
     "Corp. Action",
     "AGM/EGM",
