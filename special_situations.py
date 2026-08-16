@@ -75,14 +75,15 @@ def classify(headline):
     return None
 
 
-def fetch_market_announcements(days_back=1, max_pages=5):
+def fetch_market_announcements(days_back=1, max_pages=20):
     """Best-effort market-wide (no scrip filter) BSE announcement query.
 
-    NOT verified live — BSE/exchange APIs appear to block this sandbox's
-    egress IP outright (same class of issue documented for NSE in
-    price_fetcher.py history: every call, even known-good scrip+date combos,
-    returned "No Record Found!"). Verify strScrip/pagination against a real
-    GitHub Actions run and adjust if the shape is wrong.
+    NOT verified live — BSE/exchange APIs appear to block dev-sandbox egress
+    IPs outright (same class of issue this repo already hit with NSE price
+    data). Verify strScrip/pagination against a real GitHub Actions run and
+    adjust if the shape is wrong — the diagnostic prints below show whether
+    zero results means "API blocked/wrong params" (0 raw announcements) vs
+    "genuinely nothing matched" (raw count > 0, candidates == 0).
     """
     today = datetime.now()
     from_date = (today - timedelta(days=days_back)).strftime("%Y%m%d")
@@ -100,19 +101,25 @@ def fetch_market_announcements(days_back=1, max_pages=5):
             "strType": "C",
             "subcategory": "-1",
         }
+        response = None
         try:
             response = requests.get(BSE_API_URL, params=params, headers=HEADERS, timeout=15)
             data = response.json()
             page_items = data.get("Table", [])
-        except Exception:
+        except Exception as e:
+            print(f"  [special_situations] page {pageno} request failed: {e}")
+            if response is not None:
+                print(f"  [special_situations] status={response.status_code} body[:300]={response.text[:300]!r}")
             break
 
+        print(f"  [special_situations] page {pageno}: {len(page_items)} announcements")
         if not page_items:
             break
         announcements.extend(page_items)
         if len(page_items) < 50:
             break
 
+    print(f"  [special_situations] total raw announcements fetched: {len(announcements)}")
     return announcements
 
 
@@ -154,6 +161,7 @@ def find_special_situations(days_back=1):
             "link": link,
         })
 
+    print(f"  [special_situations] candidates after keyword filter: {len(candidates)}")
     return candidates
 
 

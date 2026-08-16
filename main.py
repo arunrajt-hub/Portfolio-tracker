@@ -1,10 +1,10 @@
 from dotenv import load_dotenv
 load_dotenv()
 
+import os
 from config import COMPANIES
 from news_fetcher import fetch_all_news
 from quarterly_results import fetch_all_quarterly_results
-from youtube_fetcher import fetch_all_earnings_calls, fetch_all_trendlyne_calls
 from special_situations import fetch_all_special_situations
 from whatsapp_sender import send_in_chunks
 from datetime import datetime
@@ -31,7 +31,7 @@ def build_news_message(news):
     return "\n".join(lines)
 
 
-def build_quarterly_message(news, quarterly, earnings, trendlyne=None):
+def build_quarterly_message(news, quarterly):
     now = datetime.now().strftime("%d %b %Y")
     lines = [
         f"📋 *QUARTERLY UPDATES — {now}*",
@@ -54,22 +54,6 @@ def build_quarterly_message(news, quarterly, earnings, trendlyne=None):
             lines.append(f"\n🏢 *{company_name}*")
             for item in items:
                 lines.append(f"• {item['title']}")
-
-    if earnings:
-        has_content = True
-        lines.append("\n*Earnings Calls (YouTube)*")
-        for company_name, video in earnings.items():
-            lines.append(f"\n🏢 *{company_name}*")
-            lines.append(f"• {video['title']}")
-            lines.append(f"  {video['url']}")
-
-    if trendlyne:
-        has_content = True
-        lines.append("\n*Trendlyne Earnings Transcripts*")
-        for company_name, video in trendlyne.items():
-            lines.append(f"\n🏢 *{company_name}*")
-            lines.append(f"• {video['title']}")
-            lines.append(f"  {video['url']}")
 
     if not has_content:
         lines.append("\nNo quarterly updates today.")
@@ -113,17 +97,12 @@ def main():
     print("Fetching quarterly results...")
     quarterly = fetch_all_quarterly_results(COMPANIES)
 
-    print("Fetching earnings calls...")
-    earnings = fetch_all_earnings_calls(COMPANIES)
-
-    print("Fetching Trendlyne earnings transcripts...")
-    trendlyne = fetch_all_trendlyne_calls(COMPANIES)
-
-    print("Scanning market-wide special situations...")
-    situations = fetch_all_special_situations()
+    days_back = int(os.environ.get("SPECIAL_SITUATIONS_DAYS_BACK", "1"))
+    print(f"Scanning market-wide special situations (last {days_back} day(s))...")
+    situations = fetch_all_special_situations(days_back=days_back)
 
     msg2 = build_news_message(news)
-    msg3 = build_quarterly_message(news, quarterly, earnings, trendlyne)
+    msg3 = build_quarterly_message(news, quarterly)
     msg4 = build_special_situations_message(situations)
 
     print("\n--- Sending 3 messages ---")

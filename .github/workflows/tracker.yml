@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: "30 14 * * *"  # 8:00 PM IST (UTC+5:30)
   workflow_dispatch:        # allow manual trigger
+    inputs:
+      special_situations_days_back:
+        description: "Special situations lookback window (days). Leave as 1 for normal daily runs."
+        required: false
+        default: "1"
 
 jobs:
   run-tracker:
@@ -23,9 +28,9 @@ jobs:
 
       - name: Run tracker
         env:
-          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
           WHAPI_TOKEN: ${{ secrets.WHAPI_TOKEN }}
           WHAPI_URL: ${{ secrets.WHAPI_URL }}
           WHATSAPP_NUMBER: ${{ secrets.WHATSAPP_NUMBER }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          SPECIAL_SITUATIONS_DAYS_BACK: ${{ github.event.inputs.special_situations_days_back || '1' }}
         run: python main.py

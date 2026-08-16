@@ -18,7 +18,6 @@ Go to your repo → Settings → Secrets and variables → Actions → New repos
 
 | Secret | Value |
 |---|---|
-| `YOUTUBE_API_KEY` | Your YouTube Data API v3 key |
 | `WHAPI_TOKEN` | Your WHAPI bearer token |
 | `WHAPI_URL` | e.g. `https://gate.whapi.cloud` |
 | `WHATSAPP_NUMBER` | e.g. `919500055366` |
