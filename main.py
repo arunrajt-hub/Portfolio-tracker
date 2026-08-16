@@ -3,10 +3,13 @@ load_dotenv()
 
 import os
 from special_situations import fetch_all_special_situations
-from ipo_tracker import find_fallen_ipos, TRACK_MONTHS, DROP_PCT_TRIGGER
+from ipo_tracker import find_fallen_ipos, enrich_fallen_ipos, TRACK_MONTHS, DROP_PCT_TRIGGER
 from archive import write_daily_record
 from email_sender import send_email
 from datetime import datetime
+
+
+VIEW_EMOJI = {"Buy": "✅", "Avoid": "🚫", "Watch": "👀"}
 
 
 def build_special_situations_message(situations):
@@ -14,6 +17,7 @@ def build_special_situations_message(situations):
     lines = [
         f"🎯 *SPECIAL SITUATIONS — {now}*",
         "_Market-wide, not limited to your watchlist_",
+        "_Buy/Avoid/Watch views are AI-generated for personal reference, not certified financial advice_",
         "━━━━━━━━━━━━━━━━━━━━",
     ]
     if not situations:
@@ -34,6 +38,9 @@ def build_special_situations_message(situations):
                 lines.append(f"  💰 {s['impact']}")
             if s.get("risk"):
                 lines.append(f"  ⚠️ {s['risk']}")
+            if s.get("view"):
+                emoji = VIEW_EMOJI.get(s["view"], "")
+                lines.append(f"  {emoji} *{s['view']}* — {s.get('view_reasoning', '')}")
             lines.append(f"  {s['link']}")
 
     return "\n".join(lines)
@@ -44,6 +51,7 @@ def build_fallen_ipos_message(fallen):
     lines = [
         f"📉 *FALLEN IPOs — {now}*",
         f"_Listed within {TRACK_MONTHS} months, now down {DROP_PCT_TRIGGER}%+ from day-1 close_",
+        "_Buy/Avoid/Watch views are AI-generated for personal reference, not certified financial advice_",
         "━━━━━━━━━━━━━━━━━━━━",
     ]
     if not fallen:
@@ -58,6 +66,9 @@ def build_fallen_ipos_message(fallen):
         if f.get("pct_of_issue") is not None:
             drop_pct_issue = 100 - f["pct_of_issue"]
             lines.append(f"• {drop_pct_issue:.0f}% below issue price")
+        if f.get("view"):
+            emoji = VIEW_EMOJI.get(f["view"], "")
+            lines.append(f"• {emoji} *{f['view']}* — {f.get('view_reasoning', '')}")
 
     return "\n".join(lines)
 
@@ -69,6 +80,7 @@ def main():
 
     print("Checking recent IPOs for post-listing crashes...")
     fallen_ipos = find_fallen_ipos()
+    fallen_ipos = enrich_fallen_ipos(fallen_ipos)
 
     write_daily_record(situations, fallen_ipos)
 

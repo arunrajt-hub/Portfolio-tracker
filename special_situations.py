@@ -35,7 +35,10 @@ MAX_PAGES_PER_CATEGORY = 100  # safety cap (5000 rows/category) for wide test pu
 
 ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY")
 ANTHROPIC_URL = "https://api.anthropic.com/v1/messages"
-ANTHROPIC_MODEL = "claude-haiku-4-5-20251001"
+# Sonnet, not Haiku — this pass now includes a Buy/Avoid/Watch call, which
+# carries more real-world weight than a category label or summary and is
+# worth the extra cost/latency for stronger reasoning.
+ANTHROPIC_MODEL = "claude-sonnet-5"
 MAX_ENRICHMENT_SEARCHES = 20  # shared across the whole batch, not per-candidate — cost bound
 
 # Event-type keyword buckets. Matched as whole phrases (word-boundary) against
@@ -283,7 +286,8 @@ def _build_enrichment_prompt(candidates):
         "the array), one object per announcement you judge to be genuinely "
         "material, each with exactly these keys: \"company\", \"category\", "
         "\"summary\" (<=15 words, the concrete action), \"impact\", \"risk\" "
-        "(<=12 words on the key risk/watch-item, or \"None apparent\").\n\n"
+        "(<=12 words on the key risk/watch-item, or \"None apparent\"), \"view\", "
+        "\"view_reasoning\".\n\n"
         "For \"impact\": if the event involves a monetary figure (capex amount, "
         "deal size, fundraise amount, order/contract value, buyback size, etc.) "
         "and the headline doesn't state it, use web search to find it, then also "
@@ -293,12 +297,23 @@ def _build_enrichment_prompt(candidates):
         "transaction size at all (governance, regulatory, distress announcements "
         "with no deal figure), give a brief qualitative impact note instead — "
         "don't force a percentage that doesn't apply. If search turns up nothing "
-        "usable, say \"Not stated\" rather than guessing or inventing a figure."
+        "usable, say \"Not stated\" rather than guessing or inventing a figure.\n\n"
+        "For \"view\": one of \"Buy\", \"Avoid\", or \"Watch\" — your read on "
+        "whether this event makes the stock more or less attractive right now, "
+        "weighing the event's materiality against what you can find about the "
+        "company's current valuation/fundamentals via web search. Many events "
+        "(e.g. a routine board meeting notice, an auditor resignation with no "
+        "other red flags) genuinely have no clear directional signal — use "
+        "\"Watch\" with reasoning \"No clear directional signal\" rather than "
+        "forcing a Buy/Avoid call. \"view_reasoning\" is <=20 words, specific and "
+        "evidence-based (cite what you found), not generic. This is an "
+        "AI-generated personal-reference read, not certified financial advice — "
+        "be honest about uncertainty rather than confidently guessing."
     )
 
 
 def _unenriched(candidates):
-    return [{**c, "summary": None, "impact": None, "risk": None} for c in candidates]
+    return [{**c, "summary": None, "impact": None, "risk": None, "view": None, "view_reasoning": None} for c in candidates]
 
 
 def enrich_candidates(candidates, max_items=40):
@@ -365,6 +380,8 @@ def enrich_candidates(candidates, max_items=40):
             "summary": item.get("summary"),
             "impact": item.get("impact"),
             "risk": item.get("risk"),
+            "view": item.get("view"),
+            "view_reasoning": item.get("view_reasoning"),
         })
     return results + _unenriched(overflow)
 

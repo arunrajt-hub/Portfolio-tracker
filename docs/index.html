@@ -21,6 +21,7 @@
     --cat-flags:    #4a3aa7;
     --cat-distress: #e34948;
 
+    --status-good:     #0ca30c;
     --status-warning:  #fab219;
     --status-serious:  #ec835a;
     --status-critical: #d03b3b;
@@ -140,9 +141,13 @@
 
   .status-chip { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 500; }
   .status-dot { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+  .status-good     .status-dot { background: var(--status-good); }
   .status-warning  .status-dot { background: var(--status-warning); }
   .status-serious  .status-dot { background: var(--status-serious); }
   .status-critical .status-dot { background: var(--status-critical); }
+  .status-neutral  .status-dot { background: var(--text-muted); }
+
+  .view-note { display: block; font-size: 11px; color: var(--text-secondary); margin-top: 2px; max-width: 220px; }
 
   footer { color: var(--text-muted); font-size: 12px; margin-top: 24px; }
 
@@ -282,6 +287,17 @@ function statusForDrop(dropPct) {
   return ["warning", "Warning"];
 }
 
+const VIEW_STATUS_CLASS = { Buy: "good", Avoid: "critical", Watch: "neutral" };
+
+function viewChipHtml(view, reasoning) {
+  if (!view) return "—";
+  const cls = VIEW_STATUS_CLASS[view] || "neutral";
+  return (
+    `<span class="status-chip status-${cls}"><span class="status-dot"></span>${escapeHtml(view)}</span>` +
+    (reasoning ? `<span class="view-note">${escapeHtml(reasoning)}</span>` : "")
+  );
+}
+
 async function loadIndex() {
   const res = await fetch("data/index.json");
   if (!res.ok) throw new Error("no index.json yet");
@@ -355,7 +371,7 @@ function renderSituations(record) {
   lastSituationRows = rows;
   wrap.innerHTML = `
     <table>
-      <thead><tr><th>Category</th><th>Sub-category</th><th>Company</th><th>Summary</th><th>Impact</th><th>Risk</th><th></th><th></th></tr></thead>
+      <thead><tr><th>Category</th><th>Sub-category</th><th>Company</th><th>Summary</th><th>Impact</th><th>Risk</th><th>View</th><th></th><th></th></tr></thead>
       <tbody>
         ${rows.map((s, i) => `
           <tr>
@@ -365,6 +381,7 @@ function renderSituations(record) {
             <td>${escapeHtml(s.summary || s.headline)}</td>
             <td>${escapeHtml(s.impact || '—')}</td>
             <td>${escapeHtml(s.risk || '—')}</td>
+            <td>${viewChipHtml(s.view, s.view_reasoning)}</td>
             <td><a href="${escapeHtml(s.link)}" target="_blank" rel="noopener">source</a></td>
             <td><button class="chat-btn" data-chat-situation="${i}">💬 Ask Claude</button></td>
           </tr>
@@ -396,7 +413,7 @@ function renderIpos(record) {
   lastIpoRows = rows;
   wrap.innerHTML = `
     <table>
-      <thead><tr><th>Company</th><th>Listed</th><th>Issue price</th><th>Day-1 close</th><th>Current</th><th>Status</th><th>Drop from issue</th><th></th></tr></thead>
+      <thead><tr><th>Company</th><th>Listed</th><th>Issue price</th><th>Day-1 close</th><th>Current</th><th>Status</th><th>Drop from issue</th><th>View</th><th></th></tr></thead>
       <tbody>
         ${rows.map((f, i) => {
           const dropPct = 100 - f.pct_of_day1;
@@ -411,6 +428,7 @@ function renderIpos(record) {
             <td class="num">₹${Number(f.current_price).toFixed(2)}</td>
             <td class="num"><span class="status-chip status-${cls}"><span class="status-dot"></span>${label} · ${dropPct.toFixed(0)}% down</span></td>
             <td class="num">${dropFromIssue != null ? dropFromIssue.toFixed(0) + '%' : '—'}</td>
+            <td>${viewChipHtml(f.view, f.view_reasoning)}</td>
             <td><button class="chat-btn" data-chat-ipo="${i}">💬 Ask Claude</button></td>
           </tr>`;
         }).join("")}
@@ -535,7 +553,8 @@ async function init() {
   await selectDate(index.dates[0], index.dates.length);
 
   document.getElementById("footer").textContent =
-    "Data refreshes daily from the Portfolio News Tracker GitHub Actions job.";
+    "Data refreshes daily from the Portfolio News Tracker GitHub Actions job. " +
+    "Buy/Avoid/Watch views are AI-generated for personal reference, not certified financial advice.";
 }
 
 init();
