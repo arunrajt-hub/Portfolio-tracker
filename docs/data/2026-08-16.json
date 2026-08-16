@@ -1,13 +1,363 @@
 {
   "date": "2026-08-16",
-  "generated_at": "2026-08-16T13:32:06.089556",
+  "generated_at": "2026-08-16T08:16:33.598750",
   "special_situations": [
     {
-      "company": "Manipal Health Enterprises Ltd",
+      "company": "Jindal Photo Ltd",
       "category": "Demerger, M&A & PE",
       "subcategory": "M&A",
-      "headline": "The Exchange has received Disclosure under Regulation 31(1) and 31(2) of SEBI (Substantial Acquisition of Shares & Takeovers) Regulations, 2011 on August 14, 2026 for Manipal Global Health ....",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/01506286_6354_43E6_8B21_ED5D02F35FC7_174303.pdf",
+      "headline": "Intimation of Postal Ballot Notice for Voluntary Delisting",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/1278899a-c135-4bb0-844e-5f6886f1cff1.pdf",
+      "summary": "Postal Ballot initiated for Voluntary Delisting",
+      "impact": "Removal from stock exchange, reduced liquidity for shareholders",
+      "risk": "Delisting approval risk, shareholder acceptance, fair valuation dispute"
+    },
+    {
+      "company": "IRM Energy Ltd",
+      "category": "Distress / Insolvency",
+      "subcategory": "Court Convened Meeting",
+      "headline": "Please find attached herewith Notice of Court convened meeting of Unsecured Creditors of the Company to be held on Saturday, September 12, 2026 at 12:30 p.m. as per the Order of NCLT Ahmedabad.",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c37db29b-0d63-4757-98e2-3f1a37735f5e.pdf",
+      "summary": "NCLT-convened Unsecured Creditors meeting scheduled for September 12, 2026",
+      "impact": "Insolvency proceedings, potential debt restructuring or liquidation",
+      "risk": "Creditor recovery rates, business continuity, debt restructuring terms"
+    },
+    {
+      "company": "Marathon Nextgen Realty Ltd",
+      "category": "Distress / Insolvency",
+      "subcategory": "Court Convened Meeting",
+      "headline": "Marathon Nextgen Realty Limited has informed the Exchange about the Notice of NCLT convened meeting of the Unsecured Creditors of the Company to be held on Monday September 7, 2026 at 12:30 ....",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/aa165b85-d7f3-4e62-aba2-ca305a4437a3.pdf",
+      "summary": "NCLT-convened Unsecured Creditors meeting scheduled for September 7, 2026",
+      "impact": "Insolvency proceedings, potential debt restructuring or liquidation",
+      "risk": "Creditor recovery rates, business continuity, resolution plan approval"
+    },
+    {
+      "company": "Palco Metals Ltd",
+      "category": "Distress / Insolvency",
+      "subcategory": "Court Convened Meeting",
+      "headline": "Proceedings of Hon''ble NCLT Convened Meeting",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/d80bcae1-6643-4f8d-accc-190f645b11d8.pdf",
+      "summary": "Multiple NCLT-convened creditor meetings held and proceedings documented",
+      "impact": "Advanced insolvency resolution process, potential restructuring outcome",
+      "risk": "Resolution plan execution, creditor disputes, recovery adequacy"
+    },
+    {
+      "company": "Veefin Solutions Ltd",
+      "category": "Distress / Insolvency",
+      "subcategory": "Court Convened Meeting",
+      "headline": "Proceedings of the Meeting of Unsecured Creditors of the Veefin Solutions Limited (\"Company\") convened as per the directions of the Hon''ble National Company Law Tribunal, Mumbai Bench (NCLT).",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/b9293709-241d-4886-90fa-4d4fecf92b76.pdf",
+      "summary": "NCLT-convened Secured and Unsecured Creditors meetings held",
+      "impact": "Insolvency resolution in progress, debt restructuring underway",
+      "risk": "Creditor coordination, recovery rates, resolution plan implementation"
+    },
+    {
+      "company": "Vishnu Prakash R Punglia Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "The Exchange has received revised Disclosure under Regulation 31(1) and 31(2) of SEBI (Substantial Acquisition of Shares & Takeovers) Regulations, 2011 on August 05, 2026 for Vijay Punglia",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/34624FF2_BC4F_4837_9746_E37E75C879D3_121456.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Vishnu Prakash R Punglia Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "The Exchange has received revised Disclosure under Regulation 31(1) and 31(2) of SEBI (Substantial Acquisition of Shares & Takeovers) Regulations, 2011 on August 05, 2026 for Anil Punglia",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/673EF746_6D60_4A5B_88DA_7A2D31B7D1F7_121518.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Eureka Forbes Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "The Exchange has received Disclosure under Regulation 31(1) and 31(2) of SEBI (Substantial Acquisition of Shares & Takeovers) Regulations, 2011 on August 04, 2026 for Lunolux Midco Ltd & Lunolux Ltd",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/54FE0EF9_226D_4212_9FDF_3EECDC3009B3_120044.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Restaurant Brands Asia Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "The Exchange has received Disclosure under Regulation 31(1) and 31(2) of SEBI (Substantial Acquisition of Shares & Takeovers) Regulations, 2011 on July 23, 2026 for Lenexis Foodworks Pvt Ltd",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2440D715_0E10_445D_8D11_A91A2A079C6E_102106.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "The Ramco Cements Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "The Exchange has received Disclosure under Regulation 31(1) and 31(2) of SEBI (Substantial Acquisition of Shares & Takeovers) Regulations, 2011 on July 23, 2026 for Rajapalayam Mills Ltd",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/69EB031A_ECE3_468D_92BB_414483A984E8_101704.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Archean Chemical Industries Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "The Exchange has received Disclosure under Regulation 31(1) and 31(2) of SEBI (Substantial Acquisition of Shares & Takeovers) Regulations, 2011 on July 23, 2026 for Chemikas Speciality LLP",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/3717D325_F12E_4A39_80B3_AE22BAF26B67_101216.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Ramco Industries Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "The Exchange has received Disclosure under Regulation 31(1) and 31(2) of SEBI (Substantial Acquisition of Shares & Takeovers) Regulations, 2011 on July 23, 2026 for Rajapalayam Mills Ltd",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/AF6D3D45_BFD7_42AF_B2D3_4AA78CAA01F9_150541.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Rikhav Securities Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "The Exchange has received Disclosure under Regulation 31(1) and 31(2) of SEBI (Substantial Acquisition of Shares & Takeovers) Regulations, 2011 on August 04, 2026 for Hitesh Himatlal Lakhani",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/15F5A352_1144_4B69_84C6_8BB0F5A29699_173146.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Dev Accelerator Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "The Exchange has received Disclosure under Regulation 31(1) and 31(2) of SEBI (Substantial Acquisition of Shares & Takeovers) Regulations, 2011 on August 04, 2026 for Parth Shah, Rushit ....",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/CC1DDE7A_C9F9_498E_AC89_921CD9775059_163020.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Apollo Tyres Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "The Exchange has received Disclosure under Regulation 31(1) and 31(2) of SEBI (Substantial Acquisition of Shares & Takeovers) Regulations, 2011 on August 04, 2026 for Raaja Kanwar",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/5E406BCB_30FE_46DD_94F2_8ADF5BDC11BA_162751.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Raama Finance Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "The Exchange has received Disclosure under Regulation 31(1) and 31(2) of SEBI (Substantial Acquisition of Shares & Takeovers) Regulations, 2011 on August 03, 2026 for Akhil Mittal & Mrs. ....",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/6E1B60FE_E143_4D97_884D_D400525311E8_103943.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Themis Medicare Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "The Exchange has received revised Disclosure under Regulation 31(1) and 31(2) of SEBI (Substantial Acquisition of Shares & Takeovers) Regulations, 2011 on July 21, 2026 for Vividhmargi Trust",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/8C6E480D_A789_4558_9FE6_EEB7D717C163_172731.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Gujarat Themis Biosyn Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "The Exchange has received revised Disclosure under Regulation 31(1) and 31(2) of SEBI (Substantial Acquisition of Shares & Takeovers) Regulations, 2011 on July 21, 2026 for Pharmaceutical ....",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/227A0FE7_6D78_4AF8_A40B_3BD7FEA4585F_172611.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Centrum Capital Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "The Exchange has received revised Disclosure under Regulation 31(1) and 31(2) of SEBI (Substantial Acquisition of Shares & Takeovers) Regulations, 2011 on July 21, 2026 for Business Match ....",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/09E7C82E_FA63_4529_9A34_E64254B45250_142843.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Themis Medicare Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "The Exchange has received revised Disclosure under Regulation 31(1) and 31(2) of SEBI (Substantial Acquisition of Shares & Takeovers) Regulations, 2011 on July 20, 2026 for Vividhmargi ....",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/24B6B257_04E7_468B_B8AF_F26100D85EC0_111857.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Gujarat Themis Biosyn Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "The Exchange has received revised Disclosure under Regulation 31(1) and 31(2) of SEBI (Substantial Acquisition of Shares & Takeovers) Regulations, 2011 on July 20, 2026 for Themis Medicare Ltd",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/3F087070_3E09_49A2_9B49_02AB63EC5614_111648.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Gujarat Themis Biosyn Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "The Exchange has received revised Disclosure under Regulation 31(1) and 31(2) of SEBI (Substantial Acquisition of Shares & Takeovers) Regulations, 2011 on July 20, 2026 for Pharmaceutical ....",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/3362248E_308C_45DC_B781_751A2EA29C57_104648.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Vishnu Prakash R Punglia Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "The Exchange has received Disclosure under Regulation 31(1) and 31(2) of SEBI (Substantial Acquisition of Shares & Takeovers) Regulations, 2011 on July 20, 2026 for Anil Punglia",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/647328A3_6A37_43F5_81DA_801ABED857A8_102305.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Asian Paints Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "The Exchange has received Disclosure under Regulation 31(1) and 31(2) of SEBI (Substantial Acquisition of Shares & Takeovers) Regulations, 2011 on July 27, 2026 for Geetanjali Trading and ....",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/388C960D_44BE_4F0B_B75C_3C4A5C34536E_102450.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "The Ramco Cements Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "The Exchange has received Disclosure under Regulation 31(1) and 31(2) of SEBI (Substantial Acquisition of Shares & Takeovers) Regulations, 2011 on July 25, 2026 for Rajapalayam Mills Ltd",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/15FA055D_E084_4A7B_957A_4DE1FAE93D0D_105539.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Ramco Industries Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "The Exchange has received Disclosure under Regulation 31(1) and 31(2) of SEBI (Substantial Acquisition of Shares & Takeovers) Regulations, 2011 on July 24, 2026 for Rajapalayam Mills Ltd",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/60EEB545_31CD_494B_9641_14CFD62DC508_105317.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "The Ramco Cements Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "The Exchange has received Disclosure under Regulation 31(1) and 31(2) of SEBI (Substantial Acquisition of Shares & Takeovers) Regulations, 2011 on July 24, 2026 for Rajapalayam Mills Ltd",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/6A446C06_8037_4CD0_890C_4D05F93365CB_102410.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Vedanta Power Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "The Exchange has received Disclosure under Regulation 31(1) and 31(2) of SEBI (Substantial Acquisition of Shares & Takeovers) Regulations, 2011 on July 17, 2026 for on July 17, 2026 for ....",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/58D6B836_3622_456B_A6DE_43471DC71CD4_103912.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Jyoti CNC Automation Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "The Exchange has received Disclosure under Regulation 31(1) and 31(2) of SEBI (Substantial Acquisition of Shares & Takeovers) Regulations, 2011 on July 17, 2026 for Anilkumar Bhikhabhai Virani",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/F837510B_A2DA_4062_8AE8_BE5332E7249C_173344.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Themis Medicare Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "The Exchange has received Disclosure under Regulation 31(1) and 31(2) of SEBI (Substantial Acquisition of Shares & Takeovers) Regulations, 2011 on July 16, 2026 for Vividhmargi Investments Pvt Ltd",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/D3D78528_5421_488F_9D38_7CCBAA273B74_103253.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Gujarat Themis Biosyn Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "The Exchange has received Disclosure under Regulation 31(1) and 31(2) of SEBI (Substantial Acquisition of Shares & Takeovers) Regulations, 2011 on July 16, 2026 for Themis Medicare Ltd",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7046AE5B_EE33_4533_AFC4_EFB61AD8A481_103125.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Gujarat Themis Biosyn Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "The Exchange has received Disclosure under Regulation 31(1) and 31(2) of SEBI (Substantial Acquisition of Shares & Takeovers) Regulations, 2011 on July 16, 2026 for Pharmaceutical Business ....",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7A0B121A_7ED6_4104_8DF4_671E81728D9A_103008.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Themis Medicare Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "The Exchange has received Disclosure under Regulation 31(1) and 31(2) of SEBI (Substantial Acquisition of Shares & Takeovers) Regulations, 2011 on July 30, 2026 for Vividhmargi Investments Pvt Ltd",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/247BDD1C_FE85_4BC8_AC7E_4BD34D982949_110934.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Leela Palaces Hotels & Resorts Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "The Exchange has received revised Disclosure under Regulation 31(1) and 31(2) of SEBI (Substantial Acquisition of Shares & Takeovers) Regulations, 2011 on July 30, 2026 for Project Ballet ....",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/275FEDC6_32CD_4873_A865_6640C08E2432_154606.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Medplus Health Services Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "The Exchange has received Disclosure under Regulation 31(1) and 31(2) of SEBI (Substantial Acquisition of Shares & Takeovers) Regulations, 2011 on July 29, 2026 for Lone Furrow Investment Pvt Ltd",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/9816758C_CB11_40CE_9843_D8F4602EEF57_190341.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Medplus Health Services Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "The Exchange has received Disclosure under Regulation 31(1) and 31(2) of SEBI (Substantial Acquisition of Shares & Takeovers) Regulations, 2011 on July 29, 2026 for Agilemed Investments Pvt Ltd",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2F73B0CF_ADDF_4D07_A0A7_1743660D667E_190142.pdf",
       "summary": null,
       "impact": null,
       "risk": null
@@ -16,18 +366,68 @@
       "company": "Ajanta Pharma Ltd",
       "category": "Demerger, M&A & PE",
       "subcategory": "M&A",
-      "headline": "The Exchange has received Disclosure under Regulation 31(1) and 31(2) of SEBI (Substantial Acquisition of Shares & Takeovers) Regulations, 2011 on August 14, 2026 for Ravi Agrawal, trustee ....",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/EC446B24_BE29_4054_A921_651D90A84E33_124958.pdf",
+      "headline": "The Exchange has received Disclosure under Regulation 31(1) and 31(2) of SEBI (Substantial Acquisition of Shares & Takeovers) Regulations, 2011 on July 29, 2026 for Aayush Agrawal, trustee ....",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/3CB240EB_07FF_4FB0_BF54_19250A41872D_122303.pdf",
       "summary": null,
       "impact": null,
       "risk": null
     },
     {
-      "company": "Quint Digital Ltd",
+      "company": "Afcons Infrastructure Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "The Exchange has received Disclosure under Regulation 31(1) and 31(2) of SEBI (Substantial Acquisition of Shares & Takeovers) Regulations, 2011 on July 28, 2026 for Goswami Infratech Pvt Ltd",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/3F45B1F5_C087_453E_9221_19AD50F54A13_180739.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Camlin Fine Sciences Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "The Exchange has received Disclosure under Regulation 31(1) and 31(2) of SEBI (Substantial Acquisition of Shares & Takeovers) Regulations, 2011 on July 28, 2026 for Ashish Subhash Dandekar",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/0B3F1E1B_85A6_4999_A9F5_FDE41E618591_174332.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "NCL Industries Ltd-$",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "The Exchange has received Disclosure under Regulation 31(1) and 31(2) of SEBI (Substantial Acquisition of Shares & Takeovers) Regulations, 2011 on July 28, 2026 for K. Gautam, K. Roopa, ....",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7D791665_0C7B_4213_87AE_08FE2DF65134_161129.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "L. T. Elevator Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "Considered and approved the consequential preferential issue of equity shares for consideration other than cash, pursuant to the proposed acquisition of Ricardo Elevators Private Limited ....",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/f42c9bf5-c0bf-4011-8177-6fd1fd6b8c32.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Sindhu Trade Links Ltd",
       "category": "Demerger, M&A & PE",
       "subcategory": "PE / Fundraising",
-      "headline": "Quint Digital Ltdhas informed BSE that the meeting of the Board of Directors of the Company is scheduled on 19/08/2026 ,inter alia, to consider and approve The Rights Issue Committee (\"RIC\") ....",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/bfe92a30-5a3b-492d-9b95-099ec8f20510.pdf",
+      "headline": "1. Considered and Approved the UFR  for the Quarter ended on 30.06.2026 \r\n2. Taken on record the LR Report submitted by the Statutory Auditors\r\n3. To take note of In-Principle approval ....",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c72aec06-6bb4-429d-ba11-ee566aaa9790.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "AvenuesAI Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "Outcome of Board Meeting for Unaudited (Standalone And Consolidated) Financial Results, Update - Increase in Investment limit, Scheme of Amalgamation, Variation in Objects of the Rights ....",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7e877bac-d29d-4d49-904f-98e1acc7fd42.pdf",
       "summary": null,
       "impact": null,
       "risk": null
@@ -36,18 +436,18 @@
       "company": "Viceroy Hotels Ltd",
       "category": "Demerger, M&A & PE",
       "subcategory": "PE / Fundraising",
-      "headline": "Intimation of record date for Rights Issue",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/39f38dcb-ba4a-44a8-9e56-5ed3dd99b219.pdf",
+      "headline": "Viceroy Hotels Ltdhas informed BSE that the meeting of the Board of Directors of the Company is scheduled on 14/08/2026 ,inter alia, to consider and approve Meeting of Rights Issue Committee ....",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/a98361c3-3e42-4acf-8a96-ea9fed11cc12.pdf",
       "summary": null,
       "impact": null,
       "risk": null
     },
     {
-      "company": "Garuda Construction and Engineering Ltd",
+      "company": "Minolta Finance Ltd",
       "category": "Demerger, M&A & PE",
-      "subcategory": "M&A",
-      "headline": "The Exchange has received revised Disclosure under Regulation 31(1) and 31(2) of SEBI (Substantial Acquisition of Shares & Takeovers) Regulations, 2011 on August 13, 2026 for PKH Ventures Ltd",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/94BFC4C2_31F1_429C_8CAC_6C0F912D85DC_102828.pdf",
+      "subcategory": "PE / Fundraising",
+      "headline": "we hereby inform you that the Board of Directors of the Company, at its meeting held on August 10, 2026, has further approved the revision of the issue schedule of the Rights Issue proposed ....",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/b8acd6d8-3617-4213-8d85-6290f1a0b95e.pdf",
       "summary": null,
       "impact": null,
       "risk": null
@@ -73,6 +473,16 @@
       "risk": null
     },
     {
+      "company": "Refex Renewables & Infrastructure Ltd",
+      "category": "Distress / Insolvency",
+      "subcategory": "General",
+      "headline": "Full and Final Settlement w.r.t. Insolvency petition filed against Sherisha Solar LLP and completion of internal restructuring.",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/0e7634f4-71bc-4694-b6b2-6030260bf478.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
       "company": "Juniper Green Energy Ltd",
       "category": "Business Wins & Revenue Triggers",
       "subcategory": "Award of Order / Receipt of Order",
@@ -93,6 +503,26 @@
       "risk": null
     },
     {
+      "company": "Popees Baby Care India Ltd",
+      "category": "Red Flags & Governance",
+      "subcategory": "Resignation of Statutory Auditors",
+      "headline": "The company hereby inform the resignation of statutory auditor",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/419a5f0a-bce9-4168-913e-7fb49748bfc6.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Arco Leasing Ltd",
+      "category": "Red Flags & Governance",
+      "subcategory": "Resignation of Statutory Auditors",
+      "headline": "Resignation of statutory auditor",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/025ee204-faca-4283-a292-ce7039c064c0.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
       "company": "Maxgrow India Ltd",
       "category": "Red Flags & Governance",
       "subcategory": "Resignation of Statutory Auditors",
@@ -103,11 +533,41 @@
       "risk": null
     },
     {
-      "company": "Refex Renewables & Infrastructure Ltd",
-      "category": "Distress / Insolvency",
-      "subcategory": "General",
-      "headline": "Full and Final Settlement w.r.t. Insolvency petition filed against Sherisha Solar LLP and completion of internal restructuring.",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/0e7634f4-71bc-4694-b6b2-6030260bf478.pdf",
+      "company": "Ravindra Energy Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "PE / Fundraising",
+      "headline": "Monitoring Agency Report - Rights Issue - Q1-2026-27",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/64209494-745e-467c-b07f-e703d5a0c62b.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Optimus Finance Ltd",
+      "category": "Red Flags & Governance",
+      "subcategory": "Resignation of Statutory Auditors",
+      "headline": "Disclosure under Regulation 30 of SEBI (Listing Obligations and Disclosure Requirements), 2015 for Resignation of Statutory Auditor of the Company.",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/d11cb979-bd75-4574-b572-4facbcff0176.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Physicswallah Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "Physicswallah Limited has informed the exchange regarding Acquisition",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/1b39b02d-3044-4fd9-a4c3-edc1bf750836.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Afcom Holdings Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "PE / Fundraising",
+      "headline": "Report pertaining to the Utilisation of Preferential Allotment proceeds for the quarter ended June 30, 2026",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/90604464-59ee-4f11-bcdb-18b011a0fd93.pdf",
       "summary": null,
       "impact": null,
       "risk": null
@@ -153,16 +613,6 @@
       "risk": null
     },
     {
-      "company": "Optimus Finance Ltd",
-      "category": "Red Flags & Governance",
-      "subcategory": "Resignation of Statutory Auditors",
-      "headline": "Disclosure under Regulation 30 of SEBI (Listing Obligations and Disclosure Requirements), 2015 for Resignation of Statutory Auditor of the Company.",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/d11cb979-bd75-4574-b572-4facbcff0176.pdf",
-      "summary": null,
-      "impact": null,
-      "risk": null
-    },
-    {
       "company": "Birla Cable Ltd",
       "category": "Demerger, M&A & PE",
       "subcategory": "M&A",
@@ -173,101 +623,11 @@
       "risk": null
     },
     {
-      "company": "Source Industries (India) Ltd",
-      "category": "Red Flags & Governance",
-      "subcategory": "Resignation of Statutory Auditors",
-      "headline": "Resignation of Statutory Auditor",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/5067ff45-a5b4-4788-b4d1-3fc2854641a4.pdf",
-      "summary": null,
-      "impact": null,
-      "risk": null
-    },
-    {
-      "company": "Amit International Ltd",
-      "category": "Red Flags & Governance",
-      "subcategory": "Resignation of Statutory Auditors",
-      "headline": "Intimation of Resignation of Statutory Auditor",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/11559ca0-d0e1-44d5-87c4-9f0f27b0dc4d.pdf",
-      "summary": null,
-      "impact": null,
-      "risk": null
-    },
-    {
-      "company": "Ravindra Energy Ltd",
-      "category": "Demerger, M&A & PE",
-      "subcategory": "PE / Fundraising",
-      "headline": "Monitoring Agency Report - Rights Issue - Q1-2026-27",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/64209494-745e-467c-b07f-e703d5a0c62b.pdf",
-      "summary": null,
-      "impact": null,
-      "risk": null
-    },
-    {
       "company": "Vindhya Telelinks Ltd",
       "category": "Demerger, M&A & PE",
       "subcategory": "M&A",
       "headline": "Receipt of Observation Letters with ''no objection'' from the National Stock Exchange of India Limited and ''no adverse observations'' from BSE Limited in relation to Scheme of Amalgamation ....",
       "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/60916ca1-2f5f-483c-b790-fc3f9d299cdd.pdf",
-      "summary": null,
-      "impact": null,
-      "risk": null
-    },
-    {
-      "company": "Physicswallah Ltd",
-      "category": "Demerger, M&A & PE",
-      "subcategory": "M&A",
-      "headline": "Physicswallah Limited has informed the exchange regarding Acquisition",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/1b39b02d-3044-4fd9-a4c3-edc1bf750836.pdf",
-      "summary": null,
-      "impact": null,
-      "risk": null
-    },
-    {
-      "company": "Afcom Holdings Ltd",
-      "category": "Demerger, M&A & PE",
-      "subcategory": "PE / Fundraising",
-      "headline": "Report pertaining to the Utilisation of Preferential Allotment proceeds for the quarter ended June 30, 2026",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/90604464-59ee-4f11-bcdb-18b011a0fd93.pdf",
-      "summary": null,
-      "impact": null,
-      "risk": null
-    },
-    {
-      "company": "Popees Baby Care India Ltd",
-      "category": "Red Flags & Governance",
-      "subcategory": "Resignation of Statutory Auditors",
-      "headline": "The company hereby inform the resignation of statutory auditor",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/419a5f0a-bce9-4168-913e-7fb49748bfc6.pdf",
-      "summary": null,
-      "impact": null,
-      "risk": null
-    },
-    {
-      "company": "Arco Leasing Ltd",
-      "category": "Red Flags & Governance",
-      "subcategory": "Resignation of Statutory Auditors",
-      "headline": "Resignation of statutory auditor",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/025ee204-faca-4283-a292-ce7039c064c0.pdf",
-      "summary": null,
-      "impact": null,
-      "risk": null
-    },
-    {
-      "company": "Jupiter Infomedia Ltd",
-      "category": "Demerger, M&A & PE",
-      "subcategory": "Demerger",
-      "headline": "Declaration of the proposed scheme of Arrangement",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/11d5b483-3ea7-491a-ab3d-6ec5e0ceb488.pdf",
-      "summary": null,
-      "impact": null,
-      "risk": null
-    },
-    {
-      "company": "GACM Technologies Ltd",
-      "category": "Demerger, M&A & PE",
-      "subcategory": "PE / Fundraising",
-      "headline": "The Fund Raising Committee, at its meeting held on 14 August 2026, approved the closure of the Qualified Institutional Placement (QIP) Issue upon completion of the requisite subscription ....",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/9f9f9f4e-b8ea-4660-b40d-2d458f9ceef0.pdf",
       "summary": null,
       "impact": null,
       "risk": null
@@ -288,6 +648,26 @@
       "subcategory": "PE / Fundraising",
       "headline": "On receipt of in-principle approval, the company has allotted the equity upon the conversion of 10% CCPS, the details of which are attached to the PDF.",
       "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/9f8763af-e65e-4cad-8152-38c8ce0821a0.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Source Industries (India) Ltd",
+      "category": "Red Flags & Governance",
+      "subcategory": "Resignation of Statutory Auditors",
+      "headline": "Resignation of Statutory Auditor",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/5067ff45-a5b4-4788-b4d1-3fc2854641a4.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Amit International Ltd",
+      "category": "Red Flags & Governance",
+      "subcategory": "Resignation of Statutory Auditors",
+      "headline": "Intimation of Resignation of Statutory Auditor",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/11559ca0-d0e1-44d5-87c4-9f0f27b0dc4d.pdf",
       "summary": null,
       "impact": null,
       "risk": null
@@ -323,26 +703,6 @@
       "risk": null
     },
     {
-      "company": "IZMO Ltd-$",
-      "category": "Demerger, M&A & PE",
-      "subcategory": "M&A",
-      "headline": "The Board of Directors approved the Delisting of Equity Shares from The Calcutta Stock Exchange Limited (CSE), disclosure enclosed",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4722acb3-13e3-4938-ac26-5b273a13e9c0.pdf",
-      "summary": null,
-      "impact": null,
-      "risk": null
-    },
-    {
-      "company": "Centuple Global Ltd",
-      "category": "Red Flags & Governance",
-      "subcategory": "Resignation of Statutory Auditors",
-      "headline": "Resignation of statutory auditor",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/020b3c23-4360-4b53-ac7f-d302e2f23555.pdf",
-      "summary": null,
-      "impact": null,
-      "risk": null
-    },
-    {
       "company": "Aster DM Quality Care Ltd",
       "category": "Demerger, M&A & PE",
       "subcategory": "M&A",
@@ -363,21 +723,41 @@
       "risk": null
     },
     {
-      "company": "Agribio Spirits Ltd",
+      "company": "Jupiter Infomedia Ltd",
       "category": "Demerger, M&A & PE",
-      "subcategory": "M&A",
-      "headline": "Update on Scheme of Amalgamation",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/1f93a5ab-66ae-4574-89d7-64d8f1a79790.pdf",
+      "subcategory": "Demerger",
+      "headline": "Declaration of the proposed scheme of Arrangement",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/11d5b483-3ea7-491a-ab3d-6ec5e0ceb488.pdf",
       "summary": null,
       "impact": null,
       "risk": null
     },
     {
-      "company": "Shivansh Finserve Ltd",
+      "company": "GACM Technologies Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "PE / Fundraising",
+      "headline": "The Fund Raising Committee, at its meeting held on 14 August 2026, approved the closure of the Qualified Institutional Placement (QIP) Issue upon completion of the requisite subscription ....",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/9f9f9f4e-b8ea-4660-b40d-2d458f9ceef0.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "IZMO Ltd-$",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "The Board of Directors approved the Delisting of Equity Shares from The Calcutta Stock Exchange Limited (CSE), disclosure enclosed",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4722acb3-13e3-4938-ac26-5b273a13e9c0.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Centuple Global Ltd",
       "category": "Red Flags & Governance",
       "subcategory": "Resignation of Statutory Auditors",
-      "headline": "Resignation of Statutory Auditor of the Company",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/46b14136-bcb3-462e-80f8-27fb6dfac007.pdf",
+      "headline": "Resignation of statutory auditor",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/020b3c23-4360-4b53-ac7f-d302e2f23555.pdf",
       "summary": null,
       "impact": null,
       "risk": null
@@ -388,26 +768,6 @@
       "subcategory": "M&A",
       "headline": "In continuation to our earlier letter dated 07.08.2026, intimation regarding publication of notice in various newspapers in respect of hearing date in the matter of scheme of amalgamation ....",
       "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/81ad374d-baa6-41f3-a1bc-f7c267745a1d.pdf",
-      "summary": null,
-      "impact": null,
-      "risk": null
-    },
-    {
-      "company": "Maximus International Ltd",
-      "category": "Red Flags & Governance",
-      "subcategory": "Resignation of Statutory Auditors",
-      "headline": "Disclosure under regulation 30 of SEBI (Listing Obligation and Disclosure Requirements),2015 for Resignation of Statutory Auditor of the Company.",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/b8485011-b1ab-4a8a-a948-f6c4f6b5031a.pdf",
-      "summary": null,
-      "impact": null,
-      "risk": null
-    },
-    {
-      "company": "20 Microns Ltd",
-      "category": "Demerger, M&A & PE",
-      "subcategory": "M&A",
-      "headline": "Acquisition of Partnership Interest in M/s Shree Shrest Minerals",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/a985e1a3-e547-4cc1-b1c6-7cefcbd051d0.pdf",
       "summary": null,
       "impact": null,
       "risk": null
@@ -433,101 +793,51 @@
       "risk": null
     },
     {
+      "company": "Maximus International Ltd",
+      "category": "Red Flags & Governance",
+      "subcategory": "Resignation of Statutory Auditors",
+      "headline": "Disclosure under regulation 30 of SEBI (Listing Obligation and Disclosure Requirements),2015 for Resignation of Statutory Auditor of the Company.",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/b8485011-b1ab-4a8a-a948-f6c4f6b5031a.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Agribio Spirits Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "Update on Scheme of Amalgamation",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/1f93a5ab-66ae-4574-89d7-64d8f1a79790.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Shivansh Finserve Ltd",
+      "category": "Red Flags & Governance",
+      "subcategory": "Resignation of Statutory Auditors",
+      "headline": "Resignation of Statutory Auditor of the Company",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/46b14136-bcb3-462e-80f8-27fb6dfac007.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "20 Microns Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "Acquisition of Partnership Interest in M/s Shree Shrest Minerals",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/a985e1a3-e547-4cc1-b1c6-7cefcbd051d0.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
       "company": "DMR Engineering Ltd",
       "category": "Business Wins & Revenue Triggers",
       "subcategory": "Award of Order / Receipt of Order",
       "headline": "Intimation of receipt of letter of award",
       "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/d3a81b8b-47e3-4924-9345-995741ab2904.pdf",
-      "summary": null,
-      "impact": null,
-      "risk": null
-    },
-    {
-      "company": "Viceroy Hotels Ltd",
-      "category": "Demerger, M&A & PE",
-      "subcategory": "PE / Fundraising",
-      "headline": "Outcome of meeting of Rights Issue Committee approving the terms of Rights Issue",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/d2ef7ec8-d82c-43fb-b4c7-c7119f4952f3.pdf",
-      "summary": null,
-      "impact": null,
-      "risk": null
-    },
-    {
-      "company": "Ashok Leyland Ltd",
-      "category": "Demerger, M&A & PE",
-      "subcategory": "M&A",
-      "headline": "Updates on Acquisition",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/cbe3be7d-f478-4e8a-a631-a3c08620084a.pdf",
-      "summary": null,
-      "impact": null,
-      "risk": null
-    },
-    {
-      "company": "Zensar Technologies Ltd",
-      "category": "Demerger, M&A & PE",
-      "subcategory": "M&A",
-      "headline": "In continuation to our letter dated July 29, 2026, this is an update on merger of M3BI LLC with Zensar Technologies Inc.",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/73eec575-4a0e-47b8-9281-2d05d91a63e1.pdf",
-      "summary": null,
-      "impact": null,
-      "risk": null
-    },
-    {
-      "company": "NCL Research & Financial Services Ltd",
-      "category": "Demerger, M&A & PE",
-      "subcategory": "PE / Fundraising",
-      "headline": "The Company is pleased to announce that it has received BSE In-Principle approval letter from BSE for its'' proposed Right Issue. Said Letter is attached herewith.",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2a367c2e-7219-4ebc-af4a-7fdcda0b5e00.pdf",
-      "summary": null,
-      "impact": null,
-      "risk": null
-    },
-    {
-      "company": "Rainbow Children's Medicare Ltd",
-      "category": "Demerger, M&A & PE",
-      "subcategory": "M&A",
-      "headline": "Update on acquisition",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/bd2cda3c-d205-4ba0-87a8-6c1ed77ec774.pdf",
-      "summary": null,
-      "impact": null,
-      "risk": null
-    },
-    {
-      "company": "Digispice Technologies Ltd-$",
-      "category": "Distress / Insolvency",
-      "subcategory": "Newspaper Publication",
-      "headline": "Newspaper Publication for notice of hearing of Company Scheme Petition pursuant to Hon''ble NCLT order 06th August, 2026",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/fe927ce9-fbaa-495b-9d0f-d4fe8177fb7a.pdf",
-      "summary": null,
-      "impact": null,
-      "risk": null
-    },
-    {
-      "company": "Go Digit General Insurance Ltd",
-      "category": "Distress / Insolvency",
-      "subcategory": "Scheme of Arrangement",
-      "headline": "Intimation pursuant to Regulation 30 of the SEBI Listing Regulations, 2015, informing regarding receipt of NCLT order allowing the first motion application filed in relation to the Scheme",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/0851e271-9339-4b0a-847b-9e02a861c6cb.pdf",
-      "summary": null,
-      "impact": null,
-      "risk": null
-    },
-    {
-      "company": "Hazoor Multi Projects Ltd-$",
-      "category": "Business Wins & Revenue Triggers",
-      "subcategory": "Award of Order / Receipt of Order",
-      "headline": "We are pleased to inform you that the Company has been awarded the Letter of award from the National Highways Authority of India ( NHAI) at Thirupapachethi Fee Plaza.",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/e1f66dea-b24b-42fa-8d3f-da88de08730d.pdf",
-      "summary": null,
-      "impact": null,
-      "risk": null
-    },
-    {
-      "company": "GTT Data Solutions Ltd",
-      "category": "Red Flags & Governance",
-      "subcategory": "Resignation of Statutory Auditors",
-      "headline": "Disclosure for resignation of Statutory Auditor",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/f2fbc531-8af6-446f-a8d7-f230ac4ec498.pdf",
       "summary": null,
       "impact": null,
       "risk": null
@@ -563,11 +873,81 @@
       "risk": null
     },
     {
-      "company": "AVG Logistics Ltd",
+      "company": "Go Digit General Insurance Ltd",
+      "category": "Distress / Insolvency",
+      "subcategory": "Scheme of Arrangement",
+      "headline": "Intimation pursuant to Regulation 30 of the SEBI Listing Regulations, 2015, informing regarding receipt of NCLT order allowing the first motion application filed in relation to the Scheme",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/0851e271-9339-4b0a-847b-9e02a861c6cb.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Hazoor Multi Projects Ltd-$",
+      "category": "Business Wins & Revenue Triggers",
+      "subcategory": "Award of Order / Receipt of Order",
+      "headline": "We are pleased to inform you that the Company has been awarded the Letter of award from the National Highways Authority of India ( NHAI) at Thirupapachethi Fee Plaza.",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/e1f66dea-b24b-42fa-8d3f-da88de08730d.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "NCL Research & Financial Services Ltd",
       "category": "Demerger, M&A & PE",
       "subcategory": "PE / Fundraising",
-      "headline": "Monitoring Agency Report for Rights Issue for the Quarter Ended June 30, 2026",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c3a569f9-a026-4f26-8fab-f43955556eae.pdf",
+      "headline": "The Company is pleased to announce that it has received BSE In-Principle approval letter from BSE for its'' proposed Right Issue. Said Letter is attached herewith.",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2a367c2e-7219-4ebc-af4a-7fdcda0b5e00.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Rainbow Children's Medicare Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "Update on acquisition",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/bd2cda3c-d205-4ba0-87a8-6c1ed77ec774.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Viceroy Hotels Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "PE / Fundraising",
+      "headline": "Outcome of meeting of Rights Issue Committee approving the terms of Rights Issue",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/d2ef7ec8-d82c-43fb-b4c7-c7119f4952f3.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Ashok Leyland Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "Updates on Acquisition",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/cbe3be7d-f478-4e8a-a631-a3c08620084a.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Zensar Technologies Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "In continuation to our letter dated July 29, 2026, this is an update on merger of M3BI LLC with Zensar Technologies Inc.",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/73eec575-4a0e-47b8-9281-2d05d91a63e1.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Digispice Technologies Ltd-$",
+      "category": "Distress / Insolvency",
+      "subcategory": "Newspaper Publication",
+      "headline": "Newspaper Publication for notice of hearing of Company Scheme Petition pursuant to Hon''ble NCLT order 06th August, 2026",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/fe927ce9-fbaa-495b-9d0f-d4fe8177fb7a.pdf",
       "summary": null,
       "impact": null,
       "risk": null
@@ -578,6 +958,676 @@
       "subcategory": "General",
       "headline": "Intimation under Regulation 30 of SEBI (LODR) Regulations, 2015: (i) Intimation of approval of new capacity expansion/ hospital projects at Trichy and Bengaluru; & \r\n(ii) Appointment of Cost Auditor",
       "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/bbb93407-568e-4964-b419-320d48089cf6.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "ACE Software Exports Ltd-$",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "The Company has completed acquisition of remaining 8900 equity shares, representing 1.38% of the fully diluted equity share capital of Ace Infoworld Private Limited. As a result, Ace Infoworld ....",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/ba18dfb5-6917-4041-9c84-2c0d87261900.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "AVG Logistics Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "PE / Fundraising",
+      "headline": "Monitoring Agency Report for Rights Issue for the Quarter Ended June 30, 2026",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c3a569f9-a026-4f26-8fab-f43955556eae.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Vashu Bhagnani Industries Ltd",
+      "category": "Red Flags & Governance",
+      "subcategory": "Resignation of Statutory Auditors",
+      "headline": "Resignation of Statutory Auditor with effect from 13th August, 2026",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/35346d6d-4e75-4e02-a10b-e0b6e21d6068.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "GTT Data Solutions Ltd",
+      "category": "Red Flags & Governance",
+      "subcategory": "Resignation of Statutory Auditors",
+      "headline": "Disclosure for resignation of Statutory Auditor",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/f2fbc531-8af6-446f-a8d7-f230ac4ec498.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Abans Enterprises Ltd",
+      "category": "Red Flags & Governance",
+      "subcategory": "Resignation of Statutory Auditors",
+      "headline": "Resignation of Statutory Auditor of Material Subsidiary of the Company",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7a6b4ea8-3c70-47e1-b936-673cd1478849.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Yuranus Infrastructure Ltd",
+      "category": "Red Flags & Governance",
+      "subcategory": "Resignation of Statutory Auditors",
+      "headline": "Resignation of Statutory Auditor (PKN & Co.) with effect from 13th August, 2026",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/f5f9c66e-48fc-409a-b766-7fd36f6df919.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Swelect Energy Systems Ltd-$",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "Update on the previous intimation of acquisition of Dexler Solar Park Phase 1 Private Limited",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/64a59843-1ede-4616-ad0a-89173150ebc5.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Steelco Gujarat Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "PE / Fundraising",
+      "headline": "Statement of Material Deviation/Variation for Rights issue for quarter ended 30th June 2026 is enclosed.",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/5b1cbbad-b4fc-4c75-9b15-c314b9583ae6.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "SJ Corporation Ltd",
+      "category": "Red Flags & Governance",
+      "subcategory": "Resignation of Statutory Auditors",
+      "headline": "Resignation of Statutory Auditor w.e.f. 14th August 2026, due to completion of second consecutive tenure in the ensuring Annual General Meeting.",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/61082cc6-c832-4bde-b8e3-0ca52799eee8.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Katare Spinning Mills Ltd",
+      "category": "Red Flags & Governance",
+      "subcategory": "Resignation of Statutory Auditors",
+      "headline": "Enclosed herewith the intimation letter of resignation of Statutory Auditor of the Company for your information.",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/235d91a5-893e-4d57-87fe-8c2406e0623c.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Oswal Greentech Ltd",
+      "category": "Red Flags & Governance",
+      "subcategory": "Change in Management",
+      "headline": "Resignation of Statutory Auditor of the Company",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/f13b74e3-e5d1-465c-a7b1-92382aee182a.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Virat Industries Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "The board of Directors have approved Proposal for Acquisition of stake in Brahm Lifestyle Products Private Limited.",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/ccc7849f-743f-4000-9aba-b9d4e4011f93.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Ventura Guaranty Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "Ventura Guaranty Limited hereby submits the intimation regarding the completion of merger of Ventura Allied Services Private Limited (\"VASPL\") (Step-down Subsidiary Company) with Ventura ....",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/dd398da9-1664-4971-8d2d-c099d2f87556.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "DCW Ltd",
+      "category": "Capacity & Capex",
+      "subcategory": "Press Release / Media Release",
+      "headline": "Press Release - Synthetic Iron Oxide Pigments (SIOP) Capacity Expansion Project and Sahupuram Power Plant Improvements Project",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/17048268-34a7-4e40-864a-a4ce931866cc.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Indigo Paints Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "Outcome of the Board Meeting Held on August 13, 2026 - Acquisition",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/292e9acd-ddde-483e-ad1e-9f2af27b1693.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Adani Enterprises Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "Intimation for acquisition of Path Highways LLP by Adani Road Transport Limited, a wholly owned subsidiary of the Company and Adani GRICL Limited, a step down subsidiary of the Company",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/5a302a8b-d88c-45c7-abb0-af2f3fc04a7c.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "G R Infraprojects Ltd",
+      "category": "Business Wins & Revenue Triggers",
+      "subcategory": "General",
+      "headline": "Intimation of Letter of Award.",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4820fe59-8fb5-4c0c-a1c7-ec2ce2b6d9d8.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Gayatri Highways Ltd",
+      "category": "Red Flags & Governance",
+      "subcategory": "Resignation of Statutory Auditors",
+      "headline": "Resignation of Statutory Auditor",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2aa12c86-4c99-4c93-b3ae-fa5537495970.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Sudarshan Pharma Industries Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "The Company has entered into a Memorandum of Understanding to acquire 1,24,64,000 equity shares of Rs.10/- each of the target company (76% of paid up equity share capital). The acquisition ....",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/56b32a00-a508-461a-a816-8a1c48d091b1.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Arigato Universe Ltd",
+      "category": "Red Flags & Governance",
+      "subcategory": "Resignation of Statutory Auditors",
+      "headline": "Resignation of Statutory Auditor with reference to resignation letter received 13.08.2026",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7eec04f1-7334-49ba-a173-c14c33d3f0b1.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Zodiac Energy Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "Announcement Under Regulation 30 of SEBI (LODR) Regulations, 2015- Acquisition of LLPs",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/9bf80358-357c-4ca2-9298-17dd53c558c4.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Raconteur Global Resources Ltd",
+      "category": "Red Flags & Governance",
+      "subcategory": "Resignation of Statutory Auditors",
+      "headline": "Resignation of Statutory Auditor w.e.f. 13th August, 2026.",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/3fdb818d-8ca4-493c-9457-bb3a8dbf6bf5.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Glittek Granites Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "Establishment of new Corporate Office at Ahmedabad, Acquisition of land and commencement of Battery Energy Storage Systems and allied business subject to receipt of applicable statutory ....",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/05b25784-c6d5-4ddf-80fd-865a3d0dbde1.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "B-Right Realestate Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "Announcement under Regulation 30 (LODR) Acquisition of Tattva & Mittal Developers Private Limited",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/ae00be3a-e1f3-4aaa-89f9-ff1b979e2a99.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Hi-Klass Trading and Investment Ltd",
+      "category": "Red Flags & Governance",
+      "subcategory": "Resignation of Chief Financial Officer (CFO)",
+      "headline": "Resignation of CFO.",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/9482247a-f1d2-4e19-8455-23eb85311460.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Tarc Ltd",
+      "category": "Red Flags & Governance",
+      "subcategory": "General",
+      "headline": "Intimation under Regulation 30 of the SEBI (LODR) Regulations, 2015 regarding resignation of Statutory Auditor of material subsidiary",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/29a192d5-1034-4e5a-ac3d-3c889e80e453.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Aplab Ltd-$",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "PE / Fundraising",
+      "headline": "Intimation regarding Utilization of Rights Issue Proceeds and Valuation Repost Confirmation for the quarter ended 30th June, 2026",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7bff6700-f51a-49aa-8bdb-3ab5cc755e65.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "EFC (I) Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "Acquisition regarding Ultrafresh Modular Solutions Limited.",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/880e0c82-abbb-4a8e-b142-d4024d8648e7.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Mahamaya Steel Industries Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "Acquisition of approx 350 acres of land in Chhattisgarh for Solar Power Plant Project.",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2193bf30-5dac-4704-9f85-5f1586ee5b3c.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Magna Electro Castings Ltd-$",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "Enclosed Intimation regarding In Principal Approval for proposed merger of Samrajyaa Precision Machining Private Limited (Transferor Company) with Magna Electro Castings Limited (Transferee Company).",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/347cabf5-441e-442d-bfe5-aee4a3a009bd.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Aditya Birla Real Estate Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "The Board of Directors of the Company has approved the formulation, adoption and implementation of \"ABREL ESOP Scheme 2026\" through trust by way of secondary acquisition subject to approval ....",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7acd0532-1c6c-46e0-8c84-3f27bed5a4da.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "GACM Technologies Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "PE / Fundraising",
+      "headline": "The Fund Raising Committee, at its meeting held on 13 August 2026, approved the opening of the Qualified Institutional Placement (QIP) Issue and approved the preliminary offering documents ....",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c875c649-54fa-4e0b-b50c-79f6bf935204.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Imagicaaworld Entertainment Ltd",
+      "category": "Distress / Insolvency",
+      "subcategory": "General",
+      "headline": "Please find enclosed herewith details of arbitration award received in favour of Company.",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/bb18d552-dbf8-4aed-9a1c-9f20baf702f0.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Capitalnumbers Infotech Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "Update on Investment for acquisition of 100% stake in Epitome Cloud Inc.",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c51b11ba-fc9f-4a3f-840f-4c73b2b410c5.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Sudarshan Chemical Industries Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "Announcement under Reg 30 - Acquisition",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/76d94e59-09a9-4730-8b89-388e2885f8d6.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Emrock Corporation Ltd",
+      "category": "Distress / Insolvency",
+      "subcategory": "Cessation",
+      "headline": "Change in Managment due to resignation of WTD pursuant to managament restructuring and realignment of role and responsibilities",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/5b8735f9-9168-4ff4-adf9-03c457f00694.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Axita Cotton Ltd",
+      "category": "Red Flags & Governance",
+      "subcategory": "Resignation of Statutory Auditors",
+      "headline": "Disclosure of Resignation of Statutory Auditor of the Company",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/047ba35b-90e6-443b-9a3f-8219cda52df9.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Juniper Green Energy Ltd",
+      "category": "Capacity & Capex",
+      "subcategory": "General",
+      "headline": "Intimation under Regulation 30 of the Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015 - Update on commissioning of additional capacity.",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/73f01726-ae5d-42d4-8cef-e3a83f8c02ae.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Shalimar Paints Ltd-$",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "PE / Fundraising",
+      "headline": "We wish to inform you that, the Board of Directors at its meeting held on August 12, 2026, has approved Fund Raise by way of QIP.",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/919df5f7-3b37-438a-be08-d66e02ec6e37.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "UVS Hospitality And Services Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "Please find attached the intimation with regards to acquisition of  34.76% stake in Calcio Restaurant Private Limited in exchange of shares of the Company on share swap basis.",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/283429eb-9289-4471-af31-78e5deb49e31.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "HMA Agro Industries Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "Dear Sir/Ma''am,\r\n\r\nPlease  find attached the report received from the acquirer with regard to acquisition of shares via gift.",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/a1daf77e-e836-4d07-8e09-901627c44286.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Bluspring Enterprises Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "Amalgamation of wholly owned subsidiaries of the Company",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/ec301715-4320-45bd-9db8-19a62bf7fbf0.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Svarnim Trade Udyog Ltd",
+      "category": "Red Flags & Governance",
+      "subcategory": "Resignation of Statutory Auditors",
+      "headline": "Resignation of Statutory Auditor of the Company",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/efd15046-85c0-4ed7-abc0-8d68785bde7d.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Gamco Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "The Company has received the disclosure under Regulation 29(2) of SEBI (Substantial Acquisition of Shares & Takeovers) Regulations, 2011 from Mrs. Rashi Goenka.",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/e41664d1-7208-4a25-90c9-62346c161854.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Mallcom (India) Ltd",
+      "category": "Distress / Insolvency",
+      "subcategory": "General",
+      "headline": "Please find enclosed a copy of the certified order passed by the Hon''ble NCLT, Kolkata Bench.",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2f0e97f7-9641-4547-b700-c3ae9c8fab63.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "KRN Heat Exchanger And Refrigeration Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "PE / Fundraising",
+      "headline": "Monitoring Agency Report for Utilisation of QIP Proceeds",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/ea5d16e4-3bc9-4ea1-93b5-8eed3ab32715.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "SecMark Consultancy Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "The Board of Directors of SecMark Consultancy Limited at its meeting held today i.e. August 12, 2026, has approved the Scheme of Amalgamation of Codifi Finserv Private Limited and SecMark ....",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c150dd4b-aba8-4428-bbea-b1b46e14aace.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Capricorn Systems Global Solutions Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "PE / Fundraising",
+      "headline": "Statement of Deviation or Variation in Utilization of Proceeds from Rights Issue of Equity Shares for the quarter ended June 30, 2026.",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7b166ee4-7574-4791-aa17-77ebb1d84264.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Kerala Ayurveda Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "Demerger",
+      "headline": "Announcement under Regulation 30 (LODR)- Scheme of Arrangement",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/f4944fc7-8d6d-42d5-ba09-d5155b5bd022.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Sanstar Ltd",
+      "category": "Capacity & Capex",
+      "subcategory": "Press Release / Media Release",
+      "headline": "Press Release on Commissioning of 3 MW Solar Power Plant at Kutch Facility",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4c112f91-6613-4760-81ef-c178505978b3.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "JK Cement Ltd",
+      "category": "Capacity & Capex",
+      "subcategory": "General",
+      "headline": "Commissioning of J.K. White Nathdwara - White cement based wall putty manufacturing Plant",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/b28ef8ef-4553-416b-a69f-a65834e79722.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Svam Software Ltd",
+      "category": "Red Flags & Governance",
+      "subcategory": "Resignation of Statutory Auditors",
+      "headline": "Intimation under Regulation 30 of SEBI (LODR) Regulation, 2015 for Resignation of Statutory Auditor",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/d3bd5dcd-cda3-4319-b11e-eee36d1968ce.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Gautam Exim Ltd",
+      "category": "Red Flags & Governance",
+      "subcategory": "Resignation of Statutory Auditors",
+      "headline": "Intimation of Resignation of Statutory Auditor M/s B A Desai & Associates wef 06th August 2026.",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4c634bc2-650d-432e-b246-4be8bfc1a5df.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Svam Software Ltd",
+      "category": "Red Flags & Governance",
+      "subcategory": "Resignation of Statutory Auditors",
+      "headline": "Intimation of Resignation of Statutory Auditor",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/8cc10a4c-9acf-43e3-8afb-bf0cb9394385.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Shah Alloys Ltd",
+      "category": "Distress / Insolvency",
+      "subcategory": "General",
+      "headline": "Strategic Review and Proposed Restructuring/Monetisation of Steel Plant, Plant and Machinery and Other Assets",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/a874403a-1696-457e-b601-7586567508f0.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "UltraTech Cement Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "Acquisition of 26% equity share capital of Solaris Horizon Energy Private Limited",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2030bc51-b9d8-47c0-abfe-99062837ba4d.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Ugro Capital Ltd",
+      "category": "Distress / Insolvency",
+      "subcategory": "Scheme of Arrangement",
+      "headline": "Receipt of the certified copy of NCLT Order dated 6th August 2026",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/9b1985d5-f944-4d52-816f-dc1133cbde1b.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Colinz Laboratories Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "Saffron Capital Advisors Pvt Ltd (\"Manager to the Open Offer\") has submitted to BSE a copy of Reminder Advertisement dated August 11, 2026 in relation to the open offer of Colinz Laboratories ....",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/FC5DEDC6-8562-4C2A-9F1A-ABFFB1AB7F7C-181910.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "KRN Heat Exchanger And Refrigeration Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "PE / Fundraising",
+      "headline": "Statement of Deviation or variation of funds raised through QIP Issue",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/e3026f6f-1a56-47c4-adf7-c40b88d8295b.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Nova Iron & Steel Ltd",
+      "category": "Distress / Insolvency",
+      "subcategory": "General",
+      "headline": "We wish to inform you that the Hon''ble National Company Law Tribunal, Cuttack Bench, vide its Order dated 05/08/2026, has dismissed the application filed under Section 7 of the Insolvency ....",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2552cc89-e0d7-4347-b492-59eff1f23076.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Raaj Medisafe India Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "PE / Fundraising",
+      "headline": "We submit herewith statement of Variation/deviation of utilization of Funds raised by way of Preferential Allotment on 26.03.2026",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/dde1288c-418d-43b7-8b8d-92da432e3df5.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Sambhv Steel Tubes Ltd",
+      "category": "Capacity & Capex",
+      "subcategory": "General",
+      "headline": "Sambhv Steel Tubes Limited has informed the exchange about the receipt of Environmental Clearance (EC)",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/1158c667-ea48-46a3-8b6e-f0844bc36897.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Sulabh Engineers & Services Ltd",
+      "category": "Red Flags & Governance",
+      "subcategory": "Resignation of Chief Financial Officer (CFO)",
+      "headline": "Announcement under regulation 30 (LODR) - Resignation of CFO",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/75fee7d5-34ea-4d0a-b710-7d4fabfa0a59.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Mukka Proteins Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "Intimation regarding acquisition of Swachha Eco Solutions Private Limited.",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/8b50fd98-4777-472c-b219-d0cfdb3e6918.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Oswal Agro Mills Ltd",
+      "category": "Red Flags & Governance",
+      "subcategory": "Resignation of Statutory Auditors",
+      "headline": "Resignation of Statutory Auditor of the Company",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/0c307fc3-48d2-45d0-9184-1e97b5b50100.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Citizen Solar Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "Trading approval letter received from BSE regarding New Equity Shares of Rs. 10/- bearing distinctive Numbers from 5397301 to 14043300 pursuant to Scheme of Amalgamation.",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/8cddb492-0641-4176-9d21-d7f807f17c75.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null
+    },
+    {
+      "company": "Lenskart Solutions Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "Lenskart Solutions Limited has informed the Exchnage about acquisition of additional stake in Baofeng Framekart Technology Limited, a Joint Venture entity of the Company, through its wholly ....",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/0d9e60e1-e13c-4e9b-8133-47666ab9dc8a.pdf",
       "summary": null,
       "impact": null,
       "risk": null
