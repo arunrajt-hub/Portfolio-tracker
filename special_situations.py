@@ -39,7 +39,7 @@ ANTHROPIC_URL = "https://api.anthropic.com/v1/messages"
 # carries more real-world weight than a category label or summary and is
 # worth the extra cost/latency for stronger reasoning.
 ANTHROPIC_MODEL = "claude-sonnet-5"
-MAX_ENRICHMENT_SEARCHES = 20  # shared across the whole batch, not per-candidate — cost bound
+MAX_ENRICHMENT_SEARCHES = 25  # shared across the whole batch, not per-candidate — cost bound
 
 # Event-type keyword buckets. Matched as whole phrases (word-boundary) against
 # lowercased headlines. Short/ambiguous abbreviations (e.g. bare "COD", "EIR")
@@ -284,10 +284,12 @@ def _build_enrichment_prompt(candidates):
         f"{json.dumps(items, indent=2)}\n\n"
         "Reply with ONLY a JSON array (no markdown fences, no commentary outside "
         "the array), one object per announcement you judge to be genuinely "
-        "material, each with exactly these keys: \"company\", \"category\", "
-        "\"summary\" (<=15 words, the concrete action), \"impact\", \"risk\" "
-        "(<=12 words on the key risk/watch-item, or \"None apparent\"), \"view\", "
-        "\"view_reasoning\".\n\n"
+        "material. EVERY object MUST include ALL SIX of these keys — never omit "
+        "\"view\" or \"view_reasoning\" even if you're short on search budget; "
+        "fall back to \"Watch\" / \"Not researched in depth\" rather than leaving "
+        "them out: \"company\", \"category\", \"summary\" (<=15 words, the "
+        "concrete action), \"impact\", \"risk\" (<=12 words on the key "
+        "risk/watch-item, or \"None apparent\"), \"view\", \"view_reasoning\".\n\n"
         "For \"impact\": if the event involves a monetary figure (capex amount, "
         "deal size, fundraise amount, order/contract value, buyback size, etc.) "
         "and the headline doesn't state it, use web search to find it, then also "
@@ -316,7 +318,7 @@ def _unenriched(candidates):
     return [{**c, "summary": None, "impact": None, "risk": None, "view": None, "view_reasoning": None} for c in candidates]
 
 
-def enrich_candidates(candidates, max_items=40):
+def enrich_candidates(candidates, max_items=20):
     if not candidates:
         return []
     if not ANTHROPIC_API_KEY:
@@ -342,13 +344,13 @@ def enrich_candidates(candidates, max_items=40):
             },
             json={
                 "model": ANTHROPIC_MODEL,
-                "max_tokens": 4000,
+                "max_tokens": 6000,
                 "messages": [{"role": "user", "content": prompt}],
                 "tools": [
                     {"type": "web_search_20250305", "name": "web_search", "max_uses": MAX_ENRICHMENT_SEARCHES},
                 ],
             },
-            timeout=150,
+            timeout=180,
         )
         response.raise_for_status()
         # Web search interleaves search-result blocks between text blocks, so
