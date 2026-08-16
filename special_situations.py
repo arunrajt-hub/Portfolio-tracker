@@ -318,21 +318,14 @@ def _unenriched(candidates):
     return [{**c, "summary": None, "impact": None, "risk": None, "view": None, "view_reasoning": None} for c in candidates]
 
 
-def enrich_candidates(candidates, max_items=5):
-    if not candidates:
-        return []
-    if not ANTHROPIC_API_KEY:
-        return _unenriched(candidates)
+CHUNK_SIZE = 5  # empirically the largest batch that reliably completes in one call
+CHUNK_WORKERS = 3  # parallel chunk calls — modest, to avoid tripping rate limits
 
-    # Only the first max_items go through the LLM screen (cost bound). Anything
-    # beyond that still ships in the digest, just unenriched — never silently
-    # dropped just because the batch was large.
-    subset = candidates[:max_items]
-    overflow = candidates[max_items:]
-    if overflow:
-        print(f"  [special_situations] {len(overflow)} candidates beyond the LLM batch cap, sending unenriched")
 
-    prompt = _build_enrichment_prompt(subset)
+def _enrich_chunk(chunk):
+    """One LLM call for up to CHUNK_SIZE candidates. Never raises — on any
+    failure, returns the chunk unenriched so a bad chunk doesn't sink the rest."""
+    prompt = _build_enrichment_prompt(chunk)
 
     try:
         response = requests.post(
@@ -373,10 +366,10 @@ def enrich_candidates(candidates, max_items=5):
                 raise
             enriched = json.loads(match.group(0))
     except Exception as e:
-        print(f"LLM enrichment failed, falling back to raw headlines: {e}")
-        return _unenriched(subset) + _unenriched(overflow)
+        print(f"  [special_situations] chunk enrichment failed, falling back to raw headlines: {e}")
+        return _unenriched(chunk)
 
-    by_key = {(c["company"], c["category"]): c for c in subset}
+    by_key = {(c["company"], c["category"]): c for c in chunk}
     matched_keys = set()
     results = []
     for item in enriched:
@@ -397,14 +390,42 @@ def enrich_candidates(candidates, max_items=5):
             "view_reasoning": item.get("view_reasoning") or "Not determined by the model for this item",
         })
 
-    # Anything in the batch the model didn't return (ran out of budget partway
+    # Anything in the chunk the model didn't return (ran out of budget partway
     # through, or silently filtered it) still ships unenriched rather than
-    # vanishing without a trace — same rule already applied to overflow.
-    unmatched = [c for c in subset if (c["company"], c["category"]) not in matched_keys]
+    # vanishing without a trace.
+    unmatched = [c for c in chunk if (c["company"], c["category"]) not in matched_keys]
     if unmatched:
-        print(f"  [special_situations] {len(unmatched)} candidates in the LLM batch weren't returned by the model, sending unenriched")
+        print(f"  [special_situations] {len(unmatched)} candidates in a chunk weren't returned by the model, sending unenriched")
 
-    return results + _unenriched(unmatched) + _unenriched(overflow)
+    return results + _unenriched(unmatched)
+
+
+def enrich_candidates(candidates, max_items=5):
+    if not candidates:
+        return []
+    if not ANTHROPIC_API_KEY:
+        return _unenriched(candidates)
+
+    # Only the first max_items go through the LLM screen (cost bound). Anything
+    # beyond that still ships in the digest, just unenriched — never silently
+    # dropped just because the batch was large.
+    subset = candidates[:max_items]
+    overflow = candidates[max_items:]
+    if overflow:
+        print(f"  [special_situations] {len(overflow)} candidates beyond the enrichment cap, sending unenriched")
+
+    chunks = [subset[i:i + CHUNK_SIZE] for i in range(0, len(subset), CHUNK_SIZE)]
+    print(f"  [special_situations] enriching {len(subset)} candidates in {len(chunks)} chunk(s) of up to {CHUNK_SIZE}")
+
+    results = []
+    if len(chunks) == 1:
+        results = _enrich_chunk(chunks[0])
+    else:
+        with ThreadPoolExecutor(max_workers=CHUNK_WORKERS) as pool:
+            for chunk_result in pool.map(_enrich_chunk, chunks):
+                results.extend(chunk_result)
+
+    return results + _unenriched(overflow)
 
 
 def fetch_all_special_situations(days_back=1, max_enrich=5):
