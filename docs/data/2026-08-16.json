@@ -1,61 +1,13 @@
 {
   "date": "2026-08-16",
-  "generated_at": "2026-08-16T10:45:30.891110",
+  "generated_at": "2026-08-16T10:51:19.147189",
   "special_situations": [
-    {
-      "company": "Eureka Industries Ltd",
-      "category": "Distress / Insolvency",
-      "subcategory": "Newspaper Publication",
-      "headline": "Newspaper publication of commencement of the pre-packaged insolvency resolution process.",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/395d64ac-26f5-4515-a5fa-4d44a3fe6870.pdf",
-      "summary": "Newspaper notice confirms commencement of pre-pack insolvency process (PPIRP).",
-      "impact": "Not a monetary trigger; qualitative distress signal. FY26 revenue rose 48% to \u20b9126.58 Cr but net profit collapsed 91% to \u20b90.20 Cr.",
-      "risk": "NCLT approval pending; amalgamation with Onix Renewable adds execution uncertainty.",
-      "view": "Avoid",
-      "view_reasoning": "Formal insolvency process underway alongside sharp profit collapse despite revenue growth signals real distress."
-    },
-    {
-      "company": "Maxgrow India Ltd",
-      "category": "Red Flags & Governance",
-      "subcategory": "Resignation of Statutory Auditors",
-      "headline": "Resignation of Statutory Auditor - M/S R.B. Jain & Associates",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/850ed839-78b3-4dee-bb90-fcbebdce8a22.pdf",
-      "summary": "Statutory auditor R.B. Jain & Associates resigns shortly after 5-year appointment.",
-      "impact": "No deal figure; qualitative governance concern given the firm was only appointed in May 2026 for a five-year term.",
-      "risk": "Rapid auditor turnover soon after CIRP exit raises financial-reporting credibility questions.",
-      "view": "Avoid",
-      "view_reasoning": "Auditor exiting within months of a 5-year appointment at a recently-CIRP-exited company is an unusual red flag."
-    },
-    {
-      "company": "Juniper Green Energy Ltd",
-      "category": "Business Wins & Revenue Triggers",
-      "subcategory": "Award of Order / Receipt of Order",
-      "headline": "Intimation under Regulation 30 of the Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015 - Receipt of Letter of Award",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/aa3f3871-abb1-4c1c-9e7d-6c6f9502cea9.pdf",
-      "summary": "Won 230 MW under SECI's 1 GW FDRE round-the-clock tender at \u20b95.26/unit.",
-      "impact": "Adds ~3% to its 7,910 MW portfolio; backed by 25-year PPA with SECI, though exact capex/order value not disclosed.",
-      "risk": "86% revenue concentration in two off-takers (GUVNL, MSEDCL); debt-to-equity of 3.77x.",
-      "view": "Watch",
-      "view_reasoning": "Genuine capacity win for a large, fast-growing IPP, but high leverage and thin ~1% RoNW temper enthusiasm post-IPO."
-    },
     {
       "company": "Hazoor Multi Projects Ltd-$",
       "category": "Business Wins & Revenue Triggers",
       "subcategory": "Award of Order / Receipt of Order",
       "headline": "We are pleased to inform you that the Company has been Awarded the Letter of award from the National Highways Authority of India (NHAI) at Madangundi Fee Plaza.",
       "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/de7a4232-4c4d-40ff-86c7-f6b901aefc3a.pdf",
-      "summary": "Won NHAI toll-collection LOA worth \u20b928.47 Cr at Madangundi Fee Plaza, Jharkhand.",
-      "impact": "~4.9% of FY26 revenue (\u20b928.47 Cr vs \u20b9579.58 Cr FY26 revenue), one-year recurring contract.",
-      "risk": "Negative operating cash flows and declining FY26 revenue despite steady order wins.",
-      "view": "Watch",
-      "view_reasoning": "Adds revenue visibility via recurring toll contracts, but persistent negative cash flow undercuts the positive."
-    },
-    {
-      "company": "DMR Engineering Ltd",
-      "category": "Business Wins & Revenue Triggers",
-      "subcategory": "Award of Order / Receipt of Order",
-      "headline": "Revised intimation of receipt of letter of award",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/6cd585ec-0e74-4b19-bbc7-3e0de2c3f8b7.pdf",
       "summary": null,
       "impact": null,
       "risk": null,
@@ -73,6 +25,54 @@
       "risk": null,
       "view": null,
       "view_reasoning": null
+    },
+    {
+      "company": "Eureka Industries Ltd",
+      "category": "Distress / Insolvency",
+      "subcategory": "Newspaper Publication",
+      "headline": "Newspaper publication of commencement of the pre-packaged insolvency resolution process.",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/395d64ac-26f5-4515-a5fa-4d44a3fe6870.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null,
+      "view": null,
+      "view_reasoning": null
+    },
+    {
+      "company": "Maxgrow India Ltd",
+      "category": "Red Flags & Governance",
+      "subcategory": "Resignation of Statutory Auditors",
+      "headline": "Resignation of Statutory Auditor - M/S R.B. Jain & Associates",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/850ed839-78b3-4dee-bb90-fcbebdce8a22.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null,
+      "view": null,
+      "view_reasoning": null
+    },
+    {
+      "company": "DMR Engineering Ltd",
+      "category": "Business Wins & Revenue Triggers",
+      "subcategory": "Award of Order / Receipt of Order",
+      "headline": "Revised intimation of receipt of letter of award",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/6cd585ec-0e74-4b19-bbc7-3e0de2c3f8b7.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null,
+      "view": null,
+      "view_reasoning": null
+    },
+    {
+      "company": "Juniper Green Energy Ltd",
+      "category": "Business Wins & Revenue Triggers",
+      "subcategory": "Award of Order / Receipt of Order",
+      "headline": "Intimation under Regulation 30 of the Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015 - Receipt of Letter of Award",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/aa3f3871-abb1-4c1c-9e7d-6c6f9502cea9.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null,
+      "view": null,
+      "view_reasoning": null
     }
   ],
   "fallen_ipos": [
@@ -85,8 +85,8 @@
       "current_price": 39.71,
       "pct_of_day1": 54.063989108236896,
       "pct_of_issue": 38.18269230769231,
-      "view": "Avoid",
-      "view_reasoning": "Debut fall coincided with a broad market crash, but tiny Rs3.4cr Q4 profit and continued downtrend since suggest weak fundamentals too."
+      "view": null,
+      "view_reasoning": null
     },
     {
       "company": "AASTHA SPINTEX LIMITED",
@@ -97,8 +97,8 @@
       "current_price": 74.37,
       "pct_of_day1": 54.503481128618546,
       "pct_of_issue": 54.68382352941177,
-      "view": "Avoid",
-      "view_reasoning": "Q4 profit fell 37% QoQ and multiple large shareholders (L7 Hitech, QE Securities, Kunvarji) sold heavily post-listing, pressuring price."
+      "view": null,
+      "view_reasoning": null
     },
     {
       "company": "ALPINE TEXWORLD LIMITED",
@@ -109,8 +109,8 @@
       "current_price": 58.6,
       "pct_of_day1": 58.7468671679198,
       "pct_of_issue": 55.80952380952381,
-      "view": "Watch",
-      "view_reasoning": "Fell mainly on weak IPO-market sentiment, not company issues; FY26 revenue/profit grew strongly, but too new to confirm trend."
+      "view": null,
+      "view_reasoning": null
     }
   ]
 }
