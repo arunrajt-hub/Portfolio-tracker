@@ -1,18 +1,36 @@
 import json
 import os
 import re
+import time
 import requests
 from datetime import datetime, timedelta
 
 from news_fetcher import EXCLUDE_KEYWORDS, strip_html
 
-BSE_API_URL = "https://api.bseindia.com/BseIndiaAPI/api/AnnGetData/w"
+BSE_API_URL = "https://api.bseindia.com/BseIndiaAPI/api/AnnSubCategoryGetData/w"
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)",
     "Referer": "https://www.bseindia.com/",
     "Accept": "application/json",
 }
+
+# strCat takes BSE's literal category name (confirmed live), not a numeric ID
+# or "-1" — those silently return zero rows when strScrip is blank. Picked
+# for special-situation relevance: Corp. Action (buybacks/splits/schemes),
+# AGM/EGM (special resolutions), Insider Trading / SAST (open offers,
+# pledges), Board Meeting, and Company Update (BSE's catch-all bucket, where
+# most capex/regulatory/business-win headlines actually land). "Result" is
+# deliberately excluded — quarterly_results.py already covers that per-company.
+MARKET_WIDE_CATEGORIES = [
+    "Corp. Action",
+    "AGM/EGM",
+    "Insider Trading / SAST",
+    "Board Meeting",
+    "Company Update",
+]
+PAGE_SIZE = 50
+MAX_PAGES_PER_CATEGORY = 100  # safety cap (5000 rows/category) for wide test pulls
 
 ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY")
 ANTHROPIC_URL = "https://api.anthropic.com/v1/messages"
@@ -75,25 +93,12 @@ def classify(headline):
     return None
 
 
-def fetch_market_announcements(days_back=1, max_pages=20):
-    """Best-effort market-wide (no scrip filter) BSE announcement query.
-
-    NOT verified live — BSE/exchange APIs appear to block dev-sandbox egress
-    IPs outright (same class of issue this repo already hit with NSE price
-    data). Verify strScrip/pagination against a real GitHub Actions run and
-    adjust if the shape is wrong — the diagnostic prints below show whether
-    zero results means "API blocked/wrong params" (0 raw announcements) vs
-    "genuinely nothing matched" (raw count > 0, candidates == 0).
-    """
-    today = datetime.now()
-    from_date = (today - timedelta(days=days_back)).strftime("%Y%m%d")
-    to_date = today.strftime("%Y%m%d")
-
-    announcements = []
-    for pageno in range(1, max_pages + 1):
+def _fetch_category(category, from_date, to_date):
+    items = []
+    for pageno in range(1, MAX_PAGES_PER_CATEGORY + 1):
         params = {
             "pageno": pageno,
-            "strCat": "-1",
+            "strCat": category,
             "strPrevDate": from_date,
             "strScrip": "",
             "strSearch": "P",
@@ -107,20 +112,50 @@ def fetch_market_announcements(days_back=1, max_pages=20):
             data = response.json()
             page_items = data.get("Table", [])
         except Exception as e:
-            print(f"  [special_situations] page {pageno} request failed: {e}")
+            print(f"  [special_situations] '{category}' page {pageno} request failed: {e}")
             if response is not None:
                 print(f"  [special_situations] status={response.status_code} body[:300]={response.text[:300]!r}")
             break
 
-        print(f"  [special_situations] page {pageno}: {len(page_items)} announcements")
         if not page_items:
             break
-        announcements.extend(page_items)
-        if len(page_items) < 50:
+        items.extend(page_items)
+        if len(page_items) < PAGE_SIZE:
             break
+        if pageno == MAX_PAGES_PER_CATEGORY:
+            print(f"  [special_situations] '{category}' hit the {MAX_PAGES_PER_CATEGORY}-page safety cap, more may exist")
+        time.sleep(0.2)
+
+    print(f"  [special_situations] '{category}': {len(items)} announcements")
+    return items
+
+
+def fetch_market_announcements(days_back=1):
+    """Market-wide (no scrip filter) BSE announcement query, one call per
+    relevant category — confirmed live: strCat must be the literal category
+    name (e.g. "Corp. Action"), not "-1"/numeric, when strScrip is blank.
+    """
+    today = datetime.now()
+    from_date = (today - timedelta(days=days_back)).strftime("%Y%m%d")
+    to_date = today.strftime("%Y%m%d")
+
+    announcements = []
+    for category in MARKET_WIDE_CATEGORIES:
+        announcements.extend(_fetch_category(category, from_date, to_date))
 
     print(f"  [special_situations] total raw announcements fetched: {len(announcements)}")
     return announcements
+
+
+# Routine periodic shareholding-disclosure filings (SAST Reg 29/31 etc.) use
+# this boilerplate wrapper phrase regardless of stake size — they dominate
+# volume without being genuinely material. Real open offers/takeovers use
+# different headline templates ("Open Offer", "Public Announcement") and
+# aren't caught by this.
+BOILERPLATE_EXCLUDE = [
+    "the exchange has received the disclosure under regulation",
+    "the exchange has received the revised disclosure under regulation",
+]
 
 
 def find_special_situations(days_back=1):
@@ -135,6 +170,8 @@ def find_special_situations(days_back=1):
 
         headline_lower = headline.lower()
         if any(kw in headline_lower for kw in EXCLUDE_KEYWORDS):
+            continue
+        if any(kw in headline_lower for kw in BOILERPLATE_EXCLUDE):
             continue
 
         category = classify(headline)
@@ -188,13 +225,24 @@ def _build_enrichment_prompt(candidates):
     )
 
 
+def _unenriched(candidates):
+    return [{**c, "summary": None, "impact": None, "risk": None} for c in candidates]
+
+
 def enrich_candidates(candidates, max_items=40):
     if not candidates:
         return []
     if not ANTHROPIC_API_KEY:
-        return [{**c, "summary": None, "impact": None, "risk": None} for c in candidates]
+        return _unenriched(candidates)
 
+    # Only the first max_items go through the LLM screen (cost bound). Anything
+    # beyond that still ships in the digest, just unenriched — never silently
+    # dropped just because the batch was large.
     subset = candidates[:max_items]
+    overflow = candidates[max_items:]
+    if overflow:
+        print(f"  [special_situations] {len(overflow)} candidates beyond the LLM batch cap, sending unenriched")
+
     prompt = _build_enrichment_prompt(subset)
 
     try:
@@ -218,7 +266,7 @@ def enrich_candidates(candidates, max_items=40):
         enriched = json.loads(text)
     except Exception as e:
         print(f"LLM enrichment failed, falling back to raw headlines: {e}")
-        return [{**c, "summary": None, "impact": None, "risk": None} for c in subset]
+        return _unenriched(subset) + _unenriched(overflow)
 
     by_key = {(c["company"], c["category"]): c for c in subset}
     results = []
@@ -233,7 +281,7 @@ def enrich_candidates(candidates, max_items=40):
             "impact": item.get("impact"),
             "risk": item.get("risk"),
         })
-    return results
+    return results + _unenriched(overflow)
 
 
 def fetch_all_special_situations(days_back=1):

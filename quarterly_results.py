@@ -1,7 +1,7 @@
 import requests
 from datetime import datetime, timedelta
 
-BSE_API_URL = "https://api.bseindia.com/BseIndiaAPI/api/AnnGetData/w"
+BSE_API_URL = "https://api.bseindia.com/BseIndiaAPI/api/AnnSubCategoryGetData/w"
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)",
