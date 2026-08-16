@@ -36,6 +36,7 @@ MAX_PAGES_PER_CATEGORY = 100  # safety cap (5000 rows/category) for wide test pu
 ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY")
 ANTHROPIC_URL = "https://api.anthropic.com/v1/messages"
 ANTHROPIC_MODEL = "claude-haiku-4-5-20251001"
+MAX_ENRICHMENT_SEARCHES = 20  # shared across the whole batch, not per-candidate — cost bound
 
 # Event-type keyword buckets. Matched as whole phrases (word-boundary) against
 # lowercased headlines. Short/ambiguous abbreviations (e.g. bare "COD", "EIR")
@@ -278,13 +279,21 @@ def _build_enrichment_prompt(candidates):
         "Below is a JSON list of candidate announcements that already passed a "
         "keyword filter. Some may still be routine boilerplate — drop those.\n\n"
         f"{json.dumps(items, indent=2)}\n\n"
-        "Reply with ONLY a JSON array (no markdown fences, no commentary), one "
-        "object per announcement you judge to be genuinely material, each with "
-        "exactly these keys: \"company\", \"category\", \"summary\" (<=15 words, "
-        "the concrete action), \"impact\" (<=12 words on likely financial "
-        "impact, or \"Not stated\" if the headline doesn't say), \"risk\" "
-        "(<=12 words on the key risk/watch-item, or \"None apparent\"). Do not "
-        "invent figures that aren't in the headline."
+        "Reply with ONLY a JSON array (no markdown fences, no commentary outside "
+        "the array), one object per announcement you judge to be genuinely "
+        "material, each with exactly these keys: \"company\", \"category\", "
+        "\"summary\" (<=15 words, the concrete action), \"impact\", \"risk\" "
+        "(<=12 words on the key risk/watch-item, or \"None apparent\").\n\n"
+        "For \"impact\": if the event involves a monetary figure (capex amount, "
+        "deal size, fundraise amount, order/contract value, buyback size, etc.) "
+        "and the headline doesn't state it, use web search to find it, then also "
+        "search for the company's most recent full-year revenue and express "
+        "impact as a percentage of that revenue, e.g. \"~8% of FY25 revenue "
+        "(₹40 Cr order vs ₹500 Cr revenue)\". If the event type has no "
+        "transaction size at all (governance, regulatory, distress announcements "
+        "with no deal figure), give a brief qualitative impact note instead — "
+        "don't force a percentage that doesn't apply. If search turns up nothing "
+        "usable, say \"Not stated\" rather than guessing or inventing a figure."
     )
 
 
@@ -318,15 +327,28 @@ def enrich_candidates(candidates, max_items=40):
             },
             json={
                 "model": ANTHROPIC_MODEL,
-                "max_tokens": 2000,
+                "max_tokens": 4000,
                 "messages": [{"role": "user", "content": prompt}],
+                "tools": [
+                    {"type": "web_search_20250305", "name": "web_search", "max_uses": MAX_ENRICHMENT_SEARCHES},
+                ],
             },
-            timeout=60,
+            timeout=150,
         )
         response.raise_for_status()
-        text = response.json()["content"][0]["text"].strip()
-        text = re.sub(r"^```(json)?|```$", "", text.strip(), flags=re.MULTILINE).strip()
-        enriched = json.loads(text)
+        # Web search interleaves search-result blocks between text blocks, so
+        # the final JSON array can land anywhere in content, not just index 0 —
+        # concatenate every text block, then pull the array out of the result.
+        text_blocks = [b.get("text", "") for b in response.json().get("content", []) if b.get("type") == "text"]
+        full_text = "\n".join(text_blocks).strip()
+        full_text = re.sub(r"^```(json)?|```$", "", full_text, flags=re.MULTILINE).strip()
+        try:
+            enriched = json.loads(full_text)
+        except json.JSONDecodeError:
+            match = re.search(r"\[.*\]", full_text, re.DOTALL)
+            if not match:
+                raise
+            enriched = json.loads(match.group(0))
     except Exception as e:
         print(f"LLM enrichment failed, falling back to raw headlines: {e}")
         return _unenriched(subset) + _unenriched(overflow)
