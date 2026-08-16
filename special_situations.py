@@ -7,6 +7,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timedelta
 
 from news_fetcher import EXCLUDE_KEYWORDS, strip_html
+from archive import load_recent_enriched_situations
 
 BSE_API_URL = "https://api.bseindia.com/BseIndiaAPI/api/AnnSubCategoryGetData/w"
 
@@ -400,19 +401,39 @@ def _enrich_chunk(chunk):
     return results + _unenriched(unmatched)
 
 
-def enrich_candidates(candidates, max_items=5):
+def enrich_candidates(candidates, max_items=5, enrichment_cache=None):
     if not candidates:
         return []
     if not ANTHROPIC_API_KEY:
         return _unenriched(candidates)
 
-    # Only the first max_items go through the LLM screen (cost bound). Anything
-    # beyond that still ships in the digest, just unenriched — never silently
-    # dropped just because the batch was large.
-    subset = candidates[:max_items]
-    overflow = candidates[max_items:]
+    # Reuse a prior successful enrichment for anything already seen in a
+    # recent day's archive — the lookback window overlapping with yesterday's
+    # run shouldn't mean paying for the same LLM call twice. Anything that
+    # was seen before but never got enriched (cache miss) still goes through
+    # normally below, which is exactly the "retry" behavior wanted.
+    cache = enrichment_cache if enrichment_cache is not None else load_recent_enriched_situations()
+    cached_results = []
+    remaining = []
+    for c in candidates:
+        cached = cache.get((c["company"], c["headline"]))
+        if cached:
+            cached_results.append({**c, **{k: cached[k] for k in ("summary", "impact", "risk", "view", "view_reasoning")}})
+        else:
+            remaining.append(c)
+    if cached_results:
+        print(f"  [special_situations] {len(cached_results)} candidates already enriched in a recent run, reusing (no LLM call)")
+
+    # Only the first max_items of what's left go through the LLM screen (cost
+    # bound). Anything beyond that still ships in the digest, just
+    # unenriched — never silently dropped just because the batch was large.
+    subset = remaining[:max_items]
+    overflow = remaining[max_items:]
     if overflow:
         print(f"  [special_situations] {len(overflow)} candidates beyond the enrichment cap, sending unenriched")
+
+    if not subset:
+        return cached_results + _unenriched(overflow)
 
     chunks = [subset[i:i + CHUNK_SIZE] for i in range(0, len(subset), CHUNK_SIZE)]
     print(f"  [special_situations] enriching {len(subset)} candidates in {len(chunks)} chunk(s) of up to {CHUNK_SIZE}")
@@ -425,9 +446,9 @@ def enrich_candidates(candidates, max_items=5):
             for chunk_result in pool.map(_enrich_chunk, chunks):
                 results.extend(chunk_result)
 
-    return results + _unenriched(overflow)
+    return cached_results + results + _unenriched(overflow)
 
 
-def fetch_all_special_situations(days_back=1, max_enrich=5):
+def fetch_all_special_situations(days_back=2, max_enrich=10):
     candidates = find_special_situations(days_back=days_back)
     return enrich_candidates(candidates, max_items=max_enrich)

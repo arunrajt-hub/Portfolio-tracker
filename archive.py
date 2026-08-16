@@ -1,6 +1,6 @@
 import json
 import os
-from datetime import datetime
+from datetime import datetime, timedelta
 
 DATA_DIR = os.path.join(os.path.dirname(__file__), "docs", "data")
 INDEX_PATH = os.path.join(DATA_DIR, "index.json")
@@ -8,6 +8,42 @@ INDEX_PATH = os.path.join(DATA_DIR, "index.json")
 
 def _day_path(date_str):
     return os.path.join(DATA_DIR, f"{date_str}.json")
+
+
+def load_recent_enriched_situations(days=2):
+    """Special situations from the last `days` days that were successfully
+    enriched already (summary is not None), keyed by (company, headline) —
+    used to skip re-running the LLM on something already processed when the
+    lookback window overlaps with a previous run."""
+    if not os.path.exists(INDEX_PATH):
+        return {}
+
+    with open(INDEX_PATH) as f:
+        index = json.load(f)
+
+    cutoff = datetime.now() - timedelta(days=days)
+    cache = {}
+    for date_str in index.get("dates", []):
+        try:
+            if datetime.strptime(date_str, "%Y-%m-%d") < cutoff:
+                continue
+        except ValueError:
+            continue
+
+        path = _day_path(date_str)
+        if not os.path.exists(path):
+            continue
+        with open(path) as f:
+            record = json.load(f)
+
+        for s in record.get("special_situations", []):
+            if s.get("summary") is None:
+                continue  # never got enriched, don't cache a miss
+            key = (s.get("company"), s.get("headline"))
+            if key not in cache:
+                cache[key] = s
+
+    return cache
 
 
 def write_daily_record(situations, fallen_ipos):
