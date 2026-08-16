@@ -74,3 +74,25 @@ ADD Tata Motors NSE:TATAMOTORS BSE:500570
 REMOVE Tata Motors
 REMOVE TATAMOTORS
 ```
+
+## 6. Dashboard (Cloudflare Pages + Access)
+
+Every run writes `docs/data/<date>.json` + `docs/data/index.json` and the
+workflow commits/pushes them automatically — the dashboard at `docs/index.html`
+reads those files client-side (no backend, no database).
+
+### One-time setup
+1. Cloudflare Dashboard → **Workers & Pages** → **Create application** → **Pages**
+   → **Connect to Git** → select this repo (`Portfolio-tracker`).
+2. Build settings: **Build command** = *(leave empty)*, **Build output directory**
+   = `docs`. Deploy.
+3. You'll get a URL like `https://portfolio-tracker.pages.dev` — it redeploys
+   automatically every time the daily job pushes new data.
+
+### Password-gate it (Cloudflare Access)
+1. Cloudflare Dashboard → **Zero Trust** → **Access** → **Applications** →
+   **Add an application** → **Self-hosted**.
+2. Application domain: your `*.pages.dev` URL from above.
+3. Add a policy: **Action** = Allow, **Include** = *Emails* → your email address.
+4. Save. Now visiting the dashboard prompts for a one-time PIN sent to your
+   email — nobody else can view it even if the URL leaks.

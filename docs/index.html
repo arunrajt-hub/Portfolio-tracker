@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfolio Tracker Dashboard</title>
+<style>
+  :root {
+    --surface-1:      #fcfcfb;
+    --page-plane:     #f9f9f7;
+    --text-primary:   #0b0b0b;
+    --text-secondary: #52514e;
+    --text-muted:     #898781;
+    --gridline:       #e1e0d9;
+    --border:         rgba(11,11,11,0.10);
+
+    --cat-capex:    #2a78d6;
+    --cat-manda:    #1baf7a;
+    --cat-reg:      #eda100;
+    --cat-biz:      #008300;
+    --cat-flags:    #4a3aa7;
+    --cat-distress: #e34948;
+
+    --status-warning:  #fab219;
+    --status-serious:  #ec835a;
+    --status-critical: #d03b3b;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --surface-1:      #1a1a19;
+      --page-plane:     #0d0d0d;
+      --text-primary:   #ffffff;
+      --text-secondary: #c3c2b7;
+      --text-muted:     #898781;
+      --gridline:       #2c2c2a;
+      --border:         rgba(255,255,255,0.10);
+
+      --cat-capex:    #3987e5;
+      --cat-manda:    #199e70;
+      --cat-reg:      #c98500;
+      --cat-biz:      #008300;
+      --cat-flags:    #9085e9;
+      --cat-distress: #e66767;
+    }
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--page-plane);
+    color: var(--text-primary);
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 24px 16px 64px; }
+
+  header { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 20px; }
+  h1 { font-size: 20px; margin: 0; }
+  .subtitle { color: var(--text-secondary); font-size: 13px; margin-top: 2px; }
+
+  select, input[type="text"] {
+    background: var(--surface-1);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 7px 10px;
+    font-size: 13px;
+    font-family: inherit;
+  }
+
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin-bottom: 20px; }
+  .stat {
+    background: var(--surface-1);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 14px;
+  }
+  .stat .value { font-size: 22px; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .stat .label { color: var(--text-secondary); font-size: 12px; margin-top: 2px; }
+
+  .controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 18px; }
+  .chip {
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 5px 12px;
+    font-size: 12px;
+    cursor: pointer;
+    background: var(--surface-1);
+    color: var(--text-secondary);
+    user-select: none;
+  }
+  .chip[data-active="true"] {
+    color: #fff;
+    border-color: transparent;
+  }
+  .chip[data-cat="Capacity & Capex"][data-active="true"]           { background: var(--cat-capex); }
+  .chip[data-cat="Demerger, M&A & PE"][data-active="true"]         { background: var(--cat-manda); }
+  .chip[data-cat="Regulatory & Legal Cleansing"][data-active="true"] { background: var(--cat-reg); }
+  .chip[data-cat="Business Wins & Revenue Triggers"][data-active="true"] { background: var(--cat-biz); }
+  .chip[data-cat="Red Flags & Governance"][data-active="true"]     { background: var(--cat-flags); }
+  .chip[data-cat="Distress / Insolvency"][data-active="true"]      { background: var(--cat-distress); }
+
+  section { margin-bottom: 32px; }
+  h2 { font-size: 15px; margin: 0 0 10px; }
+  .empty { color: var(--text-muted); padding: 16px; border: 1px dashed var(--gridline); border-radius: 10px; }
+
+  table { width: 100%; border-collapse: collapse; background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--gridline); font-size: 13px; vertical-align: top; }
+  th { color: var(--text-muted); font-weight: 500; font-size: 11px; text-transform: uppercase; letter-spacing: 0.03em; }
+  tr:last-child td { border-bottom: none; }
+  td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  a { color: inherit; }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 9px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 500;
+    color: #fff;
+    white-space: nowrap;
+  }
+  .badge.capex   { background: var(--cat-capex); }
+  .badge.manda   { background: var(--cat-manda); }
+  .badge.reg     { background: var(--cat-reg); }
+  .badge.biz     { background: var(--cat-biz); }
+  .badge.flags   { background: var(--cat-flags); }
+  .badge.distress{ background: var(--cat-distress); }
+
+  .status-chip { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 500; }
+  .status-dot { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+  .status-warning  .status-dot { background: var(--status-warning); }
+  .status-serious  .status-dot { background: var(--status-serious); }
+  .status-critical .status-dot { background: var(--status-critical); }
+
+  footer { color: var(--text-muted); font-size: 12px; margin-top: 24px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1>Portfolio Tracker Dashboard</h1>
+      <div class="subtitle" id="subtitle">Loading…</div>
+    </div>
+    <select id="dateSelect"></select>
+  </header>
+
+  <div class="stats" id="stats"></div>
+
+  <div class="controls">
+    <input type="text" id="search" placeholder="Search company…" style="min-width:220px">
+    <span id="chips"></span>
+  </div>
+
+  <section>
+    <h2>🎯 Special Situations</h2>
+    <div id="situationsWrap"></div>
+  </section>
+
+  <section>
+    <h2>📉 Fallen IPOs</h2>
+    <div id="ipoWrap"></div>
+  </section>
+
+  <footer id="footer"></footer>
+</div>
+
+<script>
+const CATEGORY_CLASS = {
+  "Capacity & Capex": "capex",
+  "Demerger, M&A & PE": "manda",
+  "Regulatory & Legal Cleansing": "reg",
+  "Business Wins & Revenue Triggers": "biz",
+  "Red Flags & Governance": "flags",
+  "Distress / Insolvency": "distress",
+};
+const ALL_CATEGORIES = Object.keys(CATEGORY_CLASS);
+
+let activeCategories = new Set(ALL_CATEGORIES);
+let currentRecord = null;
+
+function escapeHtml(s) {
+  return String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+}
+
+function statusForDrop(dropPct) {
+  if (dropPct >= 80) return ["critical", "Critical"];
+  if (dropPct >= 65) return ["serious", "Serious"];
+  return ["warning", "Warning"];
+}
+
+async function loadIndex() {
+  const res = await fetch("data/index.json");
+  if (!res.ok) throw new Error("no index.json yet");
+  return res.json();
+}
+
+async function loadDay(date) {
+  const res = await fetch(`data/${date}.json`);
+  return res.json();
+}
+
+function renderChips() {
+  const chips = document.getElementById("chips");
+  chips.innerHTML = ALL_CATEGORIES.map(cat => {
+    const active = activeCategories.has(cat);
+    return `<span class="chip" data-cat="${escapeHtml(cat)}" data-active="${active}">${escapeHtml(cat)}</span>`;
+  }).join("");
+  chips.querySelectorAll(".chip").forEach(el => {
+    el.addEventListener("click", () => {
+      const cat = el.dataset.cat;
+      if (activeCategories.has(cat)) activeCategories.delete(cat);
+      else activeCategories.add(cat);
+      render();
+    });
+  });
+}
+
+function renderStats(record, totalDays) {
+  const stats = document.getElementById("stats");
+  stats.innerHTML = `
+    <div class="stat"><div class="value">${record.special_situations.length}</div><div class="label">Special situations (this day)</div></div>
+    <div class="stat"><div class="value">${record.fallen_ipos.length}</div><div class="label">Fallen IPOs (this day)</div></div>
+    <div class="stat"><div class="value">${totalDays}</div><div class="label">Days tracked</div></div>
+  `;
+}
+
+function renderSituations(record) {
+  const search = document.getElementById("search").value.trim().toLowerCase();
+  const rows = record.special_situations.filter(s =>
+    activeCategories.has(s.category) &&
+    (!search || s.company.toLowerCase().includes(search))
+  );
+
+  const wrap = document.getElementById("situationsWrap");
+  if (rows.length === 0) {
+    wrap.innerHTML = `<div class="empty">No special situations match the current filters.</div>`;
+    return;
+  }
+
+  wrap.innerHTML = `
+    <table>
+      <thead><tr><th>Category</th><th>Company</th><th>Summary</th><th>Impact</th><th>Risk</th><th></th></tr></thead>
+      <tbody>
+        ${rows.map(s => `
+          <tr>
+            <td><span class="badge ${CATEGORY_CLASS[s.category] || ''}">${escapeHtml(s.category)}</span></td>
+            <td>${escapeHtml(s.company)}</td>
+            <td>${escapeHtml(s.summary || s.headline)}</td>
+            <td>${escapeHtml(s.impact || '—')}</td>
+            <td>${escapeHtml(s.risk || '—')}</td>
+            <td><a href="${escapeHtml(s.link)}" target="_blank" rel="noopener">source</a></td>
+          </tr>
+        `).join("")}
+      </tbody>
+    </table>
+  `;
+}
+
+function renderIpos(record) {
+  const search = document.getElementById("search").value.trim().toLowerCase();
+  const rows = record.fallen_ipos.filter(f => !search || f.company.toLowerCase().includes(search));
+
+  const wrap = document.getElementById("ipoWrap");
+  if (rows.length === 0) {
+    wrap.innerHTML = `<div class="empty">No fallen IPOs on this day.</div>`;
+    return;
+  }
+
+  wrap.innerHTML = `
+    <table>
+      <thead><tr><th>Company</th><th>Listed</th><th>Issue price</th><th>Day-1 close</th><th>Current</th><th>Status</th></tr></thead>
+      <tbody>
+        ${rows.map(f => {
+          const dropPct = 100 - f.pct_of_day1;
+          const [cls, label] = statusForDrop(dropPct);
+          return `
+          <tr>
+            <td>${escapeHtml(f.company)} <span style="color:var(--text-muted)">(${escapeHtml(f.symbol)})</span></td>
+            <td class="num">${escapeHtml(f.listed_on)}</td>
+            <td class="num">₹${Number(f.issue_price).toFixed(2)}</td>
+            <td class="num">₹${Number(f.day1_close).toFixed(2)}</td>
+            <td class="num">₹${Number(f.current_price).toFixed(2)}</td>
+            <td class="num"><span class="status-chip status-${cls}"><span class="status-dot"></span>${label} · ${dropPct.toFixed(0)}% down</span></td>
+          </tr>`;
+        }).join("")}
+      </tbody>
+    </table>
+  `;
+}
+
+function render() {
+  if (!currentRecord) return;
+  renderSituations(currentRecord);
+  renderIpos(currentRecord);
+}
+
+async function selectDate(date, totalDays) {
+  currentRecord = await loadDay(date);
+  document.getElementById("subtitle").textContent =
+    `Viewing ${date} — generated ${new Date(currentRecord.generated_at).toLocaleString()}`;
+  renderStats(currentRecord, totalDays);
+  render();
+}
+
+async function init() {
+  renderChips();
+  document.getElementById("search").addEventListener("input", render);
+
+  let index;
+  try {
+    index = await loadIndex();
+  } catch (e) {
+    document.getElementById("subtitle").textContent = "No data yet — check back after the next scheduled run.";
+    document.getElementById("situationsWrap").innerHTML = `<div class="empty">No data yet.</div>`;
+    document.getElementById("ipoWrap").innerHTML = `<div class="empty">No data yet.</div>`;
+    return;
+  }
+
+  const dateSelect = document.getElementById("dateSelect");
+  dateSelect.innerHTML = index.dates.map(d => `<option value="${d}">${d}</option>`).join("");
+  dateSelect.addEventListener("change", () => selectDate(dateSelect.value, index.dates.length));
+
+  await selectDate(index.dates[0], index.dates.length);
+
+  document.getElementById("footer").textContent =
+    "Data refreshes daily from the Portfolio News Tracker GitHub Actions job.";
+}
+
+init();
+</script>
+</body>
+</html>

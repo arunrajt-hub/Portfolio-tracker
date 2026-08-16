@@ -4,6 +4,7 @@ load_dotenv()
 import os
 from special_situations import fetch_all_special_situations
 from ipo_tracker import find_fallen_ipos, TRACK_MONTHS, FALL_THRESHOLD_PCT
+from archive import write_daily_record
 from whatsapp_sender import send_in_chunks
 from datetime import datetime
 
@@ -64,6 +65,8 @@ def main():
 
     print("Checking recent IPOs for post-listing crashes...")
     fallen_ipos = find_fallen_ipos()
+
+    write_daily_record(situations, fallen_ipos)
 
     msg1 = build_special_situations_message(situations)
     msg2 = build_fallen_ipos_message(fallen_ipos)
