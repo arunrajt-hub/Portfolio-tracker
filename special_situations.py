@@ -375,12 +375,14 @@ def enrich_candidates(candidates, max_items=10):
         return _unenriched(subset) + _unenriched(overflow)
 
     by_key = {(c["company"], c["category"]): c for c in subset}
+    matched_keys = set()
     results = []
     for item in enriched:
         key = (item.get("company"), item.get("category"))
         base = by_key.get(key)
         if not base:
             continue
+        matched_keys.add(key)
         results.append({
             **base,
             "summary": item.get("summary"),
@@ -389,7 +391,15 @@ def enrich_candidates(candidates, max_items=10):
             "view": item.get("view"),
             "view_reasoning": item.get("view_reasoning"),
         })
-    return results + _unenriched(overflow)
+
+    # Anything in the batch the model didn't return (ran out of budget partway
+    # through, or silently filtered it) still ships unenriched rather than
+    # vanishing without a trace — same rule already applied to overflow.
+    unmatched = [c for c in subset if (c["company"], c["category"]) not in matched_keys]
+    if unmatched:
+        print(f"  [special_situations] {len(unmatched)} candidates in the LLM batch weren't returned by the model, sending unenriched")
+
+    return results + _unenriched(unmatched) + _unenriched(overflow)
 
 
 def fetch_all_special_situations(days_back=1):
