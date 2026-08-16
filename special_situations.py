@@ -318,7 +318,7 @@ def _unenriched(candidates):
     return [{**c, "summary": None, "impact": None, "risk": None, "view": None, "view_reasoning": None} for c in candidates]
 
 
-def enrich_candidates(candidates, max_items=10):
+def enrich_candidates(candidates, max_items=5):
     if not candidates:
         return []
     if not ANTHROPIC_API_KEY:
