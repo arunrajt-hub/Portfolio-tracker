@@ -199,8 +199,10 @@ def enrich_fallen_ipos(fallen):
         returned_symbols.add(symbol)
         results.append({
             **base,
-            "view": item.get("view"),
-            "view_reasoning": item.get("view_reasoning"),
+            # Default rather than leave blank for a stock the model otherwise
+            # processed but didn't fill these two fields in for.
+            "view": item.get("view") or "Watch",
+            "view_reasoning": item.get("view_reasoning") or "Not determined by the model for this item",
         })
 
     # Never silently drop a stock just because the model's reply skipped it.

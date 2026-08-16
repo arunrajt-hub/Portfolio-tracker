@@ -388,8 +388,11 @@ def enrich_candidates(candidates, max_items=5):
             "summary": item.get("summary"),
             "impact": item.get("impact"),
             "risk": item.get("risk"),
-            "view": item.get("view"),
-            "view_reasoning": item.get("view_reasoning"),
+            # The model doesn't always include view/view_reasoning even when
+            # told they're mandatory — default rather than leave blank for an
+            # item it otherwise did process.
+            "view": item.get("view") or "Watch",
+            "view_reasoning": item.get("view_reasoning") or "Not determined by the model for this item",
         })
 
     # Anything in the batch the model didn't return (ran out of budget partway
