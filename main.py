@@ -75,11 +75,11 @@ def main():
     msg1 = build_special_situations_message(situations)
     msg2 = build_fallen_ipos_message(fallen_ipos)
 
-    subject = f"Portfolio Tracker — {datetime.now().strftime('%d %b %Y')}"
-    body = msg1 + "\n\n\n" + msg2
+    today = datetime.now().strftime('%d %b %Y')
 
-    print("\n--- Sending email ---")
-    send_email(subject, body)
+    print("\n--- Sending 2 emails ---")
+    send_email(f"Special Situations — {today}", msg1)
+    send_email(f"Fallen IPOs — {today}", msg2)
     print("Done.")
 
 
