@@ -152,7 +152,8 @@
   <div class="stats" id="stats"></div>
 
   <div class="controls">
-    <input type="text" id="search" placeholder="Search company…" style="min-width:220px">
+    <input type="text" id="search" placeholder="Search company or sub-category…" style="min-width:240px">
+    <select id="subcatSelect"><option value="">All sub-categories</option></select>
     <span id="chips"></span>
   </div>
 
@@ -229,11 +230,22 @@ function renderStats(record, totalDays) {
   `;
 }
 
+function populateSubcatFilter(record) {
+  const select = document.getElementById("subcatSelect");
+  const current = select.value;
+  const subcats = [...new Set(record.special_situations.map(s => s.subcategory).filter(Boolean))].sort();
+  select.innerHTML = `<option value="">All sub-categories</option>` +
+    subcats.map(sc => `<option value="${escapeHtml(sc)}">${escapeHtml(sc)}</option>`).join("");
+  if (subcats.includes(current)) select.value = current;
+}
+
 function renderSituations(record) {
   const search = document.getElementById("search").value.trim().toLowerCase();
+  const subcatFilter = document.getElementById("subcatSelect").value;
   const rows = record.special_situations.filter(s =>
     activeCategories.has(s.category) &&
-    (!search || s.company.toLowerCase().includes(search))
+    (!subcatFilter || s.subcategory === subcatFilter) &&
+    (!search || s.company.toLowerCase().includes(search) || (s.subcategory || "").toLowerCase().includes(search))
   );
 
   const wrap = document.getElementById("situationsWrap");
@@ -244,11 +256,12 @@ function renderSituations(record) {
 
   wrap.innerHTML = `
     <table>
-      <thead><tr><th>Category</th><th>Company</th><th>Summary</th><th>Impact</th><th>Risk</th><th></th></tr></thead>
+      <thead><tr><th>Category</th><th>Sub-category</th><th>Company</th><th>Summary</th><th>Impact</th><th>Risk</th><th></th></tr></thead>
       <tbody>
         ${rows.map(s => `
           <tr>
             <td><span class="badge ${CATEGORY_CLASS[s.category] || ''}">${escapeHtml(s.category)}</span></td>
+            <td>${escapeHtml(s.subcategory || '—')}</td>
             <td>${escapeHtml(s.company)}</td>
             <td>${escapeHtml(s.summary || s.headline)}</td>
             <td>${escapeHtml(s.impact || '—')}</td>
@@ -304,12 +317,14 @@ async function selectDate(date, totalDays) {
   document.getElementById("subtitle").textContent =
     `Viewing ${date} — generated ${new Date(currentRecord.generated_at).toLocaleString()}`;
   renderStats(currentRecord, totalDays);
+  populateSubcatFilter(currentRecord);
   render();
 }
 
 async function init() {
   renderChips();
   document.getElementById("search").addEventListener("input", render);
+  document.getElementById("subcatSelect").addEventListener("change", render);
 
   let index;
   try {

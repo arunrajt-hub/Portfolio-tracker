@@ -27,7 +27,8 @@ def build_special_situations_message(situations):
     for category, items in by_category.items():
         lines.append(f"\n*{category}*")
         for s in items:
-            lines.append(f"\n🏢 *{s['company']}*")
+            subcat = f" _({s['subcategory']})_" if s.get("subcategory") else ""
+            lines.append(f"\n🏢 *{s['company']}*{subcat}")
             lines.append(f"• {s.get('summary') or s['headline']}")
             if s.get("impact"):
                 lines.append(f"  💰 {s['impact']}")

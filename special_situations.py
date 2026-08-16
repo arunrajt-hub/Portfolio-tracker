@@ -215,6 +215,7 @@ def find_special_situations(days_back=1):
         candidates.append({
             "company": company,
             "category": category,
+            "subcategory": ann.get("SUBCATNAME") or ann.get("CATEGORYNAME") or "General",
             "headline": headline,
             "link": link,
         })
