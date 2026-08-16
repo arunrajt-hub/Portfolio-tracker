@@ -82,19 +82,55 @@ CATEGORIES = {
     ],
 }
 
+# Refined 3-way split within "Demerger, M&A & PE", by which keyword matched —
+# BSE's own SUBCATNAME for this bucket is often unhelpfully generic ("General",
+# "Outcome of Board Meeting"), so this overrides it for this one category only.
+# Ambiguous calls (open offer/delisting/NCLT approval -> M&A; in-principle
+# approval -> PE/Fundraising) are judgment calls, adjust if they read wrong.
+MANDA_SUBCLASS_BY_KEYWORD = {
+    "composite scheme of arrangement": "Demerger",
+    "scheme of arrangement": "Demerger",
+    "record date for demerger": "Demerger",
+    "demerger": "Demerger",
+    "spin-off": "Demerger",
+    "spin off": "Demerger",
+
+    "merger": "M&A",
+    "amalgamation": "M&A",
+    "acquisition": "M&A",
+    "stake sale": "M&A",
+    "slump sale": "M&A",
+    "reverse merger": "M&A",
+    "reverse listing": "M&A",
+    "backdoor listing": "M&A",
+    "amalgamation with unlisted": "M&A",
+    "amalgamation of unlisted": "M&A",
+    "open offer": "M&A",
+    "delisting": "M&A",
+    "nclt approval": "M&A",
+
+    "preferential allotment": "PE / Fundraising",
+    "promoter warrant conversion": "PE / Fundraising",
+    "qip": "PE / Fundraising",
+    "rights issue": "PE / Fundraising",
+    "buyback": "PE / Fundraising",
+    "in-principle approval": "PE / Fundraising",
+}
+
 _KEYWORD_PATTERNS = [
-    (category, re.compile(r"\b" + re.escape(kw) + r"\b"))
+    (category, kw, re.compile(r"\b" + re.escape(kw) + r"\b"))
     for category, keywords in CATEGORIES.items()
     for kw in keywords
 ]
 
 
 def classify(headline):
+    """Returns (category, matched_keyword) or (None, None)."""
     headline_lower = headline.lower()
-    for category, pattern in _KEYWORD_PATTERNS:
+    for category, keyword, pattern in _KEYWORD_PATTERNS:
         if pattern.search(headline_lower):
-            return category
-    return None
+            return category, keyword
+    return None, None
 
 
 def _fetch_page(category, pageno, from_date, to_date):
@@ -195,7 +231,7 @@ def find_special_situations(days_back=1):
         if any(kw in headline_lower for kw in BOILERPLATE_EXCLUDE):
             continue
 
-        category = classify(headline)
+        category, keyword = classify(headline)
         if not category:
             continue
 
@@ -212,10 +248,15 @@ def find_special_situations(days_back=1):
         else:
             link = f"https://www.bseindia.com/corporates/ann.html?scrip_cd={scrip}"
 
+        if category == "Demerger, M&A & PE":
+            subcategory = MANDA_SUBCLASS_BY_KEYWORD.get(keyword, "Other")
+        else:
+            subcategory = ann.get("SUBCATNAME") or ann.get("CATEGORYNAME") or "General"
+
         candidates.append({
             "company": company,
             "category": category,
-            "subcategory": ann.get("SUBCATNAME") or ann.get("CATEGORYNAME") or "General",
+            "subcategory": subcategory,
             "headline": headline,
             "link": link,
         })
