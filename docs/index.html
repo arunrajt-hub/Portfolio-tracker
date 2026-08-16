@@ -396,11 +396,12 @@ function renderIpos(record) {
   lastIpoRows = rows;
   wrap.innerHTML = `
     <table>
-      <thead><tr><th>Company</th><th>Listed</th><th>Issue price</th><th>Day-1 close</th><th>Current</th><th>Status</th><th></th></tr></thead>
+      <thead><tr><th>Company</th><th>Listed</th><th>Issue price</th><th>Day-1 close</th><th>Current</th><th>Status</th><th>Drop from issue</th><th></th></tr></thead>
       <tbody>
         ${rows.map((f, i) => {
           const dropPct = 100 - f.pct_of_day1;
           const [cls, label] = statusForDrop(dropPct);
+          const dropFromIssue = f.pct_of_issue != null ? 100 - f.pct_of_issue : null;
           return `
           <tr>
             <td>${escapeHtml(f.company)} <span style="color:var(--text-muted)">(${escapeHtml(f.symbol)})</span></td>
@@ -409,6 +410,7 @@ function renderIpos(record) {
             <td class="num">₹${Number(f.day1_close).toFixed(2)}</td>
             <td class="num">₹${Number(f.current_price).toFixed(2)}</td>
             <td class="num"><span class="status-chip status-${cls}"><span class="status-dot"></span>${label} · ${dropPct.toFixed(0)}% down</span></td>
+            <td class="num">${dropFromIssue != null ? dropFromIssue.toFixed(0) + '%' : '—'}</td>
             <td><button class="chat-btn" data-chat-ipo="${i}">💬 Ask Claude</button></td>
           </tr>`;
         }).join("")}

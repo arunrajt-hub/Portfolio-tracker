@@ -82,14 +82,18 @@ def find_fallen_ipos(months=TRACK_MONTHS, threshold_pct=FALL_THRESHOLD_PCT):
         if pct_of_day1 > threshold_pct:
             continue
 
+        issue_price = r.get("IssuePrice")
+        pct_of_issue = (current / issue_price) * 100 if issue_price else None
+
         fallen.append({
             "company": r.get("CompanyName", "").strip(),
             "symbol": r.get("Company_Short_Name"),
             "listed_on": r["_listed_on"].strftime("%d %b %Y"),
-            "issue_price": r.get("IssuePrice"),
+            "issue_price": issue_price,
             "day1_close": day1_close,
             "current_price": current,
             "pct_of_day1": pct_of_day1,
+            "pct_of_issue": pct_of_issue,
         })
 
     fallen.sort(key=lambda x: x["pct_of_day1"])

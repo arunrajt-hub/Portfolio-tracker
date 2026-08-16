@@ -51,10 +51,13 @@ def build_fallen_ipos_message(fallen):
         return "\n".join(lines)
 
     for f in fallen:
-        drop_pct = 100 - f["pct_of_day1"]
+        drop_pct_day1 = 100 - f["pct_of_day1"]
         lines.append(f"\n🏢 *{f['company']}* ({f['symbol']})")
         lines.append(f"• Listed {f['listed_on']} at issue price ₹{f['issue_price']:,.2f}")
-        lines.append(f"• Day-1 close ₹{f['day1_close']:,.2f} → now ₹{f['current_price']:,.2f} ({drop_pct:.0f}% below day-1 close)")
+        lines.append(f"• Day-1 close ₹{f['day1_close']:,.2f} → now ₹{f['current_price']:,.2f} ({drop_pct_day1:.0f}% below day-1 close)")
+        if f.get("pct_of_issue") is not None:
+            drop_pct_issue = 100 - f["pct_of_issue"]
+            lines.append(f"• {drop_pct_issue:.0f}% below issue price")
 
     return "\n".join(lines)
 
