@@ -31,9 +31,9 @@ jobs:
 
       - name: Run tracker
         env:
-          WHAPI_TOKEN: ${{ secrets.WHAPI_TOKEN }}
-          WHAPI_URL: ${{ secrets.WHAPI_URL }}
-          WHATSAPP_NUMBER: ${{ secrets.WHATSAPP_NUMBER }}
+          EMAIL_ADDRESS: ${{ secrets.EMAIL_ADDRESS }}
+          EMAIL_APP_PASSWORD: ${{ secrets.EMAIL_APP_PASSWORD }}
+          EMAIL_TO: ${{ secrets.EMAIL_TO }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           SPECIAL_SITUATIONS_DAYS_BACK: ${{ github.event.inputs.special_situations_days_back || '1' }}
         run: python main.py

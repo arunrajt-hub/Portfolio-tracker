@@ -5,7 +5,7 @@ import os
 from special_situations import fetch_all_special_situations
 from ipo_tracker import find_fallen_ipos, TRACK_MONTHS, FALL_THRESHOLD_PCT
 from archive import write_daily_record
-from whatsapp_sender import send_in_chunks
+from email_sender import send_email
 from datetime import datetime
 
 
@@ -75,9 +75,11 @@ def main():
     msg1 = build_special_situations_message(situations)
     msg2 = build_fallen_ipos_message(fallen_ipos)
 
-    print("\n--- Sending 2 messages ---")
-    send_in_chunks(msg1)
-    send_in_chunks(msg2)
+    subject = f"Portfolio Tracker — {datetime.now().strftime('%d %b %Y')}"
+    body = msg1 + "\n\n\n" + msg2
+
+    print("\n--- Sending email ---")
+    send_email(subject, body)
     print("Done.")
 
 

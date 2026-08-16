@@ -18,10 +18,16 @@ Go to your repo → Settings → Secrets and variables → Actions → New repos
 
 | Secret | Value |
 |---|---|
-| `WHAPI_TOKEN` | Your WHAPI bearer token |
-| `WHAPI_URL` | e.g. `https://gate.whapi.cloud` |
-| `WHATSAPP_NUMBER` | e.g. `919500055366` |
+| `EMAIL_ADDRESS` | The Gmail address the daily digest sends *from*, e.g. `arunrajt@gmail.com` |
+| `EMAIL_APP_PASSWORD` | A Gmail **App Password** for that account (not your normal password — see below) |
+| `EMAIL_TO` | The address the digest sends *to*, e.g. `arun@reacher.co.in`. Optional — defaults to `EMAIL_ADDRESS` if unset (send to yourself). |
 | `ANTHROPIC_API_KEY` | Your Anthropic API key — powers the special-situations summary/impact enrichment (`special_situations.py`). Optional: without it, that message still sends but with raw headlines and no impact/risk lines. |
+
+### Generate a Gmail App Password
+Gmail blocks plain-password SMTP login. Instead:
+1. Go to your Google Account → **Security** → enable **2-Step Verification** if not already on.
+2. Security → **App passwords** → create one (name it e.g. "portfolio-tracker") → copy the 16-character password it generates.
+3. Use that as `EMAIL_APP_PASSWORD` above — not your real Gmail password.
 
 The tracker will now run automatically every day at 8:00 PM IST.
 You can also trigger it manually from Actions → Portfolio News Tracker → Run workflow.
