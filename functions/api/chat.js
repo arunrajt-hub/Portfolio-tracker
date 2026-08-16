@@ -2,10 +2,13 @@
 // Proxies chat about a single dashboard finding to Claude. The Anthropic key
 // lives only in this server-side env var (Cloudflare Pages project settings),
 // never sent to the browser. Scoped intentionally to one finding at a time —
-// keeps context small/cheap and answers focused.
+// keeps context small/cheap and answers focused. Web search is enabled so
+// Claude can pull current info about the company/action instead of being
+// limited to just the finding's own JSON.
 
 const MODEL = "claude-haiku-4-5-20251001";
 const MAX_HISTORY_TURNS = 12;
+const MAX_WEB_SEARCHES_PER_TURN = 5;
 
 export async function onRequestPost(context) {
   const { request, env } = context;
@@ -30,10 +33,12 @@ export async function onRequestPost(context) {
   const systemPrompt =
     "You are helping a retail investor understand one flagged item from their " +
     "personal portfolio-tracking dashboard (Indian equities, BSE-sourced data). " +
-    "Answer using the finding's data below plus general knowledge of Indian markets " +
-    "and corporate-finance concepts. You have no live internet/price access — never " +
-    "claim to know today's price, news, or figures beyond what's given here. If asked " +
-    "something the data doesn't cover, say so plainly rather than guessing.\n\n" +
+    "The finding below is your starting context — use web search freely to pull " +
+    "current information about the company, the specific action, and how similar " +
+    "actions have historically affected share price/business fundamentals, so you " +
+    "can give a grounded view on likely impact, not just restate the filing. Cite " +
+    "what you find. If web search doesn't turn up enough to answer confidently, " +
+    "say so rather than guessing.\n\n" +
     "Finding:\n" + JSON.stringify(finding, null, 2);
 
   const trimmedHistory = Array.isArray(history) ? history.slice(-MAX_HISTORY_TURNS) : [];
@@ -55,9 +60,12 @@ export async function onRequestPost(context) {
       },
       body: JSON.stringify({
         model: MODEL,
-        max_tokens: 1024,
+        max_tokens: 1536,
         system: systemPrompt,
         messages,
+        tools: [
+          { type: "web_search_20250305", name: "web_search", max_uses: MAX_WEB_SEARCHES_PER_TURN },
+        ],
       }),
     });
   } catch (e) {
@@ -70,7 +78,13 @@ export async function onRequestPost(context) {
   }
 
   const data = await anthropicRes.json();
-  const reply = data.content?.find(b => b.type === "text")?.text || "";
+  // With web search, content interleaves text blocks with server_tool_use /
+  // web_search_tool_result blocks — concatenate every text block in order,
+  // not just the first, or multi-search answers get truncated to the intro.
+  const reply = (data.content || [])
+    .filter(b => b.type === "text")
+    .map(b => b.text)
+    .join("\n\n") || "";
 
   return json({ reply });
 }
