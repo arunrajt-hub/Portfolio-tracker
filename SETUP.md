@@ -96,3 +96,17 @@ reads those files client-side (no backend, no database).
 3. Add a policy: **Action** = Allow, **Include** = *Emails* → your email address.
 4. Save. Now visiting the dashboard prompts for a one-time PIN sent to your
    email — nobody else can view it even if the URL leaks.
+
+### Enable "Ask Claude" chat on findings
+Each row has a **💬 Ask Claude** button that opens a chat scoped to that one
+finding. It's powered by `functions/api/chat.js`, a Cloudflare Pages Function
+that holds the Anthropic key server-side — it's never sent to the browser.
+
+1. Cloudflare Dashboard → your Pages project → **Settings** → **Environment
+   variables** → add `ANTHROPIC_API_KEY` (same value as the GitHub Actions
+   secret — Cloudflare Pages can't read GitHub's secrets, so it needs adding
+   here too).
+2. Redeploy (or just wait for the next automatic redeploy) for the variable
+   to take effect.
+3. Without this set, the chat button still works but replies with a
+   configuration error instead of an answer.
