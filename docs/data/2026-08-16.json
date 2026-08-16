@@ -1,30 +1,18 @@
 {
   "date": "2026-08-16",
-  "generated_at": "2026-08-16T10:55:37.541605",
+  "generated_at": "2026-08-16T11:01:38.904724",
   "special_situations": [
-    {
-      "company": "DMR Engineering Ltd",
-      "category": "Business Wins & Revenue Triggers",
-      "subcategory": "Award of Order / Receipt of Order",
-      "headline": "Revised intimation of receipt of letter of award",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/6cd585ec-0e74-4b19-bbc7-3e0de2c3f8b7.pdf",
-      "summary": null,
-      "impact": null,
-      "risk": null,
-      "view": null,
-      "view_reasoning": null
-    },
     {
       "company": "Eureka Industries Ltd",
       "category": "Distress / Insolvency",
       "subcategory": "Newspaper Publication",
       "headline": "Newspaper publication of commencement of the pre-packaged insolvency resolution process.",
       "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/395d64ac-26f5-4515-a5fa-4d44a3fe6870.pdf",
-      "summary": null,
-      "impact": null,
-      "risk": null,
-      "view": null,
-      "view_reasoning": null
+      "summary": "Newspaper notice formalizing pre-pack insolvency process commencement under IBC.",
+      "impact": "Not a monetary event; signals formal PPIRP now underway ahead of NCLT approval for amalgamation with Onix Renewable.",
+      "risk": "Existing equity dilution/write-off risk typical in pre-pack resolutions",
+      "view": "Avoid",
+      "view_reasoning": "Company already in formal insolvency with a proposed amalgamation; FY26 PAT collapsed to \u20b90.20 Cr from \u20b92.14 Cr."
     },
     {
       "company": "Maxgrow India Ltd",
@@ -32,35 +20,11 @@
       "subcategory": "Resignation of Statutory Auditors",
       "headline": "Resignation of Statutory Auditor - M/S R.B. Jain & Associates",
       "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/850ed839-78b3-4dee-bb90-fcbebdce8a22.pdf",
-      "summary": null,
-      "impact": null,
-      "risk": null,
-      "view": null,
-      "view_reasoning": null
-    },
-    {
-      "company": "Hazoor Multi Projects Ltd-$",
-      "category": "Business Wins & Revenue Triggers",
-      "subcategory": "Award of Order / Receipt of Order",
-      "headline": "We are pleased to inform you that the Company has been Awarded the Letter of award from the National Highways Authority of India (NHAI) at Madangundi Fee Plaza.",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/de7a4232-4c4d-40ff-86c7-f6b901aefc3a.pdf",
-      "summary": null,
-      "impact": null,
-      "risk": null,
-      "view": null,
-      "view_reasoning": null
-    },
-    {
-      "company": "Refex Renewables & Infrastructure Ltd",
-      "category": "Distress / Insolvency",
-      "subcategory": "General",
-      "headline": "Full and Final Settlement w.r.t. Insolvency petition filed against Sherisha Solar LLP and completion of internal restructuring.",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/0e7634f4-71bc-4694-b6b2-6030260bf478.pdf",
-      "summary": null,
-      "impact": null,
-      "risk": null,
-      "view": null,
-      "view_reasoning": null
+      "summary": "Newly appointed 5-year statutory auditor R.B. Jain & Associates resigns shortly after appointment.",
+      "impact": "No transaction size; qualitative governance concern for a recently NCLT-exited shell-like trading company.",
+      "risk": "Rapid auditor turnover post-CIRP raises audit/compliance quality concerns",
+      "view": "Avoid",
+      "view_reasoning": "Auditor appointed May 2026 for a 5-year term resigning within months is unusual and warrants caution for a fragile post-CIRP entity."
     },
     {
       "company": "Juniper Green Energy Ltd",
@@ -68,6 +32,42 @@
       "subcategory": "Award of Order / Receipt of Order",
       "headline": "Intimation under Regulation 30 of the Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015 - Receipt of Letter of Award",
       "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/aa3f3871-abb1-4c1c-9e7d-6c6f9502cea9.pdf",
+      "summary": "Won 230 MW in SECI's 1 GW FDRE round-the-clock tender at \u20b95.26/unit tariff.",
+      "impact": "~9% capacity addition (230 MW vs ~2.57 GWp operational base); no fixed order value disclosed, backed by 25-yr PPA.",
+      "risk": "Execution/SCOD delays over 24-month timeline; high leverage",
+      "view": "Watch",
+      "view_reasoning": "Order win is positive scale growth, but screener flags a low 3-yr ROE (1.07%) and low interest coverage post-IPO."
+    },
+    {
+      "company": "Hazoor Multi Projects Ltd-$",
+      "category": "Business Wins & Revenue Triggers",
+      "subcategory": "Award of Order / Receipt of Order",
+      "headline": "We are pleased to inform you that the Company has been Awarded the Letter of award from the National Highways Authority of India (NHAI) at Madangundi Fee Plaza.",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/de7a4232-4c4d-40ff-86c7-f6b901aefc3a.pdf",
+      "summary": "NHAI awards \u20b928.47 crore toll-collection contract at Madangundi Fee Plaza, Jharkhand.",
+      "impact": "~4.9% of FY26 revenue (\u20b928.47 Cr order vs \u20b9579.58 Cr FY26 consolidated revenue).",
+      "risk": "Recurring small toll orders amid declining FY26 revenue and reported negative operating cashflow",
+      "view": "Watch",
+      "view_reasoning": "Revenue fell ~9% YoY in FY26 despite margin improvement; steady but small toll wins don't offset core topline decline."
+    },
+    {
+      "company": "Refex Renewables & Infrastructure Ltd",
+      "category": "Distress / Insolvency",
+      "subcategory": "General",
+      "headline": "Full and Final Settlement w.r.t. Insolvency petition filed against Sherisha Solar LLP and completion of internal restructuring.",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/0e7634f4-71bc-4694-b6b2-6030260bf478.pdf",
+      "summary": "Settled Sherisha Solar LLP insolvency petition for \u20b916.51 Cr against \u20b933.39 Cr claimed; case to be withdrawn.",
+      "impact": "~25% of FY revenue (\u20b916.51 Cr settlement vs \u20b966.5 Cr consolidated revenue), removing a Section 7 IBC overhang on subsidiary.",
+      "risk": "Standalone going-concern flag, promoter pledge 42.7%, stock down ~68% over 1 year",
+      "view": "Avoid",
+      "view_reasoning": "Settlement removes one overhang, but FY loss of \u20b943 Cr, going-concern auditor note, and recent director exits signal deeper distress."
+    },
+    {
+      "company": "DMR Engineering Ltd",
+      "category": "Business Wins & Revenue Triggers",
+      "subcategory": "Award of Order / Receipt of Order",
+      "headline": "Revised intimation of receipt of letter of award",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/6cd585ec-0e74-4b19-bbc7-3e0de2c3f8b7.pdf",
       "summary": null,
       "impact": null,
       "risk": null,
@@ -85,8 +85,8 @@
       "current_price": 39.71,
       "pct_of_day1": 54.063989108236896,
       "pct_of_issue": 38.18269230769231,
-      "view": null,
-      "view_reasoning": null
+      "view": "Avoid",
+      "view_reasoning": "Promoter stake fell 47%\u219234.6% post-listing plus heavy fund selling; also hit by weak spinning-sector margins industry-wide."
     },
     {
       "company": "AASTHA SPINTEX LIMITED",
@@ -97,8 +97,8 @@
       "current_price": 74.37,
       "pct_of_day1": 54.503481128618546,
       "pct_of_issue": 54.68382352941177,
-      "view": null,
-      "view_reasoning": null
+      "view": "Watch",
+      "view_reasoning": "Q4 profit/revenue fell QoQ on sector margin squeeze, but FY26 revenue grew 26%, Falcon Yarns deal, bonus/dividend intact."
     },
     {
       "company": "ALPINE TEXWORLD LIMITED",
@@ -109,8 +109,8 @@
       "current_price": 58.6,
       "pct_of_day1": 58.7468671679198,
       "pct_of_issue": 55.80952380952381,
-      "view": null,
-      "view_reasoning": null
+      "view": "Avoid",
+      "view_reasoning": "High debt (D/E ~2.3-3x), credit rating downgrade to junk/BBB-, 70% revenue from top 10 customers, Gujarat-only concentration."
     }
   ]
 }
