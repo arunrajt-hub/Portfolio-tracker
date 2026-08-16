@@ -10,7 +10,8 @@ HEADERS = {
 }
 
 TRACK_MONTHS = 7
-FALL_THRESHOLD_PCT = 50  # flag when current price <= this % of listing-day close
+DROP_PCT_TRIGGER = 40  # flag when current price has fallen this much (or more) from listing-day close
+FALL_THRESHOLD_PCT = 100 - DROP_PCT_TRIGGER  # equivalent "current <= X% of day-1 close" form used in the price check below
 
 
 def _months_ago(months):

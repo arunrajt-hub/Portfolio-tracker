@@ -3,7 +3,7 @@ load_dotenv()
 
 import os
 from special_situations import fetch_all_special_situations
-from ipo_tracker import find_fallen_ipos, TRACK_MONTHS, FALL_THRESHOLD_PCT
+from ipo_tracker import find_fallen_ipos, TRACK_MONTHS, DROP_PCT_TRIGGER
 from archive import write_daily_record
 from email_sender import send_email
 from datetime import datetime
@@ -43,11 +43,11 @@ def build_fallen_ipos_message(fallen):
     now = datetime.now().strftime("%d %b %Y")
     lines = [
         f"📉 *FALLEN IPOs — {now}*",
-        f"_Listed within {TRACK_MONTHS} months, now ≤{FALL_THRESHOLD_PCT}% of day-1 close_",
+        f"_Listed within {TRACK_MONTHS} months, now down {DROP_PCT_TRIGGER}%+ from day-1 close_",
         "━━━━━━━━━━━━━━━━━━━━",
     ]
     if not fallen:
-        lines.append(f"\nNo recent IPO has fallen to {FALL_THRESHOLD_PCT}% or below its listing-day close.")
+        lines.append(f"\nNo recent IPO has fallen {DROP_PCT_TRIGGER}% or more from its listing-day close.")
         return "\n".join(lines)
 
     for f in fallen:
