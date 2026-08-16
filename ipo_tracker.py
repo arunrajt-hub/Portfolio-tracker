@@ -12,7 +12,7 @@ HEADERS = {
     "Accept": "application/json",
 }
 
-TRACK_MONTHS = 7
+TRACK_MONTHS = 8
 DROP_PCT_TRIGGER = 40  # flag when current price has fallen this much (or more) from listing-day close
 FALL_THRESHOLD_PCT = 100 - DROP_PCT_TRIGGER  # equivalent "current <= X% of day-1 close" form used in the price check below
 
