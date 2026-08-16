@@ -6,6 +6,7 @@ from config import COMPANIES
 from news_fetcher import fetch_all_news
 from quarterly_results import fetch_all_quarterly_results
 from special_situations import fetch_all_special_situations
+from ipo_tracker import find_fallen_ipos, TRACK_MONTHS, FALL_THRESHOLD_PCT
 from whatsapp_sender import send_in_chunks
 from datetime import datetime
 
@@ -90,6 +91,26 @@ def build_special_situations_message(situations):
     return "\n".join(lines)
 
 
+def build_fallen_ipos_message(fallen):
+    now = datetime.now().strftime("%d %b %Y")
+    lines = [
+        f"📉 *FALLEN IPOs — {now}*",
+        f"_Listed within {TRACK_MONTHS} months, now ≤{FALL_THRESHOLD_PCT}% of day-1 close_",
+        "━━━━━━━━━━━━━━━━━━━━",
+    ]
+    if not fallen:
+        lines.append(f"\nNo recent IPO has fallen to {FALL_THRESHOLD_PCT}% or below its listing-day close.")
+        return "\n".join(lines)
+
+    for f in fallen:
+        drop_pct = 100 - f["pct_of_day1"]
+        lines.append(f"\n🏢 *{f['company']}* ({f['symbol']})")
+        lines.append(f"• Listed {f['listed_on']} at issue price ₹{f['issue_price']:,.2f}")
+        lines.append(f"• Day-1 close ₹{f['day1_close']:,.2f} → now ₹{f['current_price']:,.2f} ({drop_pct:.0f}% below day-1 close)")
+
+    return "\n".join(lines)
+
+
 def main():
     print("Fetching news...")
     news = fetch_all_news(COMPANIES)
@@ -101,14 +122,19 @@ def main():
     print(f"Scanning market-wide special situations (last {days_back} day(s))...")
     situations = fetch_all_special_situations(days_back=days_back)
 
+    print("Checking recent IPOs for post-listing crashes...")
+    fallen_ipos = find_fallen_ipos()
+
     msg2 = build_news_message(news)
     msg3 = build_quarterly_message(news, quarterly)
     msg4 = build_special_situations_message(situations)
+    msg5 = build_fallen_ipos_message(fallen_ipos)
 
-    print("\n--- Sending 3 messages ---")
+    print("\n--- Sending 4 messages ---")
     send_in_chunks(msg2)
     send_in_chunks(msg3)
     send_in_chunks(msg4)
+    send_in_chunks(msg5)
     print("Done.")
 
 
