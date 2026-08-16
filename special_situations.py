@@ -43,9 +43,11 @@ ANTHROPIC_MODEL = "claude-haiku-4-5-20251001"
 CATEGORIES = {
     "Capacity & Capex": [
         "commercial operations date", "trial run completed",
-        "commencement of commercial production", "debottlenecking",
-        "phase-1 commissioned", "phase 1 commissioned",
-        "environmental clearance",
+        "commencement of commercial production", "commercial production",
+        "debottlenecking", "phase-1 commissioned", "phase 1 commissioned",
+        "environmental clearance", "commissioned", "commissioning",
+        "greenfield plant", "greenfield project", "brownfield expansion",
+        "capacity expansion", "commercial operations",
     ],
     "Demerger, M&A & PE": [
         "composite scheme of arrangement", "scheme of arrangement",
@@ -54,7 +56,8 @@ CATEGORIES = {
         "promoter warrant conversion", "merger", "amalgamation",
         "demerger", "acquisition", "stake sale", "open offer",
         "delisting", "buyback", "qip", "rights issue", "spin-off",
-        "spin off",
+        "spin off", "reverse merger", "reverse listing", "backdoor listing",
+        "amalgamation with unlisted", "amalgamation of unlisted",
     ],
     "Regulatory & Legal Cleansing": [
         "form 483", "establishment inspection report", "settlement order",
