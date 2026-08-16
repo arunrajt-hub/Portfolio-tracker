@@ -39,7 +39,7 @@ ANTHROPIC_URL = "https://api.anthropic.com/v1/messages"
 # carries more real-world weight than a category label or summary and is
 # worth the extra cost/latency for stronger reasoning.
 ANTHROPIC_MODEL = "claude-sonnet-5"
-MAX_ENRICHMENT_SEARCHES = 25  # shared across the whole batch, not per-candidate — cost bound
+MAX_ENRICHMENT_SEARCHES = 15  # shared across the whole batch, not per-candidate — cost bound
 
 # Event-type keyword buckets. Matched as whole phrases (word-boundary) against
 # lowercased headlines. Short/ambiguous abbreviations (e.g. bare "COD", "EIR")
@@ -318,7 +318,7 @@ def _unenriched(candidates):
     return [{**c, "summary": None, "impact": None, "risk": None, "view": None, "view_reasoning": None} for c in candidates]
 
 
-def enrich_candidates(candidates, max_items=20):
+def enrich_candidates(candidates, max_items=10):
     if not candidates:
         return []
     if not ANTHROPIC_API_KEY:
@@ -344,7 +344,7 @@ def enrich_candidates(candidates, max_items=20):
             },
             json={
                 "model": ANTHROPIC_MODEL,
-                "max_tokens": 6000,
+                "max_tokens": 8000,
                 "messages": [{"role": "user", "content": prompt}],
                 "tools": [
                     {"type": "web_search_20250305", "name": "web_search", "max_uses": MAX_ENRICHMENT_SEARCHES},
@@ -353,12 +353,16 @@ def enrich_candidates(candidates, max_items=20):
             timeout=180,
         )
         response.raise_for_status()
+        data = response.json()
         # Web search interleaves search-result blocks between text blocks, so
         # the final JSON array can land anywhere in content, not just index 0 —
         # concatenate every text block, then pull the array out of the result.
-        text_blocks = [b.get("text", "") for b in response.json().get("content", []) if b.get("type") == "text"]
+        block_types = [b.get("type") for b in data.get("content", [])]
+        text_blocks = [b.get("text", "") for b in data.get("content", []) if b.get("type") == "text"]
         full_text = "\n".join(text_blocks).strip()
         full_text = re.sub(r"^```(json)?|```$", "", full_text, flags=re.MULTILINE).strip()
+        if not full_text:
+            print(f"  [special_situations] enrichment produced no text content — stop_reason={data.get('stop_reason')}, blocks={block_types}")
         try:
             enriched = json.loads(full_text)
         except json.JSONDecodeError:
