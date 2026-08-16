@@ -32,56 +32,7 @@ Gmail blocks plain-password SMTP login. Instead:
 The tracker will now run automatically every day at 8:00 PM IST.
 You can also trigger it manually from Actions → Portfolio News Tracker → Run workflow.
 
-## 3. Deploy Cloudflare Worker
-
-### One-time setup
-1. Sign up at https://workers.cloudflare.com (free)
-2. Install Wrangler CLI: `npm install -g wrangler`
-3. Login: `wrangler login`
-
-### Deploy
-```bash
-wrangler deploy webhook.js --name portfolio-webhook --compatibility-date 2024-01-01
-```
-
-Your worker URL will be: `https://portfolio-webhook.YOUR_SUBDOMAIN.workers.dev`
-
-### Set Worker environment variables
-In Cloudflare Dashboard → Workers → portfolio-webhook → Settings → Variables:
-
-| Variable | Value |
-|---|---|
-| `WHAPI_TOKEN` | Your WHAPI bearer token |
-| `WHAPI_URL` | e.g. `https://gate.whapi.cloud` |
-| `WHATSAPP_NUMBER` | e.g. `919500055366` |
-| `GITHUB_TOKEN` | GitHub Personal Access Token (with `repo` scope) |
-| `GITHUB_REPO` | e.g. `yourusername/portfolio-news-tracker` |
-| `WEBHOOK_SECRET` | Any random string, e.g. `mysecret123` |
-
-### Create GitHub Personal Access Token
-Go to GitHub → Settings → Developer settings → Personal access tokens → Fine-grained tokens
-- Repository access: your portfolio repo
-- Permissions: Contents → Read and Write
-
-## 4. Configure WHAPI Webhook
-
-In your WHAPI dashboard:
-- Webhook URL: `https://portfolio-webhook.YOUR_SUBDOMAIN.workers.dev`
-- Add header: `X-Webhook-Secret: <your WEBHOOK_SECRET>`
-- Enable: incoming messages
-
-## 5. WhatsApp Commands
-
-Send these messages from your WhatsApp number:
-
-```
-LIST
-ADD Tata Motors NSE:TATAMOTORS BSE:500570
-REMOVE Tata Motors
-REMOVE TATAMOTORS
-```
-
-## 6. Dashboard (Cloudflare Pages + Access)
+## 3. Dashboard (Cloudflare Pages + Access)
 
 Every run writes `docs/data/<date>.json` + `docs/data/index.json` and the
 workflow commits/pushes them automatically — the dashboard at `docs/index.html`
