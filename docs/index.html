@@ -123,6 +123,14 @@
     color: #fff;
     white-space: nowrap;
   }
+  .badge[data-filter-cat] { cursor: pointer; }
+  .badge[data-filter-cat]:hover { filter: brightness(1.12); }
+  .reset-link {
+    font-size: 12px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    text-decoration: underline;
+  }
   .badge.capex   { background: var(--cat-capex); }
   .badge.manda   { background: var(--cat-manda); }
   .badge.reg     { background: var(--cat-reg); }
@@ -155,6 +163,7 @@
     <input type="text" id="search" placeholder="Search company or sub-category…" style="min-width:240px">
     <select id="subcatSelect"><option value="">All sub-categories</option></select>
     <span id="chips"></span>
+    <span class="reset-link" id="resetFilters">Reset filters</span>
   </div>
 
   <section>
@@ -214,11 +223,21 @@ function renderChips() {
   chips.querySelectorAll(".chip").forEach(el => {
     el.addEventListener("click", () => {
       const cat = el.dataset.cat;
-      if (activeCategories.has(cat)) activeCategories.delete(cat);
-      else activeCategories.add(cat);
-      render();
+      const next = new Set(activeCategories);
+      if (next.has(cat)) next.delete(cat);
+      else next.add(cat);
+      setActiveCategories(next);
     });
   });
+}
+
+// Single entry point for changing the category filter, used by the top chip
+// row, badges clicked inline in the table, and the reset link — keeps the
+// chips' active/inactive display in sync with whichever one triggered it.
+function setActiveCategories(next) {
+  activeCategories = next;
+  renderChips();
+  render();
 }
 
 function renderStats(record, totalDays) {
@@ -260,7 +279,7 @@ function renderSituations(record) {
       <tbody>
         ${rows.map(s => `
           <tr>
-            <td><span class="badge ${CATEGORY_CLASS[s.category] || ''}">${escapeHtml(s.category)}</span></td>
+            <td><span class="badge ${CATEGORY_CLASS[s.category] || ''}" data-filter-cat="${escapeHtml(s.category)}" title="Filter to this category">${escapeHtml(s.category)}</span></td>
             <td>${escapeHtml(s.subcategory || '—')}</td>
             <td>${escapeHtml(s.company)}</td>
             <td>${escapeHtml(s.summary || s.headline)}</td>
@@ -272,6 +291,9 @@ function renderSituations(record) {
       </tbody>
     </table>
   `;
+  wrap.querySelectorAll(".badge[data-filter-cat]").forEach(el => {
+    el.addEventListener("click", () => setActiveCategories(new Set([el.dataset.filterCat])));
+  });
 }
 
 function renderIpos(record) {
@@ -325,6 +347,11 @@ async function init() {
   renderChips();
   document.getElementById("search").addEventListener("input", render);
   document.getElementById("subcatSelect").addEventListener("change", render);
+  document.getElementById("resetFilters").addEventListener("click", () => {
+    document.getElementById("search").value = "";
+    document.getElementById("subcatSelect").value = "";
+    setActiveCategories(new Set(ALL_CATEGORIES));
+  });
 
   let index;
   try {
