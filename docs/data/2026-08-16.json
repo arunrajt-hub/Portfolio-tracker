@@ -1,6 +1,6 @@
 {
   "date": "2026-08-16",
-  "generated_at": "2026-08-16T11:31:22.257066",
+  "generated_at": "2026-08-16T14:51:37.420016",
   "special_situations": [
     {
       "company": "Manipal Health Enterprises Ltd",
@@ -51,6 +51,18 @@
       "view_reasoning": "Company already in PPIRP with plunging profits; shareholders had approved distress restructuring plan."
     },
     {
+      "company": "Refex Renewables & Infrastructure Ltd",
+      "category": "Distress / Insolvency",
+      "subcategory": "General",
+      "headline": "Full and Final Settlement w.r.t. Insolvency petition filed against Sherisha Solar LLP and completion of internal restructuring.",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/0e7634f4-71bc-4694-b6b2-6030260bf478.pdf",
+      "summary": "Settled Sherisha Solar LLP insolvency case for \u20b916.51 Cr vs \u20b933.39 Cr claim",
+      "impact": "~23% of FY26 standalone revenue (\u20b916.51 Cr settlement vs \u20b972.62 Cr revenue)",
+      "risk": "Net worth eroded, going-concern flag, qualified audit opinion, 42.7% promoter pledge",
+      "view": "Avoid",
+      "view_reasoning": "Resolves NCLT overhang but underlying business deeply lossmaking with going-concern doubts"
+    },
+    {
       "company": "Maxgrow India Ltd",
       "category": "Red Flags & Governance",
       "subcategory": "Resignation of Statutory Auditors",
@@ -75,18 +87,6 @@
       "view_reasoning": "Just IPO'd at ~316x P/E with 3.77x debt-to-equity and 86% revenue concentration in two off-takers"
     },
     {
-      "company": "DMR Engineering Ltd",
-      "category": "Business Wins & Revenue Triggers",
-      "subcategory": "Award of Order / Receipt of Order",
-      "headline": "Revised intimation of receipt of letter of award",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/6cd585ec-0e74-4b19-bbc7-3e0de2c3f8b7.pdf",
-      "summary": "Revised LOA for Tarali Pumped Storage Project PMA role, correcting earlier disclosure error",
-      "impact": "~16% of FY26 standalone revenue (\u20b91.66 Cr order vs \u20b910.26 Cr FY26 standalone revenue)",
-      "risk": "This is a correction of a prior announcement, not a fresh incremental win",
-      "view": "Watch",
-      "view_reasoning": "Small-cap with steady order inflow but low margins; correction reduces novelty of this specific filing."
-    },
-    {
       "company": "Hazoor Multi Projects Ltd-$",
       "category": "Business Wins & Revenue Triggers",
       "subcategory": "Award of Order / Receipt of Order",
@@ -97,18 +97,6 @@
       "risk": "One-year contract; part of a pattern of small serial NHAI wins, negative operating cashflow persists",
       "view": "Watch",
       "view_reasoning": "Repeated NHAI order wins aid revenue visibility but margins volatile and operating cashflow negative"
-    },
-    {
-      "company": "Refex Renewables & Infrastructure Ltd",
-      "category": "Distress / Insolvency",
-      "subcategory": "General",
-      "headline": "Full and Final Settlement w.r.t. Insolvency petition filed against Sherisha Solar LLP and completion of internal restructuring.",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/0e7634f4-71bc-4694-b6b2-6030260bf478.pdf",
-      "summary": "Settled Sherisha Solar LLP insolvency case for \u20b916.51 Cr vs \u20b933.39 Cr claim",
-      "impact": "~23% of FY26 standalone revenue (\u20b916.51 Cr settlement vs \u20b972.62 Cr revenue)",
-      "risk": "Net worth eroded, going-concern flag, qualified audit opinion, 42.7% promoter pledge",
-      "view": "Avoid",
-      "view_reasoning": "Resolves NCLT overhang but underlying business deeply lossmaking with going-concern doubts"
     },
     {
       "company": "Gujarat Raffia Industries Ltd",
@@ -147,28 +135,16 @@
       "view_reasoning": "No confirmed red-flag reason found; FY26 consolidated profit and revenue both grew"
     },
     {
-      "company": "Birla Cable Ltd",
-      "category": "Demerger, M&A & PE",
-      "subcategory": "M&A",
-      "headline": "Receipt of Observation Letters with ''no objection'' from the National Stock Exchange of India Limited and ''no adverse observations'' from BSE Limited in relation to the Scheme of Amalgamation ....",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/15a36f53-72f8-4c47-88ed-75a7625b036d.pdf",
-      "summary": "Exchanges gave 'no objection' NOCs, advancing merger into Vindhya Telelinks",
-      "impact": "Smaller entity (~\u20b9464 Cr assets) merging into larger Vindhya (~\u20b98,484 Cr assets), share-swap only",
-      "risk": "Related-party deal; swap ratio (10:115) may undervalue Birla Cable holders",
+      "company": "DMR Engineering Ltd",
+      "category": "Business Wins & Revenue Triggers",
+      "subcategory": "Award of Order / Receipt of Order",
+      "headline": "Revised intimation of receipt of letter of award",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/6cd585ec-0e74-4b19-bbc7-3e0de2c3f8b7.pdf",
+      "summary": "Revised LOA for Tarali Pumped Storage Project PMA role, correcting earlier disclosure error",
+      "impact": "~16% of FY26 standalone revenue (\u20b91.66 Cr order vs \u20b910.26 Cr FY26 standalone revenue)",
+      "risk": "This is a correction of a prior announcement, not a fresh incremental win",
       "view": "Watch",
-      "view_reasoning": "Procedural regulatory milestone confirming an already-announced related-party merger; no new terms"
-    },
-    {
-      "company": "Vindhya Telelinks Ltd",
-      "category": "Demerger, M&A & PE",
-      "subcategory": "M&A",
-      "headline": "Receipt of Observation Letters with ''no objection'' from the National Stock Exchange of India Limited and ''no adverse observations'' from BSE Limited in relation to Scheme of Amalgamation ....",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/60916ca1-2f5f-483c-b790-fc3f9d299cdd.pdf",
-      "summary": "Exchanges gave 'no objection' NOCs, advancing absorption of Birla Cable",
-      "impact": "Absorbing smaller Birla Cable (~\u20b9464 Cr assets) into ~\u20b98,484 Cr asset base via share swap",
-      "risk": "Related-party transaction; promoter stake dilutes slightly (43.5%\u219241.3%)",
-      "view": "Watch",
-      "view_reasoning": "Regulatory step forward on known merger; combines scale but promoter-group deal reduces objectivity"
+      "view_reasoning": "Small-cap with steady order inflow but low margins; correction reduces novelty of this specific filing."
     },
     {
       "company": "Source Industries (India) Ltd",
@@ -181,6 +157,78 @@
       "risk": "Auditor exits before term-end often signal information/compliance issues",
       "view": "Avoid",
       "view_reasoning": "Tiny illiquid shell-like stock (~\u20b90.3 Cr revenue), negative ROE, thin trading volume."
+    },
+    {
+      "company": "Amit International Ltd",
+      "category": "Red Flags & Governance",
+      "subcategory": "Resignation of Statutory Auditors",
+      "headline": "Intimation of Resignation of Statutory Auditor",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/11559ca0-d0e1-44d5-87c4-9f0f27b0dc4d.pdf",
+      "summary": "Statutory auditor resigned; specific reason not disclosed in filing",
+      "impact": "No deal figure; FY25 revenue only ~\u20b90.42 Cr, near-dormant operations",
+      "risk": "Abrupt auditor resignations can flag undisclosed accounting/compliance concerns",
+      "view": "Avoid",
+      "view_reasoning": "Micro-cap (~\u20b96-7 Cr mkt cap) trading at ~55x PE despite negligible revenue base; low quality."
+    },
+    {
+      "company": "Orchid Pharma Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "Revised Audited financial results for the Financial year ended March 31, 2026 pursuant to Scheme of Merger",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c592cea8-74ab-4674-abb7-8649eeefeaac.pdf",
+      "summary": "Revised FY26 financials issued after Dhanuka Laboratories merger became effective",
+      "impact": "Combined entity targets ~\u20b91,400-1,500 Cr revenue vs Orchid's standalone FY26 revenue of \u20b9811 Cr",
+      "risk": "Stock already trades at ~724x P/E, pricing in much of the merger upside",
+      "view": "Watch",
+      "view_reasoning": "Merger completion is real scale-up, but extremely high valuation already reflects optimism"
+    },
+    {
+      "company": "Kanungo Financiers Ltd",
+      "category": "Red Flags & Governance",
+      "subcategory": "Resignation of Statutory Auditors",
+      "headline": "Resignation of Statutory Auditor of the Company",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/702a9b96-6d3e-44b2-aaa9-18a89e13d65e.pdf",
+      "summary": "Statutory auditor resigned amid multiple governance upheavals",
+      "impact": "Qualitative \u2014 no deal figure; company is a small NBFC (quarterly income in the \u20b90.4-0.5 Cr range)",
+      "risk": "Named noticee (No. 222 of 226) in a SEBI final order on Mauria Udyog price manipulation case; recent MD/CFO, CS and independent-director exits",
+      "view": "Avoid",
+      "view_reasoning": "Auditor exit adds to a pattern: SEBI market-manipulation order, MD/CFO resignation, and repeated board-meeting adjournments \u2014 high governance risk."
+    },
+    {
+      "company": "GACM Technologies Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "PE / Fundraising",
+      "headline": "The Fund Raising Committee, at its meeting held on 14 August 2026, approved the closure of the Qualified Institutional Placement (QIP) Issue upon completion of the requisite subscription ....",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/9f9f9f4e-b8ea-4660-b40d-2d458f9ceef0.pdf",
+      "summary": "QIP closed, raising ~\u20b949.5 Cr at \u20b91/share, 49% above floor price",
+      "impact": "~226% of FY26 revenue (\u20b949.5 Cr raise vs \u20b921.87 Cr FY26 revenue)",
+      "risk": "Stock already up 56% in a month; penny-stock volatility and pump risk",
+      "view": "Watch",
+      "view_reasoning": "Premium QIP pricing and 108% PAT growth are bullish, but sharp pre-rally makes entry timing risky"
+    },
+    {
+      "company": "Newtime Infrastructure Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "PE / Fundraising",
+      "headline": "On receipt of in-principle approval, the company has allotted the equity upon the conversion of 10% CCPS, the details of which are attached to the PDF.",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/9f8763af-e65e-4cad-8152-38c8ce0821a0.pdf",
+      "summary": "Allotted equity on conversion of 10% CCPS after in-principle approval",
+      "impact": "Paid-up capital rises from ~\u20b958.43 Cr to ~\u20b978.03 Cr (~34% increase) via conversion to two entities, MGR Investment and Atambhu Buildwell",
+      "risk": "Company reported a consolidated net loss and falling revenue this year; dilution/promoter-concentration risk",
+      "view": "Watch",
+      "view_reasoning": "Sizeable capital structure change to a small number of allottees at a loss-making, revenue-declining real estate/hospitality firm."
+    },
+    {
+      "company": "Jupiter Infomedia Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "Demerger",
+      "headline": "Declaration of the proposed scheme of Arrangement",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/11d5b483-3ea7-491a-ab3d-6ec5e0ceb488.pdf",
+      "summary": "Board declared a proposed scheme of arrangement, details not yet disclosed",
+      "impact": "Not stated \u2014 headline lacks scheme structure/value; tiny company (~\u20b950-60 Cr mkt cap)",
+      "risk": "Scheme details unclear; company already mid-restructuring post promoter change",
+      "view": "Watch",
+      "view_reasoning": "Follows recent Arix Capital takeover and Netlink open offer; too vague to call directionally yet"
     },
     {
       "company": "Popees Baby Care India Ltd",
@@ -207,52 +255,76 @@
       "view_reasoning": "Micro-cap posted FY26 net loss of \u20b937.62 lakh amid serial KMP/auditor churn post takeover."
     },
     {
-      "company": "Amit International Ltd",
-      "category": "Red Flags & Governance",
-      "subcategory": "Resignation of Statutory Auditors",
-      "headline": "Intimation of Resignation of Statutory Auditor",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/11559ca0-d0e1-44d5-87c4-9f0f27b0dc4d.pdf",
-      "summary": "Statutory auditor resigned; specific reason not disclosed in filing",
-      "impact": "No deal figure; FY25 revenue only ~\u20b90.42 Cr, near-dormant operations",
-      "risk": "Abrupt auditor resignations can flag undisclosed accounting/compliance concerns",
-      "view": "Avoid",
-      "view_reasoning": "Micro-cap (~\u20b96-7 Cr mkt cap) trading at ~55x PE despite negligible revenue base; low quality."
-    },
-    {
-      "company": "Jupiter Infomedia Ltd",
-      "category": "Demerger, M&A & PE",
-      "subcategory": "Demerger",
-      "headline": "Declaration of the proposed scheme of Arrangement",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/11d5b483-3ea7-491a-ab3d-6ec5e0ceb488.pdf",
-      "summary": "Board declared a proposed scheme of arrangement, details not yet disclosed",
-      "impact": "Not stated \u2014 headline lacks scheme structure/value; tiny company (~\u20b950-60 Cr mkt cap)",
-      "risk": "Scheme details unclear; company already mid-restructuring post promoter change",
-      "view": "Watch",
-      "view_reasoning": "Follows recent Arix Capital takeover and Netlink open offer; too vague to call directionally yet"
-    },
-    {
-      "company": "GACM Technologies Ltd",
-      "category": "Demerger, M&A & PE",
-      "subcategory": "PE / Fundraising",
-      "headline": "The Fund Raising Committee, at its meeting held on 14 August 2026, approved the closure of the Qualified Institutional Placement (QIP) Issue upon completion of the requisite subscription ....",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/9f9f9f4e-b8ea-4660-b40d-2d458f9ceef0.pdf",
-      "summary": "QIP closed, raising ~\u20b949.5 Cr at \u20b91/share, 49% above floor price",
-      "impact": "~226% of FY26 revenue (\u20b949.5 Cr raise vs \u20b921.87 Cr FY26 revenue)",
-      "risk": "Stock already up 56% in a month; penny-stock volatility and pump risk",
-      "view": "Watch",
-      "view_reasoning": "Premium QIP pricing and 108% PAT growth are bullish, but sharp pre-rally makes entry timing risky"
-    },
-    {
-      "company": "Orchid Pharma Ltd",
+      "company": "Physicswallah Ltd",
       "category": "Demerger, M&A & PE",
       "subcategory": "M&A",
-      "headline": "Revised Audited financial results for the Financial year ended March 31, 2026 pursuant to Scheme of Merger",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c592cea8-74ab-4674-abb7-8649eeefeaac.pdf",
-      "summary": "Revised FY26 financials issued after Dhanuka Laboratories merger became effective",
-      "impact": "Combined entity targets ~\u20b91,400-1,500 Cr revenue vs Orchid's standalone FY26 revenue of \u20b9811 Cr",
-      "risk": "Stock already trades at ~724x P/E, pricing in much of the merger upside",
+      "headline": "Physicswallah Limited has informed the exchange regarding Acquisition",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/1b39b02d-3044-4fd9-a4c3-edc1bf750836.pdf",
+      "summary": "Board approved reacquiring residual 10% stake in subsidiary BIGPL",
+      "impact": "Not material \u2014 deal reportedly involves no cash consideration, reversing a Feb-2026 stake sale to NSDC International",
+      "risk": "Headline vague; unclear if this refers to a larger pending deal instead",
       "view": "Watch",
-      "view_reasoning": "Merger completion is real scale-up, but extremely high valuation already reflects optimism"
+      "view_reasoning": "PhysicsWallah trades at high growth multiples (FY26 revenue ~\u20b93,900 Cr, near-breakeven); this specific filing looks immaterial."
+    },
+    {
+      "company": "Birla Cable Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "Receipt of Observation Letters with ''no objection'' from the National Stock Exchange of India Limited and ''no adverse observations'' from BSE Limited in relation to the Scheme of Amalgamation ....",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/15a36f53-72f8-4c47-88ed-75a7625b036d.pdf",
+      "summary": "Exchanges gave 'no objection' NOCs, advancing merger into Vindhya Telelinks",
+      "impact": "Smaller entity (~\u20b9464 Cr assets) merging into larger Vindhya (~\u20b98,484 Cr assets), share-swap only",
+      "risk": "Related-party deal; swap ratio (10:115) may undervalue Birla Cable holders",
+      "view": "Watch",
+      "view_reasoning": "Procedural regulatory milestone confirming an already-announced related-party merger; no new terms"
+    },
+    {
+      "company": "Vindhya Telelinks Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "Receipt of Observation Letters with ''no objection'' from the National Stock Exchange of India Limited and ''no adverse observations'' from BSE Limited in relation to Scheme of Amalgamation ....",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/60916ca1-2f5f-483c-b790-fc3f9d299cdd.pdf",
+      "summary": "Exchanges gave 'no objection' NOCs, advancing absorption of Birla Cable",
+      "impact": "Absorbing smaller Birla Cable (~\u20b9464 Cr assets) into ~\u20b98,484 Cr asset base via share swap",
+      "risk": "Related-party transaction; promoter stake dilutes slightly (43.5%\u219241.3%)",
+      "view": "Watch",
+      "view_reasoning": "Regulatory step forward on known merger; combines scale but promoter-group deal reduces objectivity"
+    },
+    {
+      "company": "Vellora Impact Ltd",
+      "category": "Red Flags & Governance",
+      "subcategory": "Change in Management",
+      "headline": "Intimation of Resignation of Statutory Auditor M/s Chandabhoy & Jassoobhoy, Chartered Accountant of the company w.e.f 14th August, 2026.",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/3604f8d1-9407-4017-a0e7-2ed97a13aee6.pdf",
+      "summary": "Statutory auditor Chandabhoy & Jassoobhoy resigned effective 14 Aug 2026",
+      "impact": "Qualitative governance concern, no deal figure involved",
+      "risk": "Resignation follows a qualified audit opinion just issued on Q1FY27 results",
+      "view": "Avoid",
+      "view_reasoning": "Auditor quit right after flagging a qualified opinion on gratuity/leave accounting during a huge, agri-driven revenue jump post business pivot."
+    },
+    {
+      "company": "Apollo Micro Systems Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "AMS Update on acquisition",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/60104f9c-798a-4a78-b1fd-8c8cbb6e511a.pdf",
+      "summary": "Update on ~\u20b91,550 Cr all-cash acquisition of 41.33% stake in Premier Explosives",
+      "impact": "~171% of FY26 revenue (\u20b91,550 Cr deal vs \u20b9904.3 Cr FY26 consolidated revenue); also triggers mandatory open offer for additional 26%",
+      "risk": "Heavy equity dilution (11%+ share increase, \u20b93,322 Cr preferential issue) and stretched valuation",
+      "view": "Watch",
+      "view_reasoning": "Transformative defence-sector deal and revenue doubling, but stock trades at ~140-150x PE, already pricing in growth"
+    },
+    {
+      "company": "Digjam Ltd",
+      "category": "Distress / Insolvency",
+      "subcategory": "Court Convened Meeting",
+      "headline": "Digjam Limited has informed the Exchange regarding Proceedings of NCLT Convened General Meeting held on August 16, 2026",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/65692a43-3679-448a-a939-4708af21cd9f.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null,
+      "view": null,
+      "view_reasoning": null
     },
     {
       "company": "Ajanta Pharma Ltd",
@@ -291,6 +363,30 @@
       "view_reasoning": null
     },
     {
+      "company": "Anuroop Packaging Ltd",
+      "category": "Red Flags & Governance",
+      "subcategory": "Resignation of Statutory Auditors",
+      "headline": "Pursuant to Reg  30 of SEBI (LODR)Regulation 2015, Resignation of Statutory Auditor Banka & Banka Chartered Accountants from Listed company i.e Anuroop Packaging Limited as well its Material ....",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/d4cfc4cc-9927-447d-8869-f2fb22c5db1f.pdf",
+      "summary": "Statutory auditor resigned from company and its material subsidiary",
+      "impact": "Not stated (no deal value); qualitative governance red flag for a micro-cap (~\u20b915-16 Cr market cap)",
+      "risk": "No reason disclosed; auditor exits at both listed entity and subsidiary simultaneously",
+      "view": "Avoid",
+      "view_reasoning": "Simultaneous auditor exit at parent and material subsidiary, undisclosed reason, extreme micro-cap illiquidity."
+    },
+    {
+      "company": "Aster DM Quality Care Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "M&A",
+      "headline": "Intimation regarding receipt of trading approval for equity shares allotted in terms of Scheme of Amalgamation",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/9baa4654-a6ff-4a52-9ef6-433558d86914.pdf",
+      "summary": "Trading approval received for 35.35 crore shares from Quality Care India merger",
+      "impact": "Completes India's largest hospital-sector merger; combined FY26 revenue ~\u20b99,273 Cr vs Aster standalone ~\u20b94,138 Cr (FY25), roughly doubling revenue base.",
+      "risk": "Integration execution risk; stock trades rich at ~9.3x book with ROE near 7%",
+      "view": "Watch",
+      "view_reasoning": "Strong revenue/EBITDA growth and scale post-merger, but valuation already reflects optimism at ~\u20b971,682 Cr market cap."
+    },
+    {
       "company": "iSERA Lifesciences Ltd",
       "category": "Demerger, M&A & PE",
       "subcategory": "PE / Fundraising",
@@ -315,54 +411,6 @@
       "view_reasoning": null
     },
     {
-      "company": "Physicswallah Ltd",
-      "category": "Demerger, M&A & PE",
-      "subcategory": "M&A",
-      "headline": "Physicswallah Limited has informed the exchange regarding Acquisition",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/1b39b02d-3044-4fd9-a4c3-edc1bf750836.pdf",
-      "summary": "Board approved reacquiring residual 10% stake in subsidiary BIGPL",
-      "impact": "Not material \u2014 deal reportedly involves no cash consideration, reversing a Feb-2026 stake sale to NSDC International",
-      "risk": "Headline vague; unclear if this refers to a larger pending deal instead",
-      "view": "Watch",
-      "view_reasoning": "PhysicsWallah trades at high growth multiples (FY26 revenue ~\u20b93,900 Cr, near-breakeven); this specific filing looks immaterial."
-    },
-    {
-      "company": "Vellora Impact Ltd",
-      "category": "Red Flags & Governance",
-      "subcategory": "Change in Management",
-      "headline": "Intimation of Resignation of Statutory Auditor M/s Chandabhoy & Jassoobhoy, Chartered Accountant of the company w.e.f 14th August, 2026.",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/3604f8d1-9407-4017-a0e7-2ed97a13aee6.pdf",
-      "summary": "Statutory auditor Chandabhoy & Jassoobhoy resigned effective 14 Aug 2026",
-      "impact": "Qualitative governance concern, no deal figure involved",
-      "risk": "Resignation follows a qualified audit opinion just issued on Q1FY27 results",
-      "view": "Avoid",
-      "view_reasoning": "Auditor quit right after flagging a qualified opinion on gratuity/leave accounting during a huge, agri-driven revenue jump post business pivot."
-    },
-    {
-      "company": "Newtime Infrastructure Ltd",
-      "category": "Demerger, M&A & PE",
-      "subcategory": "PE / Fundraising",
-      "headline": "On receipt of in-principle approval, the company has allotted the equity upon the conversion of 10% CCPS, the details of which are attached to the PDF.",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/9f8763af-e65e-4cad-8152-38c8ce0821a0.pdf",
-      "summary": "Allotted equity on conversion of 10% CCPS after in-principle approval",
-      "impact": "Paid-up capital rises from ~\u20b958.43 Cr to ~\u20b978.03 Cr (~34% increase) via conversion to two entities, MGR Investment and Atambhu Buildwell",
-      "risk": "Company reported a consolidated net loss and falling revenue this year; dilution/promoter-concentration risk",
-      "view": "Watch",
-      "view_reasoning": "Sizeable capital structure change to a small number of allottees at a loss-making, revenue-declining real estate/hospitality firm."
-    },
-    {
-      "company": "Kanungo Financiers Ltd",
-      "category": "Red Flags & Governance",
-      "subcategory": "Resignation of Statutory Auditors",
-      "headline": "Resignation of Statutory Auditor of the Company",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/702a9b96-6d3e-44b2-aaa9-18a89e13d65e.pdf",
-      "summary": "Statutory auditor resigned amid multiple governance upheavals",
-      "impact": "Qualitative \u2014 no deal figure; company is a small NBFC (quarterly income in the \u20b90.4-0.5 Cr range)",
-      "risk": "Named noticee (No. 222 of 226) in a SEBI final order on Mauria Udyog price manipulation case; recent MD/CFO, CS and independent-director exits",
-      "view": "Avoid",
-      "view_reasoning": "Auditor exit adds to a pattern: SEBI market-manipulation order, MD/CFO resignation, and repeated board-meeting adjournments \u2014 high governance risk."
-    },
-    {
       "company": "Afcom Holdings Ltd",
       "category": "Demerger, M&A & PE",
       "subcategory": "PE / Fundraising",
@@ -375,23 +423,11 @@
       "view_reasoning": null
     },
     {
-      "company": "Anuroop Packaging Ltd",
+      "company": "LCC Infotech Ltd",
       "category": "Red Flags & Governance",
       "subcategory": "Resignation of Statutory Auditors",
-      "headline": "Pursuant to Reg  30 of SEBI (LODR)Regulation 2015, Resignation of Statutory Auditor Banka & Banka Chartered Accountants from Listed company i.e Anuroop Packaging Limited as well its Material ....",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/d4cfc4cc-9927-447d-8869-f2fb22c5db1f.pdf",
-      "summary": null,
-      "impact": null,
-      "risk": null,
-      "view": null,
-      "view_reasoning": null
-    },
-    {
-      "company": "Aster DM Quality Care Ltd",
-      "category": "Demerger, M&A & PE",
-      "subcategory": "M&A",
-      "headline": "Intimation regarding receipt of trading approval for equity shares allotted in terms of Scheme of Amalgamation",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/9baa4654-a6ff-4a52-9ef6-433558d86914.pdf",
+      "headline": "Resignation of Statutory Auditor",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/a0a1ec8f-421f-4016-9e3a-5477f70fab41.pdf",
       "summary": null,
       "impact": null,
       "risk": null,
@@ -416,18 +452,6 @@
       "subcategory": "Resignation of Statutory Auditors",
       "headline": "Resignation of Statutory Auditor of the Company",
       "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/46b14136-bcb3-462e-80f8-27fb6dfac007.pdf",
-      "summary": null,
-      "impact": null,
-      "risk": null,
-      "view": null,
-      "view_reasoning": null
-    },
-    {
-      "company": "LCC Infotech Ltd",
-      "category": "Red Flags & Governance",
-      "subcategory": "Resignation of Statutory Auditors",
-      "headline": "Resignation of Statutory Auditor",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/a0a1ec8f-421f-4016-9e3a-5477f70fab41.pdf",
       "summary": null,
       "impact": null,
       "risk": null,
@@ -471,18 +495,6 @@
       "view_reasoning": null
     },
     {
-      "company": "Maximus International Ltd",
-      "category": "Red Flags & Governance",
-      "subcategory": "Resignation of Statutory Auditors",
-      "headline": "Disclosure under regulation 30 of SEBI (Listing Obligation and Disclosure Requirements),2015 for Resignation of Statutory Auditor of the Company.",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/b8485011-b1ab-4a8a-a948-f6c4f6b5031a.pdf",
-      "summary": null,
-      "impact": null,
-      "risk": null,
-      "view": null,
-      "view_reasoning": null
-    },
-    {
       "company": "Spandana Sphoorty Financial Ltd",
       "category": "Demerger, M&A & PE",
       "subcategory": "Demerger",
@@ -519,35 +531,11 @@
       "view_reasoning": null
     },
     {
-      "company": "DMR Engineering Ltd",
-      "category": "Business Wins & Revenue Triggers",
-      "subcategory": "Award of Order / Receipt of Order",
-      "headline": "Intimation of receipt of letter of award",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/d3a81b8b-47e3-4924-9345-995741ab2904.pdf",
-      "summary": null,
-      "impact": null,
-      "risk": null,
-      "view": null,
-      "view_reasoning": null
-    },
-    {
-      "company": "Greaves Cotton Ltd",
-      "category": "Demerger, M&A & PE",
-      "subcategory": "M&A",
-      "headline": "Please find attached herewith intimation in relation to further acquisition in Excel Controlinkage Private Limited (\"Excel\"), material subsidiary of the Company. Excel has become a wholly ....",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/928cbaeb-6fe9-4022-84b0-d9694f095462.pdf",
-      "summary": null,
-      "impact": null,
-      "risk": null,
-      "view": null,
-      "view_reasoning": null
-    },
-    {
-      "company": "Prakash Pipes Ltd",
-      "category": "Capacity & Capex",
-      "subcategory": "General",
-      "headline": "Capacity expansion in Flexible Packaging Division at Kashipur, involving a Capital expenditure of around Rs. 100 Crores",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/52320d50-d00a-4b2f-bc29-3f89b59103a4.pdf",
+      "company": "Maximus International Ltd",
+      "category": "Red Flags & Governance",
+      "subcategory": "Resignation of Statutory Auditors",
+      "headline": "Disclosure under regulation 30 of SEBI (Listing Obligation and Disclosure Requirements),2015 for Resignation of Statutory Auditor of the Company.",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/b8485011-b1ab-4a8a-a948-f6c4f6b5031a.pdf",
       "summary": null,
       "impact": null,
       "risk": null,
@@ -567,11 +555,23 @@
       "view_reasoning": null
     },
     {
-      "company": "Hi-Tech Pipes Ltd",
+      "company": "DMR Engineering Ltd",
+      "category": "Business Wins & Revenue Triggers",
+      "subcategory": "Award of Order / Receipt of Order",
+      "headline": "Intimation of receipt of letter of award",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/d3a81b8b-47e3-4924-9345-995741ab2904.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null,
+      "view": null,
+      "view_reasoning": null
+    },
+    {
+      "company": "Greaves Cotton Ltd",
       "category": "Demerger, M&A & PE",
-      "subcategory": "PE / Fundraising",
-      "headline": "Monitoring Agency Report w.r.t. the utilization of Qualified Institutional Placement (\"QIP\") proceeds for the Quarter ended June 30, 2026",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/1ac1be4a-68d2-45c6-9b09-f248ccde6647.pdf",
+      "subcategory": "M&A",
+      "headline": "Please find attached herewith intimation in relation to further acquisition in Excel Controlinkage Private Limited (\"Excel\"), material subsidiary of the Company. Excel has become a wholly ....",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/928cbaeb-6fe9-4022-84b0-d9694f095462.pdf",
       "summary": null,
       "impact": null,
       "risk": null,
@@ -639,6 +639,30 @@
       "view_reasoning": null
     },
     {
+      "company": "Prakash Pipes Ltd",
+      "category": "Capacity & Capex",
+      "subcategory": "General",
+      "headline": "Capacity expansion in Flexible Packaging Division at Kashipur, involving a Capital expenditure of around Rs. 100 Crores",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/52320d50-d00a-4b2f-bc29-3f89b59103a4.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null,
+      "view": null,
+      "view_reasoning": null
+    },
+    {
+      "company": "Hi-Tech Pipes Ltd",
+      "category": "Demerger, M&A & PE",
+      "subcategory": "PE / Fundraising",
+      "headline": "Monitoring Agency Report w.r.t. the utilization of Qualified Institutional Placement (\"QIP\") proceeds for the Quarter ended June 30, 2026",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/1ac1be4a-68d2-45c6-9b09-f248ccde6647.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null,
+      "view": null,
+      "view_reasoning": null
+    },
+    {
       "company": "Digispice Technologies Ltd-$",
       "category": "Distress / Insolvency",
       "subcategory": "Newspaper Publication",
@@ -663,11 +687,11 @@
       "view_reasoning": null
     },
     {
-      "company": "KMC Speciality Hospitals (India) Ltd",
-      "category": "Capacity & Capex",
-      "subcategory": "General",
-      "headline": "Intimation under Regulation 30 of SEBI (LODR) Regulations, 2015: (i) Intimation of approval of new capacity expansion/ hospital projects at Trichy and Bengaluru; & \r\n(ii) Appointment of Cost Auditor",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/bbb93407-568e-4964-b419-320d48089cf6.pdf",
+      "company": "GTT Data Solutions Ltd",
+      "category": "Red Flags & Governance",
+      "subcategory": "Resignation of Statutory Auditors",
+      "headline": "Disclosure for resignation of Statutory Auditor",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/f2fbc531-8af6-446f-a8d7-f230ac4ec498.pdf",
       "summary": null,
       "impact": null,
       "risk": null,
@@ -687,11 +711,11 @@
       "view_reasoning": null
     },
     {
-      "company": "GTT Data Solutions Ltd",
-      "category": "Red Flags & Governance",
-      "subcategory": "Resignation of Statutory Auditors",
-      "headline": "Disclosure for resignation of Statutory Auditor",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/f2fbc531-8af6-446f-a8d7-f230ac4ec498.pdf",
+      "company": "KMC Speciality Hospitals (India) Ltd",
+      "category": "Capacity & Capex",
+      "subcategory": "General",
+      "headline": "Intimation under Regulation 30 of SEBI (LODR) Regulations, 2015: (i) Intimation of approval of new capacity expansion/ hospital projects at Trichy and Bengaluru; & \r\n(ii) Appointment of Cost Auditor",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/bbb93407-568e-4964-b419-320d48089cf6.pdf",
       "summary": null,
       "impact": null,
       "risk": null,
@@ -710,7 +734,7 @@
       "pct_of_day1": 54.063989108236896,
       "pct_of_issue": 38.18269230769231,
       "view": "Watch",
-      "view_reasoning": "Listing crash was broad market/geopolitical, but continued fall is stock-specific: Q4 revenue -48% QoQ; price now near analyst fair value ~\u20b938-40."
+      "view_reasoning": "Listed amid broad market crash; profit and margins growing, debt falling, but heavy fund selling post-listing continues to pressure price."
     },
     {
       "company": "AASTHA SPINTEX LIMITED",
@@ -722,7 +746,7 @@
       "pct_of_day1": 54.503481128618546,
       "pct_of_issue": 54.68382352941177,
       "view": "Watch",
-      "view_reasoning": "Q4 revenue/profit fell sharply QoQ and an anchor investor sold shares near \u20b9116; bonus issue and strong Falcon order book offer partial support."
+      "view_reasoning": "FY26 revenue up 26%, but Q4 profit fell 37% QoQ; Telegram rumours and heavy early-investor selling add company-specific volatility."
     },
     {
       "company": "ALPINE TEXWORLD LIMITED",
@@ -733,8 +757,8 @@
       "current_price": 58.6,
       "pct_of_day1": 58.7468671679198,
       "pct_of_issue": 55.80952380952381,
-      "view": "Avoid",
-      "view_reasoning": "Company-specific: CRISIL downgraded credit rating to junk 'BB (Issuer Not Cooperating)' pre-IPO, high 2.35x debt-equity, customer/geographic concentration."
+      "view": "Watch",
+      "view_reasoning": "Flat listing then lower circuit from profit-booking, not a specific scandal; cheap P/E but known debt and client-concentration risks persist."
     }
   ]
 }
