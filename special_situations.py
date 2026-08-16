@@ -352,6 +352,8 @@ def enrich_candidates(candidates, max_items=5):
             },
             timeout=180,
         )
+        if not response.ok:
+            print(f"  [special_situations] Anthropic API {response.status_code}: {response.text[:1000]}")
         response.raise_for_status()
         data = response.json()
         # Web search interleaves search-result blocks between text blocks, so

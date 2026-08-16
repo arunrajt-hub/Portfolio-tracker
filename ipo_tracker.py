@@ -167,6 +167,8 @@ def enrich_fallen_ipos(fallen):
             },
             timeout=180,
         )
+        if not response.ok:
+            print(f"  [ipo_tracker] Anthropic API {response.status_code}: {response.text[:1000]}")
         response.raise_for_status()
         data = response.json()
         # Web search interleaves search-result blocks between text blocks, so
