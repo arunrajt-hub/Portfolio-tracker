@@ -407,6 +407,6 @@ def enrich_candidates(candidates, max_items=5):
     return results + _unenriched(unmatched) + _unenriched(overflow)
 
 
-def fetch_all_special_situations(days_back=1):
+def fetch_all_special_situations(days_back=1, max_enrich=5):
     candidates = find_special_situations(days_back=days_back)
-    return enrich_candidates(candidates)
+    return enrich_candidates(candidates, max_items=max_enrich)

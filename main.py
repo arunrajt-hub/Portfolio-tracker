@@ -75,8 +75,9 @@ def build_fallen_ipos_message(fallen):
 
 def main():
     days_back = int(os.environ.get("SPECIAL_SITUATIONS_DAYS_BACK", "1"))
-    print(f"Scanning market-wide special situations (last {days_back} day(s))...")
-    situations = fetch_all_special_situations(days_back=days_back)
+    max_enrich = int(os.environ.get("SPECIAL_SITUATIONS_MAX_ENRICH", "5"))
+    print(f"Scanning market-wide special situations (last {days_back} day(s), enriching up to {max_enrich})...")
+    situations = fetch_all_special_situations(days_back=days_back, max_enrich=max_enrich)
 
     print("Checking recent IPOs for post-listing crashes...")
     fallen_ipos = find_fallen_ipos()

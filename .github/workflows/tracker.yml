@@ -9,6 +9,10 @@ on:
         description: "Special situations lookback window (days). Leave as 1 for normal daily runs."
         required: false
         default: "1"
+      special_situations_max_enrich:
+        description: "Max special situations to send through AI enrichment (summary/impact/view). Leave as 5 for normal daily runs — raise it for a one-off wide pull (e.g. with a 30-day lookback), but higher = slower + more Anthropic API cost."
+        required: false
+        default: "5"
 
 permissions:
   contents: write
@@ -36,6 +40,7 @@ jobs:
           EMAIL_TO: ${{ secrets.EMAIL_TO }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           SPECIAL_SITUATIONS_DAYS_BACK: ${{ github.event.inputs.special_situations_days_back || '1' }}
+          SPECIAL_SITUATIONS_MAX_ENRICH: ${{ github.event.inputs.special_situations_max_enrich || '5' }}
         run: python main.py
 
       - name: Commit dashboard data
