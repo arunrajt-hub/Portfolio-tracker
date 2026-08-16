@@ -1,25 +1,13 @@
 {
   "date": "2026-08-16",
-  "generated_at": "2026-08-16T10:51:19.147189",
+  "generated_at": "2026-08-16T10:55:37.541605",
   "special_situations": [
     {
-      "company": "Hazoor Multi Projects Ltd-$",
+      "company": "DMR Engineering Ltd",
       "category": "Business Wins & Revenue Triggers",
       "subcategory": "Award of Order / Receipt of Order",
-      "headline": "We are pleased to inform you that the Company has been Awarded the Letter of award from the National Highways Authority of India (NHAI) at Madangundi Fee Plaza.",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/de7a4232-4c4d-40ff-86c7-f6b901aefc3a.pdf",
-      "summary": null,
-      "impact": null,
-      "risk": null,
-      "view": null,
-      "view_reasoning": null
-    },
-    {
-      "company": "Refex Renewables & Infrastructure Ltd",
-      "category": "Distress / Insolvency",
-      "subcategory": "General",
-      "headline": "Full and Final Settlement w.r.t. Insolvency petition filed against Sherisha Solar LLP and completion of internal restructuring.",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/0e7634f4-71bc-4694-b6b2-6030260bf478.pdf",
+      "headline": "Revised intimation of receipt of letter of award",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/6cd585ec-0e74-4b19-bbc7-3e0de2c3f8b7.pdf",
       "summary": null,
       "impact": null,
       "risk": null,
@@ -51,11 +39,23 @@
       "view_reasoning": null
     },
     {
-      "company": "DMR Engineering Ltd",
+      "company": "Hazoor Multi Projects Ltd-$",
       "category": "Business Wins & Revenue Triggers",
       "subcategory": "Award of Order / Receipt of Order",
-      "headline": "Revised intimation of receipt of letter of award",
-      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/6cd585ec-0e74-4b19-bbc7-3e0de2c3f8b7.pdf",
+      "headline": "We are pleased to inform you that the Company has been Awarded the Letter of award from the National Highways Authority of India (NHAI) at Madangundi Fee Plaza.",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/de7a4232-4c4d-40ff-86c7-f6b901aefc3a.pdf",
+      "summary": null,
+      "impact": null,
+      "risk": null,
+      "view": null,
+      "view_reasoning": null
+    },
+    {
+      "company": "Refex Renewables & Infrastructure Ltd",
+      "category": "Distress / Insolvency",
+      "subcategory": "General",
+      "headline": "Full and Final Settlement w.r.t. Insolvency petition filed against Sherisha Solar LLP and completion of internal restructuring.",
+      "link": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/0e7634f4-71bc-4694-b6b2-6030260bf478.pdf",
       "summary": null,
       "impact": null,
       "risk": null,
