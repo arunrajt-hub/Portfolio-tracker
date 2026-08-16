@@ -5,20 +5,9 @@ from config import COMPANIES
 from news_fetcher import fetch_all_news
 from quarterly_results import fetch_all_quarterly_results
 from youtube_fetcher import fetch_all_earnings_calls, fetch_all_trendlyne_calls
-from price_fetcher import fetch_prices, format_price_table
+from special_situations import fetch_all_special_situations
 from whatsapp_sender import send_in_chunks
 from datetime import datetime
-
-
-def build_price_message(prices):
-    now = datetime.now().strftime("%d %b %Y, %I:%M %p")
-    lines = [
-        f"💹 *PORTFOLIO PRICES*",
-        f"_{now} IST_",
-        "━━━━━━━━━━━━━━━━━━━━",
-        format_price_table(prices),
-    ]
-    return "\n".join(lines)
 
 
 def build_news_message(news):
@@ -88,10 +77,36 @@ def build_quarterly_message(news, quarterly, earnings, trendlyne=None):
     return "\n".join(lines)
 
 
-def main():
-    print("Fetching market prices...")
-    prices = fetch_prices()
+def build_special_situations_message(situations):
+    now = datetime.now().strftime("%d %b %Y")
+    lines = [
+        f"🎯 *SPECIAL SITUATIONS — {now}*",
+        "_Market-wide, not limited to your watchlist_",
+        "━━━━━━━━━━━━━━━━━━━━",
+    ]
+    if not situations:
+        lines.append("\nNo special-situation events flagged today.")
+        return "\n".join(lines)
 
+    by_category = {}
+    for s in situations:
+        by_category.setdefault(s["category"], []).append(s)
+
+    for category, items in by_category.items():
+        lines.append(f"\n*{category}*")
+        for s in items:
+            lines.append(f"\n🏢 *{s['company']}*")
+            lines.append(f"• {s.get('summary') or s['headline']}")
+            if s.get("impact"):
+                lines.append(f"  💰 {s['impact']}")
+            if s.get("risk"):
+                lines.append(f"  ⚠️ {s['risk']}")
+            lines.append(f"  {s['link']}")
+
+    return "\n".join(lines)
+
+
+def main():
     print("Fetching news...")
     news = fetch_all_news(COMPANIES)
 
@@ -104,14 +119,17 @@ def main():
     print("Fetching Trendlyne earnings transcripts...")
     trendlyne = fetch_all_trendlyne_calls(COMPANIES)
 
-    msg1 = build_price_message(prices)
+    print("Scanning market-wide special situations...")
+    situations = fetch_all_special_situations()
+
     msg2 = build_news_message(news)
     msg3 = build_quarterly_message(news, quarterly, earnings, trendlyne)
+    msg4 = build_special_situations_message(situations)
 
     print("\n--- Sending 3 messages ---")
-    send_in_chunks(msg1)
     send_in_chunks(msg2)
     send_in_chunks(msg3)
+    send_in_chunks(msg4)
     print("Done.")
 
 

@@ -22,6 +22,7 @@ Go to your repo → Settings → Secrets and variables → Actions → New repos
 | `WHAPI_TOKEN` | Your WHAPI bearer token |
 | `WHAPI_URL` | e.g. `https://gate.whapi.cloud` |
 | `WHATSAPP_NUMBER` | e.g. `919500055366` |
+| `ANTHROPIC_API_KEY` | Your Anthropic API key — powers the special-situations summary/impact enrichment (`special_situations.py`). Optional: without it, that message still sends but with raw headlines and no impact/risk lines. |
 
 The tracker will now run automatically every day at 8:00 PM IST.
 You can also trigger it manually from Actions → Portfolio News Tracker → Run workflow.
