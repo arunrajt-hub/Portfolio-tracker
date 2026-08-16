@@ -1,8 +1,9 @@
 import json
+import math
 import os
 import re
-import time
 import requests
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timedelta
 
 from news_fetcher import EXCLUDE_KEYWORDS, strip_html
@@ -96,55 +97,72 @@ def classify(headline):
     return None
 
 
-def _fetch_category(category, from_date, to_date):
-    items = []
-    for pageno in range(1, MAX_PAGES_PER_CATEGORY + 1):
-        params = {
-            "pageno": pageno,
-            "strCat": category,
-            "strPrevDate": from_date,
-            "strScrip": "",
-            "strSearch": "P",
-            "strToDate": to_date,
-            "strType": "C",
-            "subcategory": "-1",
-        }
-        response = None
-        try:
-            response = requests.get(BSE_API_URL, params=params, headers=HEADERS, timeout=15)
-            data = response.json()
-            page_items = data.get("Table", [])
-        except Exception as e:
-            print(f"  [special_situations] '{category}' page {pageno} request failed: {e}")
-            if response is not None:
-                print(f"  [special_situations] status={response.status_code} body[:300]={response.text[:300]!r}")
-            break
-
-        if not page_items:
-            break
-        items.extend(page_items)
-        if len(page_items) < PAGE_SIZE:
-            break
-        if pageno == MAX_PAGES_PER_CATEGORY:
-            print(f"  [special_situations] '{category}' hit the {MAX_PAGES_PER_CATEGORY}-page safety cap, more may exist")
-        time.sleep(0.2)
-
-    print(f"  [special_situations] '{category}': {len(items)} announcements")
-    return items
+def _fetch_page(category, pageno, from_date, to_date):
+    params = {
+        "pageno": pageno,
+        "strCat": category,
+        "strPrevDate": from_date,
+        "strScrip": "",
+        "strSearch": "P",
+        "strToDate": to_date,
+        "strType": "C",
+        "subcategory": "-1",
+    }
+    response = None
+    try:
+        response = requests.get(BSE_API_URL, params=params, headers=HEADERS, timeout=20)
+        data = response.json()
+        return data.get("Table", []), data.get("Table1", [{}])
+    except Exception as e:
+        print(f"  [special_situations] '{category}' page {pageno} request failed: {e}")
+        if response is not None:
+            print(f"  [special_situations] status={response.status_code} body[:300]={response.text[:300]!r}")
+        return [], None
 
 
-def fetch_market_announcements(days_back=1):
+def fetch_market_announcements(days_back=1, max_workers=10):
     """Market-wide (no scrip filter) BSE announcement query, one call per
     relevant category — confirmed live: strCat must be the literal category
     name (e.g. "Corp. Action"), not "-1"/numeric, when strScrip is blank.
+
+    Page 1 of each category reports the true row count (Table1[0].ROWCNT),
+    so remaining pages are fetched concurrently instead of one-by-one —
+    sequential pagination made "Company Update" alone (~70+ pages/day) take
+    several minutes.
     """
     today = datetime.now()
     from_date = (today - timedelta(days=days_back)).strftime("%Y%m%d")
     to_date = today.strftime("%Y%m%d")
 
     announcements = []
+    remaining_page_tasks = []  # (category, pageno)
+
     for category in MARKET_WIDE_CATEGORIES:
-        announcements.extend(_fetch_category(category, from_date, to_date))
+        page1_items, table1 = _fetch_page(category, 1, from_date, to_date)
+        announcements.extend(page1_items)
+        if not page1_items:
+            continue
+
+        rowcnt = (table1[0].get("ROWCNT") if table1 else None) or len(page1_items)
+        total_pages = min(math.ceil(rowcnt / PAGE_SIZE), MAX_PAGES_PER_CATEGORY)
+        if total_pages > MAX_PAGES_PER_CATEGORY:
+            print(f"  [special_situations] '{category}' hit the {MAX_PAGES_PER_CATEGORY}-page safety cap, more may exist")
+        for pageno in range(2, total_pages + 1):
+            remaining_page_tasks.append((category, pageno))
+
+    if remaining_page_tasks:
+        with ThreadPoolExecutor(max_workers=max_workers) as pool:
+            futures = {
+                pool.submit(_fetch_page, category, pageno, from_date, to_date): (category, pageno)
+                for category, pageno in remaining_page_tasks
+            }
+            for future in as_completed(futures):
+                page_items, _ = future.result()
+                announcements.extend(page_items)
+
+    for category in MARKET_WIDE_CATEGORIES:
+        count = sum(1 for a in announcements if a.get("CATEGORYNAME") == category)
+        print(f"  [special_situations] '{category}': {count} announcements")
 
     print(f"  [special_situations] total raw announcements fetched: {len(announcements)}")
     return announcements
